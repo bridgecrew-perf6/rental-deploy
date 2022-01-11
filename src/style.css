@@ -1,0 +1,2024 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300&family=Playfair+Display:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;1,200&family=Nunito:wght@200;300&family=Playfair+Display:wght@400;500&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+    color: black;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+}
+
+.profile-dropdown .dropdown-menu[data-bs-popper] {
+    top: 51px;
+    left: -29px;
+    margin-top: 0.125rem;
+}
+
+.chat .dropdown-menu[data-bs-popper] {
+    top: 71px;
+    left: -282px;
+    margin-top: 0.125rem;
+}
+
+.relative-header {
+    padding: 0;
+    margin: auto auto 30px auto;
+    width: 100%;
+    position: relative;
+    max-height: 850px;
+}
+
+.container-fluid {
+    padding: 0;
+}
+
+.img-fluid {
+    width: 100%;
+    height: 85%;
+    position: relative;
+}
+
+.img-fluid-home {
+    width: 100%;
+    height: 85%;
+    position: relative;
+}
+
+.bg-pass {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.main-child {
+    position: absolute;
+    top: 5%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 15px;
+}
+
+.wrapper {
+    height: 75%;
+    width: 85%;
+    margin: 0 auto;
+}
+
+.dot-svg {
+    margin: 0;
+    padding: 0;
+    height: auto;
+}
+
+.dot-svg img {
+    width: 20%;
+    height: 600px;
+    margin: 0;
+    padding: 0
+}
+
+.left {
+    margin: 15px auto;
+    max-width: 100%;
+    max-height: 300px;
+}
+
+.title-header-lg {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: bold;
+    color: #FFFFFF;
+    margin-bottom: 5rem;
+    font-size: 4.5rem;
+}
+
+.title-header-sm {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #FFFFFF;
+}
+
+.btn-left {
+    background: #393939;
+    box-shadow: 0px 0px 20px rgba(218, 218, 218, 0.25);
+    font-family: Nunito;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: auto;
+    font-weight: bold;
+    color: #FFCD61;
+    width: 75%;
+    height: 79px;
+    border-radius: 10px;
+    text-align: center;
+    padding: auto;
+}
+
+.right {
+    height: auto;
+    margin: 80px auto;
+    width: 100%;
+}
+
+.form-group-index {
+    color: white;
+    font-family: Nunito;
+    font-style: normal;
+    margin: 15px auto 30px auto;
+    float: left;
+    height: auto;
+    width: 100%;
+}
+
+.form-group-index input {
+    color: white;
+    height: 79px;
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
+.forgot-password {
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.1rem;
+    line-height: 28px;
+    text-decoration-line: underline;
+    color: #FFFFFF;
+    margin: auto;
+    /* padding-left: 40px; */
+}
+
+.sign-form {
+    margin: 15px auto;
+    background: rgba(255, 255, 255, 0.26);
+    border-radius: 10px;
+    height: 79px;
+}
+
+.sign-form::placeholder {
+    color: rgb(255, 255, 255);
+    opacity: 1;
+}
+
+.yellow-color {
+    background: #FFCD61;
+    box-shadow: 0px 0px 20px rgba(248, 161, 112, 0.47);
+}
+
+.btn-right {
+    border-radius: 10px;
+    width: 100%;
+    height: 79px;
+    font-family: Nunito;
+    color: #393939;
+    margin: 15px auto;
+    font-style: normal;
+    font-size: 1.5rem;
+    line-height: auto;
+    font-weight: bold;
+}
+
+.btn-wrapper a img {
+    margin: 25px 5px;
+    max-width: 5%;
+    text-align: center;
+    align-items: center;
+}
+
+.information {
+    width: 90%;
+    height: 390px;
+    background: #F9F9FB;
+    margin: auto;
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1rem;
+    line-height: 38px;
+    color: #848484;
+}
+
+.first-foo {
+    max-height: 233px;
+    margin: auto;
+}
+
+.first-foo img {
+    margin-bottom: 10px;
+}
+
+.foo-info {
+    margin-bottom: 70px;
+    width: 309px
+}
+
+.card-title img {
+    width: 44px;
+    height: 44px;
+}
+
+.footer-card {
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #393939;
+}
+
+.list-group-item {
+    border: none;
+    padding: 0 5px;
+    color: #848484;
+}
+
+.foo-list {
+    height: auto;
+    margin-bottom: auto;
+}
+
+footer {
+    height: auto;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.footer-bottom {
+    width: 100%;
+    height: 80px;
+    margin: auto;
+    display: inline-block;
+    color: black;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+}
+
+.footer-bottom hr {
+    width: 75%;
+    margin: 10px auto 25px auto;
+    height: 2px;
+    border-top: 2px solid #848484;
+}
+
+.footer-bottom i {
+    width: 1em;
+    height: 1em;
+    margin: auto 10px;
+}
+
+
+/* next page */
+
+.hr-home {
+    width: 55px;
+    border-top: 5px solid white;
+    display: block;
+    height: 10px;
+    border-radius: 5px;
+}
+
+.btn-df {
+    background: transparent;
+}
+
+nav {
+    padding: 10px 50px;
+    width: 100%;
+    min-height: 100px;
+}
+
+.home-nav {
+    height: 100px;
+}
+
+.nav-item {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: auto;
+    color: #202336;
+    margin-right: 10px;
+    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+    text-align: center
+    /* btn margin nottom 789px */
+}
+
+
+/* .nav-item .btn-outline-warning {
+    color: black;
+    width: 132px;
+} */
+
+.nav-item .nav-home-btn {
+    color: black;
+    width: 132px;
+}
+
+.navbar-light .navbar-toggler {
+    border: 1px solid #FFCD61;
+}
+
+.navbar-brand {
+    padding-left: 10px;
+}
+
+.navbar-collapse {
+    justify-content: end;
+}
+
+.banner-content {
+    height: 800px;
+}
+
+.bg-pass-home {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.4);
+    padding-top: 69px;
+    padding-left: 122px;
+}
+
+.main-child-home {
+    position: relative;
+    background-color: white;
+    color: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.dropdown-wrapper {
+    margin: 10px auto;
+    font-family: Nunito;
+    font-style: normal;
+    color: #393939;
+}
+
+.btn-dropdown-group {
+    margin-right: 10px;
+    width: 220px;
+    height: 52px;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    /* line-height: 2em; */
+}
+
+.dropdown-span-icon {
+    float: right;
+}
+
+.dropdown-toggle {
+    background: rgba(255, 255, 255, 0.5);
+    border: 0.8px solid #AFB0B9;
+    box-sizing: border-box;
+    border-radius: 6px;
+}
+
+.btn-explore {
+    width: 180px;
+    height: 60px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    /* line-height: 2.5em; */
+    margin-top: 47px;
+}
+
+.popular-section {
+    height: 550px;
+    padding: 10px 30px;
+    display: inline-block;
+    width: 100%;
+}
+
+.btn-next-viewAll {
+    text-decoration: none;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    align-items: center;
+    color: #FB8F1D;
+    margin-top: 2%;
+}
+
+.popular-header {
+    width: 80%;
+    height: auto;
+    margin: 50px auto 25px auto;
+}
+
+.popular-home-section {
+    width: 80%;
+    height: auto;
+    margin: auto;
+}
+
+.vehicle-card {
+    border: none;
+    position: relative;
+    width: 266px;
+    height: 340px;
+    margin: 15px auto;
+}
+
+.vehicle-card .view-popular-card {
+    margin: auto;
+    position: absolute;
+    bottom: 0px;
+    background: #FFFFFF;
+    border-radius: 0px 6px 0px 0px;
+    width: 140px;
+    height: 66px;
+    padding: auto auto 0 auto;
+}
+
+.vehicle-card .view-popular-card p {
+    border: none;
+    font-family: Nunito;
+    font-style: normal;
+    /* font-weight: 600; */
+    color: #0c0b0b;
+    margin: auto;
+}
+
+.testimonial-rate-image {
+    width: 384px;
+    height: 491px;
+    position: relative;
+    padding: 0;
+    margin: auto;
+}
+
+.xplus {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    width: 42px;
+    height: 42px;
+}
+
+.bg-circle {
+    position: absolute;
+    left: -15px;
+    bottom: -15px;
+    width: 42px;
+    height: 42px;
+}
+
+.testimonial-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 132px;
+    height: 55px;
+    background: #FFFFFF;
+    border-radius: 16px 0px 0px 0px;
+    margin: auto;
+    border: none !important;
+}
+
+.prev-testimonial-button {
+    border-radius: 16px 0px 0px 0px;
+    border: none;
+    margin: auto;
+    width: 60px;
+    height: 60px;
+}
+
+.next-testimonial-button {
+    border-radius: 16px 0px 0px 0px;
+    border: none;
+    margin: auto;
+    width: 60px;
+    height: 60px;
+}
+
+.testimonial-icon {
+    width: 1em;
+}
+
+.view-popular-image {
+    width: 261px;
+    border-radius: 8px;
+    height: 337px;
+    object-fit: cover;
+}
+
+.home-title {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: left;
+    color: #000000;
+}
+
+.home-bottom-content {
+    width: 100%;
+    height: auto;
+    margin: 50 auto;
+}
+
+.testimonial {
+    height: auto;
+    width: 100%;
+    overflow-y: none;
+    margin: 50px auto 100px auto;
+    padding: auto;
+    position: relative;
+}
+
+.testimonial h1 {
+    width: 70%;
+    margin: auto auto 25px auto;
+}
+
+.testimonial-row-wrapper {
+    width: 70%;
+    margin: auto;
+}
+
+.sm-xplus {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+}
+
+.testimonial-rate-info {
+    margin: auto;
+    font-family: Mulish;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.5rem;
+    line-height: 36px;
+    color: #393939;
+}
+
+.testimonial-picture {
+    /* width: 384px;
+    height: 491px; */
+    width: 384px;
+    height: 491px;
+    border-radius: 8px;
+}
+
+.popular-section-view {
+    height: auto;
+    padding: 10px auto;
+    width: 80%;
+    margin: auto auto 50px auto;
+}
+
+.view-popular {
+    width: 100%;
+    height: auto;
+    margin: 25px auto 150px auto;
+}
+
+.view-popular-home {
+    width: 82%;
+    height: auto;
+    margin: 25px auto;
+}
+
+.popular-section-view h1 {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3rem;
+    color: #000000;
+}
+
+.popular-section-view p {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    align-items: center;
+    text-align: center;
+    color: #B8BECD;
+}
+
+.card-popular-spicing {
+    margin: auto auto 55px auto;
+}
+
+.img-thumbnail {
+    object-fit: contain;
+    border-radius: 10px;
+    border: none;
+}
+
+.card {
+    border: none;
+}
+
+.vehicle-detail {
+    width: 90%;
+    margin: 50px auto;
+    height: auto;
+}
+
+.vehicle-detail-container {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    gap: 4px;
+}
+
+.grid-image {
+    grid-column: 1 / span 4;
+    grid-row: 1;
+    margin: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    align-self: stretch;
+}
+
+.item2 {
+    grid-row: 2;
+    margin: auto;
+}
+
+.item3 {
+    grid-row: 2;
+    margin: auto;
+}
+
+.item4 {
+    grid-row: 2;
+    margin: auto;
+}
+
+.item5 {
+    grid-row: 2;
+    margin: auto;
+}
+
+.vehicle-preview {
+    width: 150px;
+    height: 150px;
+    margin: auto;
+}
+
+.vehicle-detail-title {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 3rem;
+    align-items: center;
+    color: #042521;
+}
+
+.vehicle-info-wrapper h2 {
+    margin: 10px auto;
+    padding: auto;
+}
+
+.city {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2rem;
+    align-items: center;
+    color: #393939;
+    margin: 10px auto;
+    padding: auto;
+}
+
+.status-vehicle {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    align-items: center;
+    color: #087E0D;
+}
+
+.payment-info {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.5rem;
+    align-items: center;
+    color: #9B0A0A;
+}
+
+.vehicle-info-detail {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1.5rem;
+    align-items: center;
+    color: #393939;
+}
+
+.vehicle-info-detail p {
+    margin: 0 auto 5px auto;
+    padding: auto;
+}
+
+.price h4 {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 2rem;
+    text-align: right;
+    color: #000000;
+    margin: 20px auto;
+}
+
+.btn-detail-bottom {
+    width: 80%;
+}
+
+.btn-detail {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2rem;
+    align-items: center;
+}
+
+.btn-chatAdmin {
+    background: #393939;
+    box-shadow: 0px 0px 20px rgba(218, 218, 218, 0.25);
+    font-family: Nunito;
+    font-style: normal;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFCD61;
+    width: 100%;
+    height: 79px;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.btn-reservation {
+    border-radius: 10px;
+    width: 100%;
+    height: 79px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: #393939;
+    margin: 10px auto;
+}
+
+.btn-liked {
+    height: 79px;
+    background: #393939;
+    box-shadow: 0px 0px 20px rgba(218, 218, 218, 0.25);
+    font-family: Nunito;
+    font-style: normal;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #FFCD61;
+    width: 100%;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.qty-box {
+    width: 100%;
+    height: 100;
+    border: none;
+}
+
+.plus-qty {
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    line-height: 33px;
+    color: #393939;
+    margin: 10px auto;
+}
+
+.min-qty {
+    border-radius: 10px;
+    width: 100px;
+    height: 50px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 2rem;
+    line-height: 33px;
+    color: #393939;
+    background-color: rgba(166, 166, 173, 0.2);
+    margin: 10px auto;
+}
+
+.text-qty {
+    width: 100px;
+    height: 50px;
+    border: none;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 15px;
+}
+
+.profile-section {
+    width: 80%;
+    height: auto;
+    margin: 50px auto;
+}
+
+.profile-card {
+    margin: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.profile-picture {
+    border: none;
+    margin: auto;
+    width: 200px;
+}
+
+.profile-pic {
+    border: none;
+    border-radius: 50%;
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+    margin: auto;
+    position: relative;
+}
+
+.btn-edit-profile {
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    margin: auto;
+    position: absolute;
+    top: 150px;
+    right: 42%;
+}
+
+.profile-text {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 0.8rem;
+    align-items: center;
+    text-align: center;
+    color: #B8BECD;
+}
+
+.radio-btn-profile {
+    width: 100%;
+}
+
+.form-check .form-check-inline {
+    width: 100px;
+}
+
+.profile-wrapper {
+    width: 80%;
+}
+
+.profile-input {
+    margin-right: 20px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.2rem;
+    height: auto;
+    color: #9F9F9F;
+    border-bottom: 1px solid black;
+    padding: auto;
+    margin: 20px auto 35px auto;
+}
+
+.profile-input-Identify {
+    margin-left: 0;
+}
+
+.profile-title-heading {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.7rem;
+    color: #4F5665;
+    margin: 55px auto 10px auto;
+}
+
+.profile-input input {
+    border: none;
+}
+
+.profile-save {
+    background: #393939;
+    box-shadow: 0px 0px 20px rgba(218, 218, 218, 0.25);
+    font-family: Nunito;
+    font-style: normal;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #FFCD61;
+    width: 75%;
+    height: 49px;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.profile-password {
+    border-radius: 10px;
+    width: 75%;
+    height: 49px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    line-height: 33px;
+    color: #393939;
+    margin: 10px auto;
+}
+
+.btn-cancel {
+    height: 49px;
+    color: #393939;
+    box-shadow: 0px 0px 20px rgba(218, 218, 218, 0.25);
+    font-family: Nunito;
+    font-style: normal;
+    font-size: 1.2rem;
+    font-weight: bold;
+    background: rgba(203, 203, 212, 0.27);
+    width: 75%;
+    margin: 10px auto;
+    border-radius: 10px;
+}
+
+.btn-profile-bottom {
+    width: 80%;
+    margin: 25px auto;
+    height: auto;
+    align-items: center;
+    text-align: center;
+}
+
+.identify-input {
+    margin: 0 auto 55px auto;
+    width: 100%;
+}
+
+
+/* unusesable component */
+
+.detail-carousel {
+    width: 70%;
+    height: 500px;
+}
+
+
+/* home */
+
+.profile-btn-picture {
+    padding: 0;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 0;
+    text-align: center;
+}
+
+.btn-message-profile {
+    padding: 0;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 0;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+}
+
+.profile-btn-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    top: 0;
+}
+
+.radio-btn-styling {
+    margin: 10px 70px;
+}
+
+.radio-yellow [type="radio"]:checked+label:after {
+    border-color: #FFCD61;
+    background-color: #FFCD61;
+}
+
+@media only screen and (max-width:1280px) {
+    .title-header-lg {
+        font-size: 3.5rem;
+        line-height: 85px;
+        margin-bottom: 35px;
+    }
+    .main-child {
+        top: 20px;
+        height: 80%;
+    }
+    .wrapper {
+        height: 400px;
+        margin: 0 auto;
+        padding: 25px auto;
+    }
+    .dot-svg {
+        height: 350px;
+        margin-top: 50px;
+    }
+    .dot-svg img {
+        width: 35%;
+        height: 300px;
+        margin: 0;
+        padding: 0;
+        align-items: none;
+    }
+    .left {
+        margin: 0;
+        float: left;
+    }
+    .profile-save {
+        font-size: 1.125rem;
+        width: 65%;
+        height: 49px;
+        line-height: auto;
+    }
+    .profile-password {
+        font-size: 1.125rem;
+        width: 65%;
+        height: 49px;
+        line-height: auto;
+    }
+    .btn-cancel {
+        font-size: 1.125rem;
+        width: 65%;
+        height: 49px;
+        line-height: auto;
+    }
+    .btn-left {
+        font-size: 1.125rem;
+        width: 65%;
+        height: 49px;
+        line-height: auto;
+    }
+    .right {
+        margin-top: 100px;
+    }
+    .form-group-index {
+        margin: auto;
+    }
+    .form-group-index input {
+        height: 49px;
+        font-size: 1.1rem;
+        line-height: 1.2em;
+    }
+    .forgot-password {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    .btn-right {
+        margin: 5px auto;
+        height: 49px;
+        font-size: 1.125rem;
+        line-height: 1.2em;
+    }
+    .btn-wrapper a img {
+        margin: 12px 5px;
+        max-width: 5%;
+    }
+    .information {
+        width: 90%;
+        height: auto;
+        line-height: 28px;
+    }
+    .foo-info {
+        margin-bottom: 30px;
+        height: auto;
+        width: 275px;
+    }
+}
+
+@media only screen and (max-width:1024px) {
+    .banner-content {
+        height: 542px;
+    }
+    .bg-pass-home {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        background: rgba(0, 0, 0, 0.4);
+        padding-top: 20px;
+        padding-left: 90px;
+    }
+    .btn-dropdown-group {
+        margin-right: 10px;
+        width: 200px;
+        height: 48px;
+        font-size: 1rem;
+    }
+    .btn-explore {
+        width: 170px;
+        height: 50px;
+        font-size: 1rem;
+        margin-top: 27px;
+    }
+    .popular-section {
+        height: 422px;
+        font-size: 1rem;
+    }
+    .testimonial-rate-info {
+        font-size: 1rem;
+        line-height: 26px;
+    }
+    .testimonial-rate-info img {
+        width: 57%;
+        margin-bottom: 15px;
+    }
+    .testimonial-rate-info h5 {
+        font-size: 1rem;
+    }
+    .testimonial-rate-info h6 {
+        font-size: 0.8rem;
+    }
+    .testimonial-picture {
+        width: 284px;
+        height: 391px;
+    }
+    .testimonial-rate-image {
+        width: 285px;
+        height: 392px;
+        position: relative;
+        padding: 0;
+        margin: auto;
+    }
+    /* ghome */
+    .popular-section-view {
+        width: 85%;
+        margin: auto auto 20px auto;
+    }
+    .popular-section-view h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    .popular-section-view p {
+        font-size: 1rem;
+    }
+    .vehicle-card {
+        height: 230px;
+        width: 330px;
+        /* align-items: center; */
+    }
+    .view-popular-image {
+        width: 170px;
+        height: 230px;
+    }
+    .vehicle-card .view-popular-card {
+        left: 0;
+        width: 125px;
+        height: 50px;
+    }
+    .vehicle-card .view-popular-card p {
+        font-size: 0.7rem;
+    }
+    /* veiw */
+    /* poopular */
+    .vehicle-detail-title {
+        font-size: 2rem;
+    }
+    .city {
+        font-size: 1.5rem;
+    }
+    .status-vehicle {
+        font-size: 1rem;
+    }
+    .payment-info {
+        font-size: 1rem;
+    }
+    .vehicle-info-detail {
+        font-size: 1rem;
+    }
+    .price h4 {
+        font-size: 1.3rem;
+    }
+    .btn-chatAdmin {
+        font-size: 1.125rem;
+        width: 100%;
+        height: 49px;
+        line-height: auto;
+    }
+    .btn-reservation {
+        font-size: 1.125rem;
+        width: 100%;
+        height: 49px;
+        line-height: auto;
+    }
+    .btn-liked {
+        font-size: 1.125rem;
+        width: 100%;
+        height: 49px;
+        line-height: auto;
+    }
+    /*next page */
+    .profile-input {
+        margin: 15px auto 15px 10px;
+        font-size: 1rem;
+    }
+    .profile-title-heading {
+        font-size: 1.5rem;
+        margin: 30px auto 0 auto;
+    }
+    .profile-pic {
+        position: relative;
+    }
+    .btn-edit-profile {
+        position: absolute;
+        top: 150px;
+        left: 450px
+    }
+    .title-header-lg {
+        font-size: 3.5rem;
+        line-height: 85px;
+        margin-bottom: 35px;
+    }
+    .main-child {
+        top: 20px;
+        height: 80%;
+    }
+    .wrapper {
+        height: 400px;
+        margin: 0 auto;
+        padding: 25px auto;
+    }
+    .dot-svg {
+        height: 350px;
+        margin-top: 50px;
+    }
+    .dot-svg img {
+        width: 35%;
+        height: 300px;
+        margin: 0;
+        padding: 0;
+        align-items: none;
+    }
+    .left {
+        margin: 0;
+        float: left;
+    }
+    .btn-left {
+        font-size: 1.125rem;
+        width: 65%;
+        height: 49px;
+        line-height: auto;
+    }
+    .profile-save {
+        font-size: 1.125rem;
+        width: 100%;
+        height: 49px;
+        line-height: auto;
+    }
+    .profile-password {
+        font-size: 1.125rem;
+        width: 100%;
+        height: 49px;
+        line-height: auto;
+    }
+    .btn-cancel {
+        font-size: 1.125rem;
+        width: 100%;
+        height: 49px;
+        line-height: auto;
+    }
+    .right {
+        margin-top: 100px;
+    }
+    .form-group-index {
+        margin: auto;
+    }
+    .form-group-index input {
+        height: 49px;
+        font-size: 1.1rem;
+        line-height: 1.2em;
+    }
+    .forgot-password {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    .btn-right {
+        margin: 5px auto;
+        height: 49px;
+        font-size: 1.125rem;
+        line-height: 1.2em;
+    }
+    .btn-wrapper a img {
+        margin: 12px 5px;
+        max-width: 5%;
+    }
+    .information {
+        width: 90%;
+        height: auto;
+        line-height: 28px;
+    }
+    .foo-info {
+        margin-bottom: 30px;
+        height: auto;
+        width: 275px;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    /* view */
+    .title-header-lg {
+        font-size: 2.6rem;
+        line-height: 55px;
+        margin-bottom: 45px;
+    }
+    .title-header-sm {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
+    .main-child {
+        top: 20px;
+        height: 59%;
+    }
+    .wrapper {
+        height: 350px;
+        margin: 0 auto;
+        padding: 25px auto;
+    }
+    .dot-svg img {
+        width: 35%;
+        height: 62%;
+        margin: 0;
+        padding: 0;
+        align-items: none;
+    }
+    .left {
+        margin-top: 17px;
+        float: left;
+    }
+    .btn-left {
+        font-size: 1rem;
+        width: 75%;
+        height: 45px;
+        line-height: auto;
+    }
+    .profile-save {
+        font-size: 1rem;
+        width: 75%;
+        height: 45px;
+        line-height: auto;
+    }
+    .profile-password {
+        font-size: 1rem;
+        width: 75%;
+        height: 45px;
+        line-height: auto;
+    }
+    .btn-cancel {
+        font-size: 1rem;
+        width: 75%;
+        height: 45px;
+        line-height: auto;
+    }
+    .right {
+        margin-top: 0;
+    }
+    .form-group-index {
+        margin: auto;
+    }
+    .form-group-index input {
+        height: 45px;
+        font-size: 1rem;
+    }
+    .forgot-password {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    .btn-right {
+        margin: 5px auto;
+        height: 45px;
+        font-size: 1rem;
+    }
+    .btn-wrapper a img {
+        margin-top: 9px;
+        max-width: 6%;
+        margin-left: 7px;
+    }
+    .information {
+        line-height: 28px;
+        font-size: 0.8rem;
+    }
+    .foo-info {
+        margin-bottom: 10px;
+        width: 210px;
+    }
+    .foo-list {
+        margin-top: 35px;
+        width: 150px;
+    }
+    .footer-bottom {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width:768px) {
+    .view-popular-home {
+        width: 90%;
+        height: auto;
+        margin: 25px auto;
+    }
+    .title-header-lg {
+        font-size: 2.3rem;
+        /* line-height: 55px; */
+        margin-bottom: 24px;
+    }
+    .banner-content {
+        height: 400px;
+    }
+    .bg-pass-home {
+        padding-left: 54px;
+    }
+    .btn-dropdown-group {
+        margin-right: 5px;
+        width: 154px;
+        height: 38px;
+        font-size: 0.8rem;
+    }
+    .btn-explore {
+        width: 154px;
+        height: 38px;
+        font-size: 0.8rem;
+        margin-top: 13px;
+    }
+    .popular-section {
+        width: 100%;
+        height: 400px;
+        font-size: 1rem;
+    }
+    .vehicle-card-home {
+        height: 198px;
+        width: 152px;
+        align-items: center;
+    }
+    .testimonial-rate-info {
+        font-size: 1rem;
+        line-height: 26px;
+    }
+    .testimonial-rate-info img {
+        width: 57%;
+        margin-bottom: 15px;
+    }
+    .testimonial-rate-info h5 {
+        font-size: 1rem;
+    }
+    .testimonial-rate-info h6 {
+        font-size: 0.8rem;
+    }
+    .testimonial-picture {
+        width: 284px;
+        height: 391px;
+    }
+    .testimonial-rate-image {
+        width: 285px;
+        height: 392px;
+        position: relative;
+        padding: 0;
+        margin: auto;
+    }
+    /* ///////////////////// */
+    /* home */
+    .testimonial-row-wrapper {
+        width: 90%;
+        margin: auto;
+    }
+    .popular-section-view {
+        width: 85%;
+        margin: auto auto 20px auto;
+    }
+    .popular-section-view h1 {
+        font-size: 1.5rem;
+    }
+    .popular-section-view p {
+        font-size: 0.8rem;
+    }
+    .vehicle-card {
+        height: 200px;
+        width: 300px;
+        align-items: center;
+    }
+    .view-popular-image {
+        width: 150px;
+        height: 200px;
+    }
+    .vehicle-card .view-popular-card {
+        width: 100px;
+        height: 50px;
+    }
+    .vehicle-card .view-popular-card p {
+        font-size: 0.7rem;
+    }
+    /* vewi */
+    .vehicle-detail-title {
+        font-size: 2rem;
+    }
+    .city {
+        font-size: 1.5rem;
+    }
+    .status-vehicle {
+        font-size: 1rem;
+    }
+    .payment-info {
+        font-size: 1rem;
+    }
+    .vehicle-info-detail {
+        font-size: 1rem;
+    }
+    .price h4 {
+        font-size: 1.3rem;
+    }
+    .btn-chatAdmin {
+        font-size: 1rem;
+        width: 100%;
+        height: 45px;
+        line-height: auto;
+    }
+    .btn-reservation {
+        font-size: 1rem;
+        width: 100%;
+        height: 45px;
+        line-height: auto;
+    }
+    .btn-liked {
+        font-size: 1rem;
+        width: 100px;
+        height: 45px;
+        line-height: auto;
+    }
+    /*next page */
+    .profile-input {
+        margin: 15px auto 15px 10px;
+        font-size: 0.8rem;
+    }
+    .profile-title-heading {
+        font-size: 1.2rem;
+        margin: 30px auto 0 auto;
+    }
+    .profile-pic {
+        position: relative;
+    }
+    .btn-edit-profile {
+        position: absolute;
+        top: 150px;
+        left: 350px
+    }
+    .title-header-lg {
+        font-size: 2.6rem;
+        line-height: 55px;
+        margin-bottom: 45px;
+    }
+    .title-header-sm {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
+    .main-child {
+        top: 20px;
+        height: 59%;
+    }
+    .wrapper {
+        height: 350px;
+        margin: 0 auto;
+        padding: 25px auto;
+    }
+    .dot-svg img {
+        width: 35%;
+        height: 62%;
+        margin: 0;
+        padding: 0;
+        align-items: none;
+    }
+    .left {
+        margin-top: 17px;
+        float: left;
+    }
+    .btn-left {
+        font-size: 1rem;
+        width: 75%;
+        height: 45px;
+        line-height: auto;
+    }
+    .profile-save {
+        font-size: 1rem;
+        width: 100%;
+        height: 45px;
+        line-height: auto;
+    }
+    .profile-password {
+        font-size: 1rem;
+        width: 100%;
+        height: 45px;
+        line-height: auto;
+    }
+    .btn-cancel {
+        font-size: 1rem;
+        width: 100%;
+        height: 45px;
+        line-height: auto;
+    }
+    .right {
+        margin-top: 0;
+    }
+    .form-group-index {
+        margin: auto;
+    }
+    .form-group-index input {
+        height: 45px;
+        font-size: 1rem;
+    }
+    .forgot-password {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+    .btn-right {
+        margin: 5px auto;
+        height: 45px;
+        font-size: 1rem;
+    }
+    .btn-wrapper a img {
+        margin-top: 9px;
+        max-width: 6%;
+        margin-left: 7px;
+    }
+    .information {
+        line-height: 28px;
+        font-size: 0.8rem;
+    }
+    .foo-info {
+        margin-bottom: 10px;
+        width: 210px;
+    }
+    .foo-list {
+        margin-top: 35px;
+        width: 150px;
+    }
+    .footer-bottom {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width:560px) {
+    .popular-header {
+        width: 100%;
+    }
+    .btn-next-viewAll {
+        font-size: 1rem;
+        margin-top: 0;
+        padding-top: 0;
+    }
+    .popular-section {
+        width: 100%;
+        height: auto;
+    }
+    .home-title {
+        font-size: 1rem;
+        text-align: left;
+        left: 0;
+    }
+    .img-fluid-home {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+    }
+    .main-child-home {
+        width: 100%;
+        height: auto;
+    }
+    .btn-dropdown-group {
+        margin-right: 5px;
+        width: 123px;
+        height: 31px;
+        font-size: 1rem;
+    }
+    .btn-explore {
+        width: 123px;
+        height: 31px;
+        font-size: 1rem;
+        margin-top: 17px;
+    }
+    .bg-pass-home {
+        padding-top: 45px;
+        padding-left: 37px;
+    }
+    .title-header-lg {
+        font-size: 2rem;
+        line-height: 38px;
+        margin-bottom: 15px;
+    }
+    .testimonial-rate-info {
+        font-size: 0.8rem;
+        line-height: 26px;
+    }
+    .testimonial-picture {
+        width: 239px;
+        height: 312px;
+    }
+    /* homme */
+    nav {
+        padding: 10px 19px;
+    }
+    .popular-section-view {
+        width: 85%;
+        margin: auto auto 20px auto;
+    }
+    .popular-section-view h1 {
+        font-size: 1.5rem;
+    }
+    .popular-section-view p {
+        font-size: 0.8rem;
+    }
+    .vehicle-card {
+        height: 200px;
+        width: 300px;
+        align-items: center;
+    }
+    .view-popular-image {
+        width: 150px;
+        height: 200px;
+    }
+    .vehicle-card .view-popular-card {
+        width: 100px;
+        height: 50px;
+        left: 20%;
+    }
+    .vehicle-card .view-popular-card p {
+        font-size: 0.7rem;
+    }
+    /* popoular img */
+    .btn-detail-bottom {
+        margin: auto;
+        width: 100%;
+        text-align: center;
+    }
+    .vehicle-detail-title {
+        font-size: 2rem;
+    }
+    .city {
+        font-size: 1.5rem;
+    }
+    .status-vehicle {
+        font-size: 1rem;
+    }
+    .payment-info {
+        font-size: 1rem;
+    }
+    .vehicle-info-detail {
+        font-size: 1rem;
+    }
+    .price h4 {
+        font-size: 1.3rem;
+    }
+    /*next page */
+    .profile-input {
+        margin: 15px auto 15px 10px;
+        font-size: 0.8rem;
+    }
+    .profile-title-heading {
+        font-size: 1.2rem;
+    }
+    .profile-pic {
+        position: relative;
+    }
+    .btn-edit-profile {
+        position: absolute;
+        top: 140px;
+        left: 60%;
+    }
+    .img-fluid {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .main-child {
+        width: 100%;
+        height: auto;
+        align-items: center;
+        text-align: center;
+    }
+    .dot-svg {
+        height: 130px;
+        min-width: 300px;
+        margin: auto;
+    }
+    .dot-svg img {
+        height: 80%;
+        width: 100%;
+        margin: 20px auto auto auto;
+        padding: auto;
+    }
+    .wrapper {
+        height: auto;
+        margin: 15px auto;
+    }
+    .sm-dev {
+        height: 700px;
+    }
+    .left {
+        min-width: 300px;
+        margin: auto;
+        height: auto;
+        padding: auto;
+    }
+    .btn {
+        font-size: 0.7rem;
+        padding: auto;
+        /* margin-top: 10px; */
+    }
+    .btn-left {
+        font-size: 0.8rem;
+        padding: auto;
+        width: 200px;
+        height: 39px;
+        margin: 0 auto;
+    }
+    .btn-profile-bottom {
+        width: 100%;
+        margin: 25px auto;
+    }
+    .profile-save {
+        font-size: 0.8rem;
+        padding: auto;
+        width: 150px;
+        height: 39px;
+        margin: 10px auto;
+    }
+    .profile-password {
+        font-size: 0.8rem;
+        padding: auto;
+        width: 150px;
+        height: 39px;
+        margin: 10px auto;
+    }
+    .btn-cancel {
+        font-size: 0.8rem;
+        padding: auto;
+        width: 150px;
+        height: 39px;
+        margin: 10px auto;
+    }
+    .btn-chatAdmin {
+        font-size: 0.8rem;
+        padding: auto;
+        width: 150px;
+        height: 39px;
+        margin: 10px auto;
+    }
+    .btn-reservation {
+        font-size: 0.8rem;
+        padding: auto;
+        width: 150px;
+        height: 39px;
+        margin: 10px auto;
+    }
+    .btn-liked {
+        font-size: 0.8rem;
+        padding: auto;
+        width: 150px;
+        height: 39px;
+        margin: 10px auto;
+    }
+    .right {
+        min-width: 300px;
+        height: auto;
+        margin: 0 auto;
+    }
+    .btn-right {
+        font-size: 0.8rem;
+        line-height: 0;
+        width: 250px;
+        height: 39px;
+        /* margin-top: 5px; */
+    }
+    .form-group-index {
+        margin-bottom: 0;
+        height: auto;
+        width: 250px;
+        float: none;
+    }
+    .form-group-index input {
+        width: 250px;
+        height: 39px;
+        font-size: 0.8rem;
+        line-height: 13px;
+    }
+    .forgot-password {
+        font-size: 0.7em;
+        width: 250px;
+        padding: auto;
+        margin: auto;
+        text-align: left;
+        align-items: left;
+        float: left;
+    }
+    /* sign-form / form-control */
+    .sign-form {
+        margin: 7px auto;
+        height: 39px;
+    }
+    .btn-wrapper a {
+        margin-top: 0;
+    }
+    .btn-wrapper a img {
+        margin: 7px 10px;
+        width: 25px;
+    }
+    .information {
+        width: 80%;
+        height: auto;
+        font-size: 0.8rem;
+    }
+    .first-foo {
+        margin-top: 10px;
+        margin-bottom: 20px;
+        width: 100%;
+        font-size: 0.8rem;
+        padding-bottom: 0;
+    }
+    .foo-list {
+        font-size: 0.8rem;
+        height: auto;
+    }
+    .foo-info {
+        width: 90%;
+        margin-bottom: 10px;
+    }
+    .foo-list {
+        height: 200px;
+        margin-top: 15px;
+        width: 100%;
+    }
+    .list-group-item {
+        margin-bottom: 5px;
+        font-size: 0.8rem;
+    }
+    .footer-bottom {
+        width: 100%;
+        height: 80px;
+    }
+    .footer-bottom hr {
+        width: 75%;
+        margin: 10px auto;
+        height: 2px;
+        bottom: 0;
+    }
+    .footer-bottom i {
+        width: 0.5em;
+        height: 0.5em;
+        margin: auto 10px;
+    }
+}
