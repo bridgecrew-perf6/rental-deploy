@@ -22,9 +22,6 @@ const LoginComponent = (props) => {
       .post(URL, body)
       .then((response) => {
         const token = response.data.result.token;
-        // const body = response.data.result.payload;
-        // console.log(body.id);
-        // console.log(response);
         localStorage.setItem("login-token", JSON.stringify(token));
         history.push("/");
       })
