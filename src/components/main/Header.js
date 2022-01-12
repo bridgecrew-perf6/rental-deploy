@@ -1,5 +1,6 @@
 import React from "react";
 import bg from "../../images/bg.png";
+// import bgActive from "../../images/bg-after-login.png";
 
 function Header() {
   return (

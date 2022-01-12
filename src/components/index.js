@@ -6,10 +6,13 @@ import LoginComponent from "./login/Login";
 import SignupComponent from "./login/Signup";
 import Card from "./vehicle/Card";
 import DetailVehicle from "./vehicle/Detail";
+import ReservationComponent from "./vehicle/Reservation";
+import ReservPayComp from "./vehicle/ReservPayComp";
 import Testimonial from "./homeComponent/Testimonial";
 import PopularHome from "./homeComponent/PopularHome";
+import Navvisit from "./main/NavVisit";
 
-const Layout = (props) => <div>{props.children}</div>;
+const Layout = (props) => <>{props.children}</>;
 
 export {
   Layout,
@@ -21,5 +24,8 @@ export {
   Card,
   DetailVehicle,
   Testimonial,
-  PopularHome
+  PopularHome,
+  Navvisit,
+  ReservationComponent,
+  ReservPayComp
 };
