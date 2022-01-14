@@ -1,32 +1,35 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import vehicleDetail from "../../images/vehicle-detail.png";
 import "../../style.css";
 
 class DetailVehicle extends Component {
-  state={
+  state = {
     clicks: 1,
-    show : true,
-  }
+    show: true,
+  };
   IncrementItem = () => {
     this.setState({ clicks: this.state.clicks + 1 });
-  }
+  };
   DecreaseItem = () => {
     this.setState({ clicks: this.state.clicks - 1 });
-  }
+  };
   ToggleClick = () => {
-    this.setState({ show: true});
-  }
+    this.setState({ show: true });
+  };
 
   render() {
     return (
       <div className="container-fluid vehicle-detail">
         <div className="container-fluid">
-          <button
-            type="button"
-            className="btn btn-light btn-lg btn-block btn-detail"
-          >
-            <i className="bi bi-chevron-left"></i>Detail
-          </button>
+          <Link to="vehicle-all">
+            <button
+              type="button"
+              className="btn btn-light btn-lg btn-block btn-detail"
+            >
+              <i className="bi bi-chevron-left"></i>Detail
+            </button>
+          </Link>
         </div>
 
         <div className="container-fluid vehicle-detail">
@@ -84,17 +87,26 @@ class DetailVehicle extends Component {
                     <h4>Rp. 128.000/day</h4>
                   </div>
                   <div className="container-fluid d-flex justify-content-center qty-box">
-                    <button onClick={this.IncrementItem} type="button" className="btn btn-warning plus-qty">
+                    <button
+                      onClick={this.IncrementItem}
+                      type="button"
+                      className="btn btn-warning plus-qty"
+                    >
                       +
                     </button>
                     <div className="form-group">
-                      <p onClick={this.ToggleClick}
+                      <p
+                        onClick={this.ToggleClick}
                         className="form-control text-qty"
                       >
-                         { this.state.clicks}
+                        {this.state.clicks}
                       </p>
                     </div>
-                    <button onClick={this.DecreaseItem} type="button" className="btn btn-light min-qty">
+                    <button
+                      onClick={this.DecreaseItem}
+                      type="button"
+                      className="btn btn-light min-qty"
+                    >
                       -
                     </button>
                   </div>

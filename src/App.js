@@ -56,31 +56,25 @@ class App extends React.Component {
                 return <Login />;
               }}
             />
-            {/* <Route exact path='/login'
-            render={(props) => {
-              if (accessToken)
-                return <Redirect from="/login" to="/" />;
-              return <Login {...props} />;
-            }}/>  */}
-            <Route path="/forgotpassword" component={ForgotPassword} />
+            <Route path="/forgot-password" component={ForgotPassword} />
             <Route path="/signup" component={SignUp} />
             <Route path="/profile" component={Profile} />
-            <Route path="/vehicle" component={Vehicle} />
-            <Route path="/vehicle-type" component={VehicleType} />
-            <Route path="/detail" component={Detail} />
+            <Route exact path="/vehicle" component={Vehicle} />
+            <Route path="/vehicle-all" component={VehicleType} />
+            <Route path="/vehicle-detail" component={Detail} />
             <Route
-              path="/payreservation"
+              path="/pay-reservation"
               render={(routeProps) => {
                 if (!accessToken)
-                  return <Redirect from="/payreservation" to="/login" />;
+                  return <Redirect from="/pay-reservation" to="/login" />;
                 return <ReservationComponent {...routeProps} />;
               }}
             />
+            <Route path="/go-payment" component={ReservPayment} />
             <Route path="/payment" component={Payment} />
-            <Route path="/gopayment" component={ReservPayment} />
-            <Route path="/chatmessage" component={ChatNav} />
+            <Route path="/chat-message" component={ChatNav} />
             <Route path="/chat" component={ChatPage} />
-            <Route path="/chatdetail" component={ChatDetail} />
+            <Route path="/chat-detail" component={ChatDetail} />
             <Route path="/history" component={History} />
             <Route
             exact
@@ -96,6 +90,14 @@ class App extends React.Component {
       </Provider>
     );
   }
+  // {/* <Route exact path='/login'
+  // render={(props) => {
+  //   if (accessToken)
+  //   return <Redirect from="/login" to="/" />;
+  //   return <Login {...props} />;
+  // }}/>  */}
 }
 
+
 export default App;
+

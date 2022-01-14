@@ -2,18 +2,21 @@ import React, { Component } from "react";
 import vehicleDetail from "../../images/vehicle-detail.png";
 import { Card, Container, Col, Row, Button } from "react-bootstrap";
 import "../../style.css";
+import { Link } from "react-router-dom";
 
 class ReservPayComp extends Component {
   render() {
     return (
       <div className="container-fluid vehicle-detail">
         <div className="container-fluid">
+          <Link to='/pay-reservation'>
           <button
             type="button"
             className="btn btn-light btn-lg btn-block btn-detail"
-          >
+            >
             <i className="bi bi-chevron-left"></i>Reservation
           </button>
+            </Link>
         </div>
 
         <div className="container-fluid vehicle-detail">

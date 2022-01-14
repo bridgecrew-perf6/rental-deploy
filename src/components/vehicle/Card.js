@@ -1,49 +1,25 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import popularImages from "../../images/popular-one.png";
 import "../../style.css";
-import axios from "axios";
 
-class Card extends Component {
-  state={
-    vehicle :[],
-  }
-  componentDidMount() {
-    const URL = "http://localhost:8000/vehicles";
-      axios
-        .get(URL)
-        .then((response) => {
-          console.log(response.data.result);
-        })
-        .catch((error) => {
-          console.log( error);
-        }); 
-  }
-  
-    render() {
+const Card = (props) => {
         return (
-            <div className="container-fluid view-popular-home">
-            <div className="row">
-              <div className="card col-sm col-md col-lg vehicle-card">
-                <a href="/order.html">
+              <div className="card col-sm col-md col-lg vehicle-card" key={props.idx}>
+                <Link to='/vehicle-detail'>
                   <img
                     src={popularImages}
                     className="card-img-top view-popular-image"
                     alt="pop"
                   />
-                </a>
+                </Link>
                 <div className="card-body view-popular-card">
                   <p>
-                    <strong>Merapi</strong>
-                  </p>
-                  <p>
-                    <small>Yogyakarta</small>
+                    <small>{props.name}</small>
                   </p>
                 </div>
               </div>
-            </div>
-          </div>
         );
     }
-}
 
 export default Card;

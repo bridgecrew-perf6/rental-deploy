@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Layout, Navigation, PopularHome, Testimonial } from "../../components"; //, Navvisit
 import "../../style.css";
 import homebg from "../../images/home-bg.png";
-import { Redirect } from "react-router-dom";
+// import { Redirect } from "react-router-dom";
 
 class Home extends Component {
   
@@ -14,8 +14,8 @@ class Home extends Component {
     });
   }
   render() {
-    const token = JSON.parse(localStorage.getItem("login-token"));
-    if (!token) return <Redirect to="/login" />;
+    // const token = JSON.parse(localStorage.getItem("login-token"));
+    // if (!token) return <Redirect to="/login" />;
     return (
       <Layout>
         <Navigation />

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import vehicleDetail from "../../images/vehicle-detail.png";
 import { Form, Dropdown, ButtonGroup, Button } from "react-bootstrap";
 import "../../style.css";
+import { Link } from "react-router-dom";
 
 class ReservationComponent extends Component {
   state = {
@@ -21,12 +22,14 @@ class ReservationComponent extends Component {
     return (
       <div className="container-fluid vehicle-detail">
         <div className="container-fluid">
-          <button
-            type="button"
-            className="btn btn-light btn-lg btn-block btn-detail"
-          >
-            <i className="bi bi-chevron-left"></i>Reservation
-          </button>
+          <Link to="/vehicle-detail">
+            <button
+              type="button"
+              className="btn btn-light btn-lg btn-block btn-detail"
+            >
+              <i className="bi bi-chevron-left"></i>Reservation
+            </button>
+          </Link>
         </div>
 
         <div className="container-fluid vehicle-detail">

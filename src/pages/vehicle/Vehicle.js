@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Layout, Navigation, Card } from "../../components";
 import '../../style.css';
+import {Link} from "react-router-dom";
 
 class Vehicle extends Component {
   render() {
@@ -10,6 +11,7 @@ class Vehicle extends Component {
         <div className="popular-section">
           <div className="d-flex justify-content-between popular-header">
             <h1 className="home-title">Popular In Town</h1>
+           <Link to="/vehicle-all">
             <a
               href="/vehicle.html"
               type="button"
@@ -17,6 +19,7 @@ class Vehicle extends Component {
             >
               View all<i className="bi bi-chevron-right"></i>
             </a>
+           </Link>
           </div>
          <Card/>
         </div>

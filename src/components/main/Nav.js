@@ -1,6 +1,8 @@
 import React from "react"; //{useState, useEffect }
 import dot from "../../images/dot.png";
-import profileImage from "../../images/edward.png";
+// import profileImage from "../../images/edward.png";
+import Navactive from './NavActive';
+import  Navvisit  from "./NavVisit";
 import "../../style.css";
 import { withRouter, Link } from "react-router-dom";
 import {
@@ -14,17 +16,22 @@ import {
 
 class Navigation extends React.Component{
   // const history = useHistory(props.history);
-
-  handleLogout = () => {
-    localStorage.clear();
-    this.props.history.push("/login");
-  };
   render(){
+    const token = JSON.parse(localStorage.getItem("login-token"));
+     const navRender = ()=>{
+       if(!token){
+         return <Navvisit/>
+       }else{
+         return <Navactive/>
+       }
+     }
   return (
     <Navbar bg="light" expand="lg">
       <Container>
         <Navbar.Brand>
+          <Link to='/'>
           <img src={dot} width="30" height="30" alt="logo" />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
@@ -43,46 +50,9 @@ class Navigation extends React.Component{
               About
             </Nav.Link>
             <ListGroup horizontal>
-              <Nav.Link as="li" className="nav-item chat">
-                <Dropdown className="d-inline">
-                  <Dropdown.Toggle
-                    id="dropdown-autoclose-true"
-                    className="btn btn-sm btn-outline-warning btn-message-profile"
-                  >
-                    <i className="bi bi-envelope"></i>
-                  </Dropdown.Toggle>
-
-                  <Dropdown.Menu className="justify-content-center">
-                    <Dropdown.Item href="#">
-                      <Card>
-                        <Card.Body>
-                          <ListGroup horizontal>
-                            <ListGroup.Item>
-                              <Container>
-                                <Card.Title>User 1</Card.Title>
-                                <Card.Text>
-                                  Some quick example text to <br />
-                                  build on the card title and make up the
-                                </Card.Text>
-                              </Container>
-                            </ListGroup.Item>
-                            <ListGroup.Item>
-                              <Container>
-                                <Card.Subtitle className="mb-2 text-muted">
-                                  Just now
-                                </Card.Subtitle>
-                                <Card.Text>1</Card.Text>
-                              </Container>
-                            </ListGroup.Item>
-                          </ListGroup>
-                        </Card.Body>
-                      </Card>
-                    </Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Nav.Link>
-
-              <Nav.Link as="li" className="nav-item profile-dropdown">
+            {navRender()}
+             
+              {/* <Nav.Link as="li" className="nav-item profile-dropdown">
                 <Dropdown className="d-inline">
                   <Dropdown.Toggle
                     id="dropdown-basic-button"
@@ -102,7 +72,7 @@ class Navigation extends React.Component{
                     <Dropdown.Item onClick={()=>this.handleLogout()}>Logout</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
-              </Nav.Link>
+              </Nav.Link> */}
             </ListGroup>
           </Nav>
         </Navbar.Collapse>
