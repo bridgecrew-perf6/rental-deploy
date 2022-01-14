@@ -12,7 +12,11 @@ import Testimonial from "./homeComponent/Testimonial";
 import PopularHome from "./homeComponent/PopularHome";
 import Navvisit from "./main/NavVisit";
 
-const Layout = (props) => <>{props.children}</>;
+const Layout = (props) => 
+<>
+{props.children}
+<Footer/>
+</>;
 
 export {
   Layout,

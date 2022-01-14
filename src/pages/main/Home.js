@@ -1,16 +1,14 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-import { Layout, Navigation, PopularHome, Testimonial, Navvisit } from "../../components";
+import { Layout, Navigation, PopularHome, Testimonial } from "../../components"; //, Navvisit
 import "../../style.css";
 import homebg from "../../images/home-bg.png";
 import { Redirect } from "react-router-dom";
 
 class Home extends Component {
+  
   componentDidMount() {
     const token = localStorage.getItem("login-token");
-    // if (!token) {
-    //   return this.props.history.replace('/login');
-    // }
     this.setState({
       userToken: JSON.parse(token),
     });
@@ -21,7 +19,7 @@ class Home extends Component {
     return (
       <Layout>
         <Navigation />
-        <Navvisit/>
+        {/* <Navvisit/> */}
         <div className="banner-content">
           <div className="container-fluid main-child-home">
             <img src={homebg} className="img-fluid-home" alt="bg" />

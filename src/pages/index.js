@@ -7,8 +7,12 @@ import SignUp from "./starter/Signup";
 import VehicleType from "./vehicle/VehicleType";
 import ReservationComponent from "./vehicle/Reservation";
 import ReservPayment from "./vehicle/ReservPayment";
-import ChatVOne from "./ChatVOne";
+import ChatNav from "./message/ChatNav";
 import Notfound from "./NotFound";
 import ForgotPassword from "./starter/ForgotPassword";
+import ChatPage from "./message/ChatPage";
+import ChatDetail from "./message/ChatDetail";
+import Payment from "./paymnet/Payment";
+import History from "./history/History";
 
-export {Home, Vehicle, Detail, Login, Profile, SignUp, VehicleType, ChatVOne, Notfound, ForgotPassword, ReservationComponent, ReservPayment};
+export {Home, Vehicle, Detail, Login, Profile, SignUp, VehicleType, ChatNav, Notfound, ForgotPassword, ReservationComponent, ReservPayment, ChatPage, ChatDetail, Payment, History};

@@ -1,11 +1,9 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
-// import navLogo from "../../images/dot.svg";
 import logo from "../../images/btn-google.png";
-// import { Container } from "react-bootstrap";
 import "../../style.css";
 import { useHistory } from "react-router-dom";
-import axios from "axios";
+import { registerAuth } from "../../utils/https/auth";
 
 const SignupComponent = (props) => {
   const history = useHistory(props.history);
@@ -17,9 +15,7 @@ const SignupComponent = (props) => {
       email_address: event.target.email.value,
       password: event.target.password.value,
     };
-    const URL = "http://localhost:8000/auth/SignUp";
-    axios
-      .post(URL, body)
+   registerAuth(body)
       .then((response) => {
         const registerResponse = response.data.result;
         console.log(registerResponse);

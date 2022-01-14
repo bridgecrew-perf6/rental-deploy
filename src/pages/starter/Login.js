@@ -1,10 +1,10 @@
-import React, { Component } from "react";
+import React  from "react";
 import { Layout, Header, LoginComponent } from "../../components";
 import "../../style.css";
 import navLogo from "../../images/dot.svg";
 import { Link } from "react-router-dom";
 
-class Login extends Component {
+class Login extends React.Component {
   render() {
     return (
       <Layout>

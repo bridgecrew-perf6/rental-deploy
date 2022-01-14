@@ -2,7 +2,7 @@ import React from "react"; //{useState, useEffect }
 import dot from "../../images/dot.png";
 import profileImage from "../../images/edward.png";
 import "../../style.css";
-import { useHistory } from "react-router-dom";
+import { withRouter, Link } from "react-router-dom";
 import {
   Navbar,
   Nav,
@@ -12,14 +12,14 @@ import {
   Card,
 } from "react-bootstrap";
 
-const Navigation = (props) => {
-  const history = useHistory(props.history);
+class Navigation extends React.Component{
+  // const history = useHistory(props.history);
 
-  const handleLogout = () => {
+  handleLogout = () => {
     localStorage.clear();
-    history.push("/login");
+    this.props.history.push("/login");
   };
-
+  render(){
   return (
     <Navbar bg="light" expand="lg">
       <Container>
@@ -29,20 +29,21 @@ const Navigation = (props) => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
           <Nav className="align-items-canter">
-            <Nav.Link className="nav-item" href="#home">
+           
+            <Nav.Link as={Link} to="/" className="nav-item">
               Home
-            </Nav.Link>
-            <Nav.Link className="nav-item" href="#link">
+            </Nav.Link> 
+            <Nav.Link as={Link} to="/vehicle" className="nav-item">
               Vehicle
             </Nav.Link>
-            <Nav.Link className="nav-item" href="#link">
-              Story
+            <Nav.Link as={Link} to="/history" className="nav-item">
+              History
             </Nav.Link>
-            <Nav.Link className="nav-item" href="#link">
+            <Nav.Link className="nav-item">
               About
             </Nav.Link>
             <ListGroup horizontal>
-              <Nav.Link as="li" className="nav-item chat" href="#link">
+              <Nav.Link as="li" className="nav-item chat">
                 <Dropdown className="d-inline">
                   <Dropdown.Toggle
                     id="dropdown-autoclose-true"
@@ -62,7 +63,6 @@ const Navigation = (props) => {
                                 <Card.Text>
                                   Some quick example text to <br />
                                   build on the card title and make up the
-                                  <br /> bulk of the card's content.
                                 </Card.Text>
                               </Container>
                             </ListGroup.Item>
@@ -99,7 +99,7 @@ const Navigation = (props) => {
                   <Dropdown.Menu>
                     <Dropdown.Item href="#">Edit Profile</Dropdown.Item>
                     <Dropdown.Item href="#">Help</Dropdown.Item>
-                    <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
+                    <Dropdown.Item onClick={()=>this.handleLogout()}>Logout</Dropdown.Item>
                   </Dropdown.Menu>
                 </Dropdown>
               </Nav.Link>
@@ -109,6 +109,7 @@ const Navigation = (props) => {
       </Container>
     </Navbar>
   );
-};
+}
+}
 
-export default Navigation;
+export default withRouter(Navigation);

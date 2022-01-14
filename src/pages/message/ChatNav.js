@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import { Layout, Navigation, DetailVehicle } from "../components";
+import { Layout, Navigation, DetailVehicle } from "../../components";
 
-class ChatVOne extends Component {
+class ChatNav extends Component {
   render() {
     return (
       <Layout>
@@ -36,4 +36,4 @@ class ChatVOne extends Component {
   }
 }
 
-export default ChatVOne;
+export default ChatNav;

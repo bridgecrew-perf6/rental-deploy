@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import '../../style.css';
 import {Layout, Navigation} from '../../components';
-// import Navigation from '../../components/main/Nav';
 import profileImage from "../../images/edward.png";
 
 class Profile extends Component {
-    render() { 
-
-        
+    render() {  
         return (
        <Layout>
            <Navigation />
