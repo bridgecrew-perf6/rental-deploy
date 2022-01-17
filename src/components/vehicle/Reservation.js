@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import vehicleDetail from "../../images/vehicle-detail.png";
-import { Form, Dropdown, ButtonGroup, Button } from "react-bootstrap";
 import "../../style.css";
 import { Link } from "react-router-dom";
 
@@ -25,7 +24,7 @@ class ReservationComponent extends Component {
           <Link to="/vehicle-detail">
             <button
               type="button"
-              className="btn btn-light btn-lg btn-block btn-detail"
+              className="btn-light btn-lg btn-block btn-back-content"
             >
               <i className="bi bi-chevron-left"></i>Reservation
             </button>
@@ -77,40 +76,44 @@ class ReservationComponent extends Component {
                       -
                     </button>
                   </div>
-                  <h3 className="card-subtitle">Reservation Date :</h3>
-                  <div className="row">
-                    <div className="col-md-12">
-                      <Form.Group controlId="duedate">
-                        <Form.Control
-                          type="date"
-                          name="duedate"
-                          placeholder="Select date"
-                        />
-                      </Form.Group>
-                      <Form.Group>
-                        <Dropdown as={ButtonGroup}>
-                          <Button variant="light">Day 1</Button>
-
-                          <Dropdown.Toggle
-                            split
-                            variant="success"
-                            id="dropdown-split-basic"
-                          />
-
-                          <Dropdown.Menu>
-                            <Dropdown.Item href="#/action-1">
-                              Action
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-2">
-                              Another action
-                            </Dropdown.Item>
-                            <Dropdown.Item href="#/action-3">
-                              Something else
-                            </Dropdown.Item>
-                          </Dropdown.Menu>
-                        </Dropdown>
-                      </Form.Group>
+                  <div className="container-fluid">
+                    <h3 className="reservation-date">Reservation Date :</h3>
+                    <div className="container-fluid">
+                      <input
+                        type="date"
+                        className="datepicker box-btn"
+                        placeholder="Select date"
+                        id="datereservation"
+                      />
                     </div>
+
+                    <div
+                      className="btn dropdown-toggle box-btn btn-day-options"
+                      type="button"
+                      id="defaultDropdown"
+                      data-bs-toggle="dropdown"
+                      data-bs-auto-close="true"
+                      aria-expanded="false"
+                    >
+                      Day 1
+                      <span className="dropdown-span-icon">
+                        <i className="bi bi-chevron-down"></i>
+                      </span>
+                    </div>
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="defaultDropdown"
+                    >
+                      {/* <li>
+                        <a className="dropdown-item">Menu item</a>
+                      </li>
+                      <li>
+                        <a className="dropdown-item">Menu item</a>
+                      </li>
+                      <li>
+                        <a className="dropdown-item">Menu item</a>
+                      </li> */}
+                    </ul>
                   </div>
                 </div>
               </div>

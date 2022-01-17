@@ -3,7 +3,6 @@ import "../../style.css";
 import {
   Container,
   Col,
-  Row,
   Dropdown,
   DropdownButton,
   Card,
@@ -19,7 +18,7 @@ export default function ChatPage() {
     <Layout>
       <Navigation />
       <Container className="pd-auto mx-auto h-100">
-        <Row className="mx-auto align-items-center">
+        <div className="row mx-auto align-items-center">
           <Col sm={8} md={9}>
             <Form className="d-flex formSearch px-3">
               <FormControl
@@ -43,15 +42,15 @@ export default function ChatPage() {
               <Dropdown.Item href="#/action-3">Home</Dropdown.Item>
             </DropdownButton>
           </Col>
-        </Row>
+        </div>
 
-        <Row className="my-5 mx-auto">
+        <div className="row my-5 mx-auto chat-card">
           <Col sm={2} align="center">
             <div className="container-fluid profile-picture">
               <img
                 src={profileImage}
                 className="profile-pic-chat"
-                alt="profileImg" 
+                alt="profileImg"
               />
             </div>
           </Col>
@@ -62,8 +61,10 @@ export default function ChatPage() {
                 <ListGroup>
                   <ListGroup.Item>
                     <Container>
-                      <Card.Title>User 1</Card.Title>
-                      <Card.Text>
+                      <Card.Title className="chat-setup-font">
+                        User 1
+                      </Card.Title>
+                      <Card.Text className="chat-setup-font">
                         Some quick example text to <br />
                         build on the card title and make up the
                       </Card.Text>
@@ -75,17 +76,21 @@ export default function ChatPage() {
           </Col>
 
           <Col sm={1} md={2} align="center">
-            <Card.Subtitle className="mb-2 text-muted">Just now</Card.Subtitle>
+            <Card.Subtitle className="mb-2 chat-time-detail">
+              Just now
+            </Card.Subtitle>
             <Card.Text>1</Card.Text>
           </Col>
-        </Row>
-        <Row className="my-5 mx-auto">
+          <hr className="chat-bottom-line"/>
+        </div>
+
+        <div className="row my-5 mx-auto">
           <Col sm={2} align="center">
             <div className="container-fluid profile-picture">
               <img
                 src={profileImage}
                 className="profile-pic-chat"
-                alt="profileImg" 
+                alt="profileImg"
               />
             </div>
           </Col>
@@ -96,8 +101,10 @@ export default function ChatPage() {
                 <ListGroup>
                   <ListGroup.Item>
                     <Container>
-                      <Card.Title>User 1</Card.Title>
-                      <Card.Text>
+                      <Card.Title className="chat-setup-font">
+                        User 1
+                      </Card.Title>
+                      <Card.Text className="chat-setup-font-nonActive">
                         Some quick example text to <br />
                         build on the card title and make up the
                       </Card.Text>
@@ -109,17 +116,21 @@ export default function ChatPage() {
           </Col>
 
           <Col sm={1} md={2} align="center">
-            <Card.Subtitle className="mb-2 text-muted">Just now</Card.Subtitle>
-            <Card.Text>1</Card.Text>
+            <Card.Subtitle className="mb-2 chat-time-detail">
+              Just now
+            </Card.Subtitle>
+            <Card.Text></Card.Text>
           </Col>
-        </Row>
-        <Row className="my-5 mx-auto">
+          <hr className="chat-bottom-line"/>
+        </div>
+
+        <div className="row my-5 mx-auto">
           <Col sm={2} align="center">
             <div className="container-fluid profile-picture">
               <img
                 src={profileImage}
                 className="profile-pic-chat"
-                alt="profileImg" 
+                alt="profileImg"
               />
             </div>
           </Col>
@@ -130,8 +141,10 @@ export default function ChatPage() {
                 <ListGroup>
                   <ListGroup.Item>
                     <Container>
-                      <Card.Title>User 1</Card.Title>
-                      <Card.Text>
+                      <Card.Title className="chat-setup-font">
+                        User 1
+                      </Card.Title>
+                      <Card.Text className="chat-setup-font">
                         Some quick example text to <br />
                         build on the card title and make up the
                       </Card.Text>
@@ -143,10 +156,55 @@ export default function ChatPage() {
           </Col>
 
           <Col sm={1} md={2} align="center">
-            <Card.Subtitle className="mb-2 text-muted">Just now</Card.Subtitle>
+            <Card.Subtitle className="mb-2 chat-time-detail">
+              Yesterday
+            </Card.Subtitle>
             <Card.Text>1</Card.Text>
           </Col>
-        </Row>
+          <hr className="chat-bottom-line"/>
+        </div>
+
+        <div className="row my-5 mx-auto">
+          <Col sm={2} align="center">
+            <div className="container-fluid profile-picture">
+              <img
+                src={profileImage}
+                className="profile-pic-chat"
+                alt="profileImg"
+              />
+            </div>
+          </Col>
+
+          <Col sm={8} md={8}>
+            <Card>
+              <Card.Body>
+                <ListGroup>
+                  <ListGroup.Item>
+                    <Container>
+                      <Card.Title className="chat-setup-font">
+                        User 1
+                      </Card.Title>
+                      <Card.Text className="chat-setup-font-nonActive">
+                        Some quick example text to <br />
+                        build on the card title and make up the
+                      </Card.Text>
+                    </Container>
+                  </ListGroup.Item>
+                </ListGroup>
+              </Card.Body>
+            </Card>
+          </Col>
+
+          <Col sm={1} md={2} align="center">
+            <Card.Subtitle className="mb-2 chat-time-detail">
+              yesterday
+            </Card.Subtitle>
+            <Card.Text>
+
+            </Card.Text>
+          </Col>
+          <hr className="chat-bottom-line"/>
+        </div>
       </Container>
     </Layout>
   );

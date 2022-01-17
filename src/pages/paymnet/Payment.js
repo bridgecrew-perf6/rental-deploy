@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import bg from "../../images/bg.png";
+import "../../style.css";
 import { Layout, Navigation } from "../../components";
 
 export default class Payment extends Component {
@@ -10,7 +11,7 @@ export default class Payment extends Component {
         <div className="container-fluid">
           <button
             type="button"
-            className="btn btn-light btn-lg btn-block btn-detail"
+            className="btn-light btn-lg btn-block btn-back-content"
           >
             <i className="bi bi-chevron-left"></i>Payment
           </button>

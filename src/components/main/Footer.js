@@ -1,5 +1,4 @@
 import React from "react";
-// import { Container, Row, Col, ListGroup } from "react-bootstrap";
 import "../../style.css";
 import dot from "../../images/dot.png";
 

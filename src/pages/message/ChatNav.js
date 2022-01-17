@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Layout, Navigation, DetailVehicle } from "../../components";
+import "../../style.css";
 
 class ChatNav extends Component {
   render() {

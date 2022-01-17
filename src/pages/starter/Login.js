@@ -1,8 +1,8 @@
 import React  from "react";
 import { Layout, Header, LoginComponent } from "../../components";
-import "../../style.css";
 import navLogo from "../../images/dot.svg";
 import { Link } from "react-router-dom";
+import "../../style.css";
 
 class Login extends React.Component {
   render() {

@@ -1,9 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from "react";
-import { Layout, Navigation, PopularHome, Testimonial } from "../../components"; //, Navvisit
+import { Layout, Navigation, PopularHome, Testimonial } from "../../components"; 
 import "../../style.css";
 import homebg from "../../images/home-bg.png";
-// import { Redirect } from "react-router-dom";
 
 class Home extends Component {
   
@@ -19,7 +18,6 @@ class Home extends Component {
     return (
       <Layout>
         <Navigation />
-        {/* <Navvisit/> */}
         <div className="banner-content">
           <div className="container-fluid main-child-home">
             <img src={homebg} className="img-fluid-home" alt="bg" />

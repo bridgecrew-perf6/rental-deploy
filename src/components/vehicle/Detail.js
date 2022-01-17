@@ -25,7 +25,7 @@ class DetailVehicle extends Component {
           <Link to="vehicle-all">
             <button
               type="button"
-              className="btn btn-light btn-lg btn-block btn-detail"
+              className="btn-light btn-lg btn-block btn-back-content"
             >
               <i className="bi bi-chevron-left"></i>Detail
             </button>

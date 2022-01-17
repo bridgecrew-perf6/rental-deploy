@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Layout, Header, SignupComponent } from "../../components";
-// import { Container } from "react-bootstrap";
-import "../../style.css";
 import navLogo from "../../images/dot.svg";
 import { Link } from "react-router-dom";
+import "../../style.css";
 
 class SignUp extends Component {
   render() {

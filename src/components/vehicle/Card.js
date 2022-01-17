@@ -17,6 +17,9 @@ const Card = (props) => {
                   <p>
                     <small>{props.name}</small>
                   </p>
+                  <p>
+                    <small>{props.city}</small>
+                  </p>
                 </div>
               </div>
         );

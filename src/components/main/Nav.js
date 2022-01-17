@@ -1,17 +1,14 @@
 import React from "react"; //{useState, useEffect }
 import dot from "../../images/dot.png";
-// import profileImage from "../../images/edward.png";
 import Navactive from './NavActive';
 import  Navvisit  from "./NavVisit";
-import "../../style.css";
 import { withRouter, Link } from "react-router-dom";
+import "../../style.css";
 import {
   Navbar,
   Nav,
   Container,
-  Dropdown,
   ListGroup,
-  Card,
 } from "react-bootstrap";
 
 class Navigation extends React.Component{

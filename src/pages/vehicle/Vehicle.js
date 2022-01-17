@@ -12,13 +12,13 @@ class Vehicle extends Component {
           <div className="d-flex justify-content-between popular-header">
             <h1 className="home-title">Popular In Town</h1>
            <Link to="/vehicle-all">
-            <a
+            <div
               href="/vehicle.html"
               type="button"
               className="btn btn-link btn-next-viewAll"
             >
               View all<i className="bi bi-chevron-right"></i>
-            </a>
+            </div>
            </Link>
           </div>
          <Card/>

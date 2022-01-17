@@ -17,7 +17,7 @@ class Reservation extends Component {
             <Link to="/go-payment">
               <button
                 type="button"
-                className="btn btn-warning btn-lg btn-block btn-reservation yellow-color"
+                className="btn btn-warning btn-lg btn-block btn-pay-reservation-price yellow-color"
               >
                 Rp.178.000,00
               </button>

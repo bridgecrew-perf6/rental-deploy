@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300&family=Playfair+Display:wght@400;500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;1,200&family=Nunito:wght@200;300&family=Playfair+Display:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;1,200&family=Nunito:wght@200;300&family=Playfair+Display:wght@400;500&family=Poppins:wght@100;200;300;400;500;600&display=swap');
 * {
     box-sizing: border-box;
     margin: 0;
@@ -15,6 +16,278 @@ body {
     height: 100%;
 }
 
+.history-wrapper {
+    margin: 30px auto 100px;
+    width: 95%;
+}
+
+.aside-history {
+    border: 1px solid #DADADA;
+    box-sizing: border-box;
+    border-radius: 10px;
+    width: max(30%, 375px);
+    height: auto;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.aside-title-history {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: 900;
+    text-align: center;
+    font-size: 1.3rem;
+    color: #393939;
+}
+
+.aside-title-history-bottom {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    line-height: 180%;
+    align-items: center;
+    color: #B8BECD;
+    margin-bottom: 0;
+}
+
+.aside-history-icon-chevron {
+    background: white;
+    border: none;
+    width: 50px;
+    font-size: 2rem;
+}
+
+.history-card-title-header {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    color: #C4C4C4;
+}
+
+.vehicle-detail-title-history {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.2rem;
+    align-items: center;
+    color: #042521;
+}
+
+.text-history-card {
+    font-family: Nunito;
+    font-style: normal;
+    font-size: 1rem;
+    align-items: center;
+    color: #393939;
+    margin: 5px auto;
+    padding: auto;
+}
+
+.main-section-history {
+    margin: 0 auto;
+    width: (100%, 600px);
+    /* margin-right: 0; */
+    text-align: left;
+    float: left;
+}
+
+.history-check-form {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1rem;
+    color: #393939;
+}
+
+.popUp-suggest-text {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: auto;
+    color: #B8BECD;
+}
+
+.pop-up-btn {
+    border: 1px solid rgb(163, 160, 160);
+    color: #B8BECD;
+    background-color: white;
+    width: max(90%, 100px);
+    height: auto;
+    font-size: 1rem;
+    text-align: center;
+    align-items: center;
+    line-height: auto;
+    font-weight: bold;
+    font-family: Nunito;
+    font-style: normal;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.chat-wrapper {
+    height: 300px;
+    margin: 50px auto 20px;
+}
+
+.profile-pic-chat-detail {
+    border: none;
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+    object-fit: cover;
+    margin: auto;
+}
+
+.chat-text-wrapper-user {
+    background: #393939;
+}
+
+.chat-text-wrapper-card {
+    border-radius: 10px;
+    align-items: center;
+    width: fit-content;
+}
+
+.chat-text-wrapper-admin {
+    background: #FFCD61;
+}
+
+.chat-text-detail-font-user {
+    color: #FFCD61;
+}
+
+.chat-detail-page-wrapper {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 1rem;
+}
+
+.chat-text-detail-font-admin {
+    color: #393939;
+}
+
+.chat-right-user {
+    right: 0;
+    float: right !important;
+    text-align: right;
+}
+
+.chat-right-detail-user {
+    right: 0;
+    float: right;
+}
+
+.chat-vehicle-wPic {
+    width: 80%;
+    margin: 15px auto 150px;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+.btn-back-content {
+    font-size: 1.5em;
+    border: none !important;
+    background-color: transparent !important;
+}
+
+.qty-payment-card {
+    border: 1px solid rgb(163, 160, 160);
+    background-color: white;
+    height: max(100%, 500px);
+    width: 100%;
+    font-size: 1em;
+    padding: auto 20px;
+    text-align: left;
+    line-height: auto;
+    font-weight: bold;
+    font-family: Nunito;
+    font-style: normal;
+    border-radius: 5px;
+    margin: 10px auto;
+}
+
+.gopayment-date-wrapper {
+    width: 90%;
+    margin: auto;
+    padding: auto;
+}
+
+.gopayment-reservation-btn {
+    border: 1px solid rgb(163, 160, 160);
+    background-color: white;
+    width: max(90%, 200px);
+    height: 51px;
+    font-size: 1.5em;
+    text-align: center;
+    align-items: center;
+    line-height: auto;
+    font-weight: bold;
+    font-family: Nunito;
+    font-style: normal;
+    border-radius: 10px;
+    cursor: pointer;
+    float: right;
+    margin-left: 30px;
+}
+
+.reservation-date-title {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 2em;
+    margin: auto;
+    float: left;
+}
+
+.reservation-detail-txt {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1em;
+    margin: auto;
+    color: rgb(163, 160, 160);
+}
+
+.gopayment-title {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 5px auto;
+}
+
+.box-btn {
+    width: max(100%, 400px);
+    height: 52px;
+    padding-left: 20px;
+    text-align: left;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    font-family: Nunito;
+    font-style: normal;
+    border-radius: 5px;
+    border: 1px solid rgb(139, 135, 135);
+    margin: 10px auto;
+}
+
+.chat-card {
+    background-color: white;
+    padding-bottom: 15px;
+}
+
+.chat-bottom-line {
+    width: 87%;
+    margin: 25px auto auto auto;
+    border-bottom: 0.2px solid rgb(179, 173, 173);
+}
+
 .sortbyBtn {
     font-family: Nunito;
     font-style: normal;
@@ -24,17 +297,68 @@ body {
     float: right;
 }
 
+.history-filter-btn {
+    font-family: Nunito;
+    font-style: normal;
+    font-size: 1rem;
+    color: #B8BECD;
+    line-height: auto;
+    font-weight: bold;
+    width: 220px;
+    height: 52px;
+    text-align: left;
+    border: 1px solid rgb(36, 33, 33);
+}
+
+.chat-setup-font {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.chat-setup-font-nonActive {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    /* identical to box height */
+    color: #000000;
+}
+
+.chat-time-detail {
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 0.8rem;
+    color: #9A9A9D;
+}
+
 .sortbyBtn .dropdown-toggle {
     width: 200px;
+    height: 55px;
 }
 
 .searchbar {
     border: none;
+    font-family: Poppins;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1rem;
+    color: #B8BECD;
+    background-color: transparent;
 }
 
 .formSearch {
     border: 1px solid black;
-    border-radius: 7px;
+    /* width: 866px; */
+    height: 55px;
+    color: #B8BECD;
+    background: rgba(218, 218, 218, 0.27);
+    border: 0.5px solid #C4C4C4;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin: 20px auto;
 }
 
 .profile-dropdown .dropdown-menu[data-bs-popper] {
@@ -667,7 +991,7 @@ nav {
 
 .vehicle-detail {
     width: 90%;
-    margin: 50px auto;
+    margin: 50px auto 20px auto;
     height: auto;
 }
 
@@ -747,6 +1071,14 @@ nav {
     color: #087E0D;
 }
 
+.reservation-date {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 5px auto;
+}
+
 .payment-info {
     font-family: Nunito;
     font-style: normal;
@@ -784,7 +1116,7 @@ nav {
     width: 80%;
 }
 
-.btn-detail {
+.btn-back-content {
     font-family: Nunito;
     font-style: normal;
     font-weight: bold;
@@ -807,6 +1139,18 @@ nav {
 }
 
 .btn-reservation {
+    border-radius: 10px;
+    width: 100%;
+    height: 79px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    color: #393939;
+    margin: 10px auto;
+}
+
+.btn-pay-reservation-price {
     border-radius: 10px;
     width: 100%;
     height: 79px;
@@ -929,14 +1273,20 @@ nav {
     font-family: Nunito;
     font-style: normal;
     font-weight: bold;
-    font-size: 0.8rem;
     align-items: center;
     text-align: center;
+    font-size: 0.8rem;
     color: #B8BECD;
 }
 
 .radio-btn-profile {
     width: 100%;
+    font-size: 0.8rem;
+    font-family: Nunito;
+    font-style: normal;
+    align-items: center;
+    text-align: center;
+    color: #B8BECD;
 }
 
 .form-check .form-check-inline {
@@ -999,7 +1349,6 @@ nav {
     font-style: normal;
     font-weight: bolder;
     font-size: 1.2rem;
-    line-height: 33px;
     color: #393939;
     margin: 10px auto;
 }
@@ -1404,7 +1753,7 @@ nav {
     }
 }
 
-@media only screen and (max-width:900px) {
+@media only screen and (max-width:940px) {
     /* view */
     .title-header-lg {
         font-size: 2.6rem;
@@ -1498,9 +1847,27 @@ nav {
     .footer-bottom {
         margin-top: 30px;
     }
+    .gopayment-reservation-btn {
+        font-size: 1em;
+    }
+    .reservation-date-title {
+        font-size: 1em;
+        text-align: center;
+        align-items: center;
+        padding-top: 0.5em;
+    }
 }
 
 @media only screen and (max-width:768px) {
+    .gopayment-reservation-btn {
+        font-size: 1em;
+        width: 150px;
+        height: 40px;
+        margin-top: 10px;
+    }
+    .reservation-date-title {
+        font-size: 1.5em;
+    }
     .view-popular-home {
         width: 90%;
         height: auto;
@@ -1686,19 +2053,19 @@ nav {
         line-height: auto;
     }
     .profile-save {
-        font-size: 1rem;
+        font-size: 0.7rem;
         width: 100%;
         height: 45px;
         line-height: auto;
     }
     .profile-password {
-        font-size: 1rem;
+        font-size: 0.7rem;
         width: 100%;
         height: 45px;
         line-height: auto;
     }
     .btn-cancel {
-        font-size: 1rem;
+        font-size: 0.7rem;
         width: 100%;
         height: 45px;
         line-height: auto;
@@ -1745,6 +2112,48 @@ nav {
 }
 
 @media only screen and (max-width:560px) {
+    .box-btn {
+        width: 325px;
+        /* height: 52px; */
+        /* padding-left: 20px; */
+        /* text-align: left; */
+        font-size: 1em;
+        margin: 10px auto;
+    }
+    .btn-back-content {
+        font-size: 1em;
+    }
+    .gopayment-date-wrapper {
+        width: 70%;
+        align-items: left;
+        margin-left: 0;
+        padding-left: 10px;
+    }
+    .reservation-detail-txt {
+        font-size: 0.8em;
+    }
+    .gopayment-title {
+        font-size: 1em;
+    }
+    .gopayment-reservation-btn {
+        font-size: 0.8em;
+        width: 100px;
+        height: 30px;
+        margin: auto;
+        float: none;
+    }
+    .ms-right {
+        float: right;
+    }
+    .reservation-date-title {
+        width: 340px;
+        font-size: 1em;
+        text-align: left;
+        padding-left: 0;
+        margin-bottom: 10px;
+        align-items: center;
+        padding-top: 0.5em;
+    }
     .popular-header {
         width: 100%;
     }
@@ -1907,7 +2316,7 @@ nav {
         padding: auto;
     }
     .btn {
-        font-size: 0.7rem;
+        /* font-size: 0.7rem; */
         padding: auto;
         /* margin-top: 10px; */
     }
@@ -1951,11 +2360,18 @@ nav {
         margin: 10px auto;
     }
     .btn-reservation {
-        font-size: 0.8rem;
+        font-size: 1rem;
         padding: auto;
         width: 150px;
         height: 39px;
-        margin: 10px auto;
+        margin: auto 15px;
+    }
+    .btn-pay-reservation-price {
+        font-size: 1rem;
+        padding: auto;
+        width: 80%;
+        height: 39px;
+        margin: auto 15px;
     }
     .btn-liked {
         font-size: 0.8rem;
