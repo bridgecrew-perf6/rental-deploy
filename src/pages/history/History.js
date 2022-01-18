@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react"; //, useEffect
 import { Layout, Navigation, Card } from "../../components";
 import { Form, FormControl } from "react-bootstrap";
 import vehicleDetail from "../../images/vehicle-detail.png";
