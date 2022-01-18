@@ -36,7 +36,7 @@ export default class PopularHome extends Component {
         <div className="container-fluid view-popular-home">
           <div className="row">
             {this.state.vehicles.map((vehicle, idx) => (
-              <Card name={vehicle.name} key={idx} city={vehicle.city} />
+              <Card location={vehicle.location} key={idx} city={vehicle.city} />
             ))}
           </div>
         </div>

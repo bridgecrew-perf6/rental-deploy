@@ -15,7 +15,7 @@ const Card = (props) => {
                 </Link>
                 <div className="card-body view-popular-card">
                   <p>
-                    <small>{props.name}</small>
+                    <small>{props.location}</small>
                   </p>
                   <p>
                     <small>{props.city}</small>

@@ -10,13 +10,18 @@ import ReservationComponent from "./vehicle/Reservation";
 import ReservPayComp from "./vehicle/ReservPayComp";
 import Testimonial from "./homeComponent/Testimonial";
 import PopularHome from "./homeComponent/PopularHome";
+import Bike from "./vehicelCategory/Bike";
+import Cars from "./vehicelCategory/Cars";
+import Motorbike from "./vehicelCategory/Motorbike";
 import Navvisit from "./main/NavVisit";
+import Vehiclepostcomponent from "./AdminPost/VehiclePostComponent";
 
-const Layout = (props) => 
-<>
-{props.children}
-<Footer/>
-</>;
+const Layout = (props) => (
+  <>
+    {props.children}
+    <Footer />
+  </>
+);
 
 export {
   Layout,
@@ -31,5 +36,7 @@ export {
   PopularHome,
   Navvisit,
   ReservationComponent,
-  ReservPayComp
+  ReservPayComp,
+  Vehiclepostcomponent,
+  Bike, Cars, Motorbike
 };

@@ -18,6 +18,7 @@ import {
   ChatDetail,
   Payment,
   History,
+  Postvehicle,
 } from "./pages";
 // import { Footer } from "./components";
 import {
@@ -63,6 +64,14 @@ class App extends React.Component {
             <Route path="/vehicle-all" component={VehicleType} />
             <Route path="/vehicle-detail" component={Detail} />
             <Route
+              path="/post-vehicle"
+              render={(routeProps) => {
+                if (!accessToken)
+                  return <Redirect from="/post-vehicle" to="/login" />;
+                return <Postvehicle {...routeProps} />;
+              }}
+            />
+            <Route
               path="/pay-reservation"
               render={(routeProps) => {
                 if (!accessToken)
@@ -77,9 +86,9 @@ class App extends React.Component {
             <Route path="/chat-detail" component={ChatDetail} />
             <Route path="/history" component={History} />
             <Route
-            exact
+              exact
               path="/"
-              render={(props) => {;
+              render={(props) => {
                 return <Home {...props} />;
               }}
             />
@@ -98,6 +107,4 @@ class App extends React.Component {
   // }}/>  */}
 }
 
-
 export default App;
-

@@ -14,5 +14,6 @@ import ChatPage from "./message/ChatPage";
 import ChatDetail from "./message/ChatDetail";
 import Payment from "./paymnet/Payment";
 import History from "./history/History";
+import Postvehicle from "./admin/PostVehicle";
 
-export {Home, Vehicle, Detail, Login, Profile, SignUp, VehicleType, ChatNav, Notfound, ForgotPassword, ReservationComponent, ReservPayment, ChatPage, ChatDetail, Payment, History};
+export {Home, Vehicle, Detail, Login, Profile, SignUp, VehicleType, ChatNav, Notfound, ForgotPassword, ReservationComponent, ReservPayment, ChatPage, ChatDetail, Payment, History ,Postvehicle};
