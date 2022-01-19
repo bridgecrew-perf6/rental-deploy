@@ -9,7 +9,7 @@ export default class Cars extends Component {
         vehicles: [],
       };
       componentDidMount() {
-        const URL = "http://localhost:8000/vehicles";
+        const URL = "http://localhost:8000/vehicles/all";
         axios
           .get(URL)
           .then((response) => {
@@ -36,7 +36,7 @@ export default class Cars extends Component {
             <div className="container-fluid view-popular-home">
               <div className="row">
                 {this.state.vehicles.map((vehicle, idx) => (
-                  <Card location={vehicle.location} key={idx} city={vehicle.city} />
+                  <Card idVehicle={vehicle.id} location={vehicle.location} key={idx} city={vehicle.city} />
                 ))}
               </div>
             </div>

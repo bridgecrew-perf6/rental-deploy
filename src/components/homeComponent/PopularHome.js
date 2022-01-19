@@ -6,15 +6,15 @@ import axios from "axios";
 
 export default class PopularHome extends Component {
   state = {
-    vehicles: [],
+    populars: [],
   };
   componentDidMount() {
-    const URL = "http://localhost:8000/vehicles";
+    const URL = "http://localhost:8000/history/desc";
     axios
       .get(URL)
       .then((response) => {
         this.setState({
-          vehicles: response.data.result,
+          populars: response.data.result,
         });
         console.log(response.data.result);
       })
@@ -35,8 +35,8 @@ export default class PopularHome extends Component {
         </div>
         <div className="container-fluid view-popular-home">
           <div className="row">
-            {this.state.vehicles.map((vehicle, idx) => (
-              <Card location={vehicle.location} key={idx} city={vehicle.city} />
+            {this.state.populars.map((popular, idx) => (
+              <Card location={popular.location} key={idx} city={popular.destination} />
             ))}
           </div>
         </div>

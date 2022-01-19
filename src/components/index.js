@@ -15,6 +15,7 @@ import Cars from "./vehicelCategory/Cars";
 import Motorbike from "./vehicelCategory/Motorbike";
 import Navvisit from "./main/NavVisit";
 import Vehiclepostcomponent from "./AdminPost/VehiclePostComponent";
+import VehicleAll from "./vehicelCategory/AllVehicle";
 
 const Layout = (props) => (
   <>
@@ -38,5 +39,5 @@ export {
   ReservationComponent,
   ReservPayComp,
   Vehiclepostcomponent,
-  Bike, Cars, Motorbike
+  Bike, Cars, Motorbike, VehicleAll
 };

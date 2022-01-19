@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import { Card } from "../../components";
 import "../../style.css";
 import axios from "axios";
 
-class Motorbike extends Component {
+export default class AllVehicle extends Component {
     state = {
         vehicles: [],
       };
       componentDidMount() {
-        const URL = "http://localhost:8000/vehicles/all";
+        const URL = "http://localhost:8000/vehicles";
+        // const { location } = this.props;
         axios
           .get(URL)
           .then((response) => {
@@ -22,18 +23,10 @@ class Motorbike extends Component {
             console.log(error);
           });
       }
-      render() {
+    render() {
         return (
-          <div className="popular-section">
-            <div className="d-flex justify-content-between popular-header">
-              <h1 className="home-title">Motorbike</h1>
-              <Link to="/vehicle-detail">
-                <button type="button" className="btn btn-link btn-next-viewAll">
-                  View all<i className="bi bi-chevron-right"></i>
-                </button>
-              </Link>
-            </div>
-            <div className="container-fluid view-popular-home">
+            <div className="popular-section" style={{height:'1000px'}}>
+            <div className="container-fluid view-popular-home" style={{height:'900px'}}>
               <div className="row">
                 {this.state.vehicles.map((vehicle, idx) => (
                   <Card location={vehicle.location} key={idx} city={vehicle.city} />
@@ -42,7 +35,5 @@ class Motorbike extends Component {
             </div>
           </div>
         );
-      }
+    }
 }
-
-export default Motorbike;

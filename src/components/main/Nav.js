@@ -37,7 +37,7 @@ class Navigation extends React.Component{
             <Nav.Link as={Link} to="/" className="nav-item">
               Home
             </Nav.Link> 
-            <Nav.Link as={Link} to="/vehicle" className="nav-item">
+            <Nav.Link as={Link} to="/vehicles" className="nav-item">
               Vehicle
             </Nav.Link>
             <Nav.Link as={Link} to="/history" className="nav-item">

@@ -60,9 +60,23 @@ class App extends React.Component {
             <Route path="/forgot-password" component={ForgotPassword} />
             <Route path="/signup" component={SignUp} />
             <Route path="/profile" component={Profile} />
-            <Route exact path="/vehicle" component={Vehicle} />
+            
+            <Route
+              path="/vehicles/:id"
+              render={(routeProps) => {
+                const { match } = routeProps;
+                if (!accessToken)
+                  return (
+                    <Redirect
+                      from={`/vehicles/${match.params.id}`}
+                      to="/vehicles"
+                    />
+                  );
+                return <Detail {...routeProps} />;
+              }}
+            />
+            <Route path="/vehicles" component={Vehicle} />
             <Route path="/vehicle-all" component={VehicleType} />
-            <Route path="/vehicle-detail" component={Detail} />
             <Route
               path="/post-vehicle"
               render={(routeProps) => {

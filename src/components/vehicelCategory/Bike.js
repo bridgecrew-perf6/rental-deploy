@@ -9,7 +9,7 @@ export default class Bike extends Component {
         vehicles: [],
       };
       componentDidMount() {
-        const URL = "http://localhost:8000/vehicles";
+        const URL = "http://localhost:8000/vehicles/all";
         axios
           .get(URL)
           .then((response) => {

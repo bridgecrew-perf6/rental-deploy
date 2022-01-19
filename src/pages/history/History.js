@@ -1,36 +1,49 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState } from "react"; //, useEffect
-import { Layout, Navigation, Card } from "../../components";
+import React, { useState, useEffect, useCallback } from "react"; //, useEffect
+import { Layout, Navigation, Bike } from "../../components";
 import { Form, FormControl } from "react-bootstrap";
 import vehicleDetail from "../../images/vehicle-detail.png";
 import "../../style.css";
-import { axios } from "axios";
+import axios from "axios";
+
 
 const History = () => {
-  const [historyList, setHistoryList] = useState([]);
+  let [historyList, setHistoryList] = useState([]);
+  const fetchData = useCallback(() => {
+    axios({
+      method: "GET",
+      url: "http://localhost:8000/history",
+    })
+      .then((response) => {
+        setHistoryList(response.data.result);
+        //console.log(response.data.result);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
-  // useEffect(() => {
-  //   axios
-  //   .get("http://localhost:8080/history")
-  //   .then((response) => {
-  //     console.log(response.data.result);
-  //     setHistoryList(response.data.result);
+  // const deleteHandle = (id) => {
+  //   axios.delete(`http://localhost:8080/history/${id}`).then((response) => {
+  //     setHistoryList(
+  //       historyList.filter((index) => {
+  //         return index.id !== id;
+  //       })
+  //     );
   //   });
-  // }, []);
-
-  const deleteHandle = (id) => {
-    axios.delete(`http://localhost:8080/history/${id}`).then((response) => {
-      setHistoryList(
-        historyList.filter((index) => {
-          return index.id !== id;
-        })
-      );
-    });
-  };
+  // };
 
   return (
     <Layout>
       <Navigation />
+      <div>
+        <ul>
+          
+        </ul>
+      </div>
       <div className="row history-wrapper">
         <div className="col col-md-6 col-lg-7 main-section-history">
           <div className=" row mx-auto align-items-center">
@@ -124,109 +137,49 @@ const History = () => {
 
           <div>
             <p className="history-card-title-header"> Week ago</p>
-
-            <div
-              className="row justify-content-center"
-              style={{ width: "100%" }}
-            >
-              <div className="col-sm-6 col-md-12 col-lg">
-                <div className="vehicle-detail-container">
-                  <div className="grid-image">
-                    <img
-                      src={vehicleDetail}
-                      alt="detail-vehicle"
-                      className="img-fluid img-thumbnail rounded"
-                    />
-                  </div>
+              {historyList.map(history=>(
+            <div className="row justify-content-center" style={{ width: "100%" }} key={history.id}>
+            <div className="col-sm-6 col-md-12 col-lg">
+              <div className="vehicle-detail-container">
+                <div className="grid-image">
+                  <img
+                    src={vehicleDetail}
+                    alt="detail-vehicle"
+                    className="img-fluid img-thumbnail rounded"
+                  />
                 </div>
               </div>
-              <div className="col-sm-5 col-md-11 col-lg">
-                <div className="card">
-                  <div className="card-body vehicle-info-wrapper">
-                    <p className="vehicle-detail-title-history">
-                      Fixie Gray - Only
-                    </p>
-                    <p className="card-subtitle text-history-card">
-                      Jan 18 to 21 2021
-                    </p>
-                    <p className="card-subtitle text-history-card">
-                      <strong>Prepayment : Rp. 245.000</strong>
-                    </p>
-                    <p className="card-subtitle status-vehicle">
-                      Has been returned
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div>
-              {historyList.map((index) => {
-                return (
-                  <p>
-                    history id : {index.id} | history name : {index.name}
+            </div>
+            <div className="col-sm-5 col-md-11 col-lg">
+              <div className="card">
+                <div className="card-body vehicle-info-wrapper">
+                  <p className="vehicle-detail-title-history"> <strong>{history.vehicle_name}</strong></p>
+                  <p className="card-subtitle text-history-card">{history.end_date}</p>
+                  <p className="card-subtitle text-history-card">
+                    <strong>{history.total_payment}</strong>
                   </p>
-                );
-              })}
-              </div>
-              <button
-                color="dark"
-                className="mr-2"
-                onClick={() => deleteHandle()}
-              >
-                Delete
-              </button>
-            </div>
-
-            <div
-              className="row justify-content-center"
-              style={{ width: "100%" }}
-            >
-              <div className="col-sm-6 col-md-12 col-lg">
-                <div className="vehicle-detail-container">
-                  <div className="grid-image">
-                    <img
-                      src={vehicleDetail}
-                      alt="detail-vehicle"
-                      className="img-fluid img-thumbnail rounded"
-                    />
-                  </div>
+                  <p className="card-subtitle status-vehicle">{history.status}</p>
                 </div>
               </div>
-              <div className="col-sm-5 col-md-11 col-lg">
-                <div className="card">
-                  <div className="card-body vehicle-info-wrapper">
-                    <p className="vehicle-detail-title-history">
-                      Fixie Gray - Only
-                    </p>
-                    <p className="card-subtitle text-history-card">
-                      Jan 18 to 21 2021
-                    </p>
-                    <p className="card-subtitle text-history-card">
-                      <strong>Prepayment : Rp. 245.000</strong>
-                    </p>
-                    <p className="card-subtitle status-vehicle">
-                      Has been returned
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="col col-sm-1 col-md-1">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="checkboxNoLabel"
-                  value=""
-                  aria-label="..."
-                />
-              </div>
             </div>
+      
+            <div className="col col-sm-1 col-md-1">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                id="checkboxNoLabel"
+                value=""
+                aria-label="..."
+              />
+            </div>
+          </div>
+          ))}
           </div>
         </div>
 
         <aside className="col col-md-4 col-lg-4 aside-history">
           <p className="aside-title-history">New Arrival</p>
-          <Card />
-          <Card />
+          <Bike />
           <p className="aside-title-history-bottom">View more</p>
           <button className="aside-history-icon-chevron">
             <i className="bi bi-chevron-down"></i>
@@ -239,3 +192,11 @@ const History = () => {
 
 export default History;
 //export default History;
+
+// {historyList.map((index) => {
+//   return (
+//     <p>
+//       history id : {index.id} | history name : {index.name}
+//     </p>
+//   );
+// })}

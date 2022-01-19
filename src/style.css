@@ -380,12 +380,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     margin-top: 0.125rem;
 }
 
-.chat .dropdown-menu[data-bs-popper] {
-    top: 71px;
-    left: -282px;
-    margin-top: 0.125rem;
-}
-
 .relative-header {
     padding: 0;
     margin: auto auto 30px auto;
@@ -803,7 +797,7 @@ nav {
 .vehicle-card {
     border: none;
     position: relative;
-    width: 266px;
+    width: 200px;
     height: 340px;
     margin: 15px auto;
 }
@@ -1601,8 +1595,9 @@ nav {
         margin-top: 27px;
     }
     .popular-section {
-        height: 422px;
+        height: 452px;
         font-size: 1rem;
+        width: 100%;
     }
     .testimonial-rate-info {
         font-size: 1rem;
@@ -1643,7 +1638,7 @@ nav {
     }
     .vehicle-card {
         height: 230px;
-        width: 330px;
+        width: 200px;
         /* align-items: center; */
     }
     .view-popular-image {
@@ -1999,7 +1994,7 @@ nav {
     }
     .vehicle-card {
         height: 200px;
-        width: 300px;
+        width: 161px;
         align-items: center;
     }
     .view-popular-image {
@@ -2275,7 +2270,7 @@ nav {
     }
     .vehicle-card {
         height: 200px;
-        width: 300px;
+        width: 160px;
         align-items: center;
     }
     .view-popular-image {
@@ -2285,7 +2280,7 @@ nav {
     .vehicle-card .view-popular-card {
         width: 100px;
         height: 50px;
-        left: 20%;
+        left: 0;
     }
     .vehicle-card .view-popular-card p {
         font-size: 0.7rem;
