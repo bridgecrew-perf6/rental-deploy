@@ -32,7 +32,7 @@ const Navactive = (props) => {
           <Dropdown.Menu className="justify-content-center">
           
             <Dropdown.Item>
-              <Card>
+              <Card className="chat-nav-wrapper">
                 <Link to="/chat">
                   <Card.Body>
                     <ListGroup horizontal>
@@ -40,8 +40,7 @@ const Navactive = (props) => {
                         <Container>
                           <Card.Title className="chat-nav-user">User 1</Card.Title>
                           <Card.Text className="chat-nav-text">
-                            Some quick example text to <br />
-                            build on the card title and make up the
+                            Some quick example text to 
                           </Card.Text>
                         </Container>
                       </ListGroup.Item>
@@ -60,7 +59,7 @@ const Navactive = (props) => {
             </Dropdown.Item>
 
             <Dropdown.Item>
-              <Card>
+              <Card className="chat-nav-wrapper">
                 <Link to="/chat">
                   <Card.Body>
                     <ListGroup horizontal>
@@ -68,8 +67,7 @@ const Navactive = (props) => {
                         <Container>
                           <Card.Title className="chat-nav-user">User 1</Card.Title>
                           <Card.Text className="chat-nav-text">
-                            Some quick example text to <br />
-                            build on the card title and make up the
+                            Some quick example text to
                           </Card.Text>
                         </Container>
                       </ListGroup.Item>
@@ -78,7 +76,7 @@ const Navactive = (props) => {
                           <Card.Subtitle className="mb-2 text-muted chat-nav-time">
                             Just now
                           </Card.Subtitle>
-                          <Card.Text classNam="chat-nav-numNotif">1</Card.Text>
+                          <Card.Text className="chat-nav-numNotif">1</Card.Text>
                         </Container>
                       </ListGroup.Item>
                     </ListGroup>
@@ -88,7 +86,7 @@ const Navactive = (props) => {
             </Dropdown.Item>
 
             <Dropdown.Item>
-              <Card>
+              <Card className="chat-nav-wrapper">
                 <Link to="/chat">
                   <Card.Body>
                     <ListGroup horizontal>
@@ -96,8 +94,7 @@ const Navactive = (props) => {
                         <Container>
                           <Card.Title className="chat-nav-user">User 1</Card.Title>
                           <Card.Text className="chat-nav-text">
-                            Some quick example text to <br />
-                            build on the card title and make up the
+                            Some quick example text to
                           </Card.Text>
                         </Container>
                       </ListGroup.Item>
@@ -106,7 +103,7 @@ const Navactive = (props) => {
                           <Card.Subtitle className="mb-2 text-muted chat-nav-time">
                             Just now
                           </Card.Subtitle>
-                          <Card.Text classNam="chat-nav-numNotif">1</Card.Text>
+                          <Card.Text className="chat-nav-numNotif">1</Card.Text>
                         </Container>
                       </ListGroup.Item>
                     </ListGroup>

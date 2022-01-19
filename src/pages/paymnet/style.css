@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300&family=Playfair+Display:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;1,200&family=Nunito:wght@200;300&family=Playfair+Display:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;1,200&family=Nunito:wght@200;300&family=Playfair+Display:wght@400;500&family=Poppins:wght@100;200;300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;1,200&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:wght@400;500&family=Poppins:wght@100;200;300;400;500;600&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: black;
+}
+
+.payment-back-btn {
+    margin-bottom: 30px;
+}
+
+.main-child-payment {
+    position: absolute;
+    top: 31%;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 15px;
+}
+
+.payment-header {
+    background-color: transparent;
+    width: 100%;
+    color: white;
+    margin: auto;
+    padding-left: 50px;
+}
+
+.payment-vehicle-name {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 3rem;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+
+.payment-city {
+    font-family: Playfair Display;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 1.8rem;
+    color: #FFFFFF;
+    margin-bottom: 30px;
+}
+
+.payment-method {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #FFFFFF;
+}
+
+.btn-payment-time {
+    width: 60%;
+    height: 60px;
+    text-align: center;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    margin: 50px auto;
+    padding: auto;
+}
+
+.payment-time-text {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    color: #393939;
+    margin: auto;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 15px;
+}
+
+.payment-time-text span {
+    color: #087E0D;
+}
+
+.img-fluid-payment {
+    width: 100%;
+    height: 400px;
+    position: relative;
+    object-fit: cover;
+}
+
+.relative-header-payment {
+    padding: 0;
+    margin: auto auto 30px auto;
+    width: 100%;
+    position: relative;
+    height: 400px;
+}
+
+.bg-pass-payment {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.payment-content {
+    margin: auto;
+    width: 85%;
+    height: auto;
+}
+
+.font-based-payment-book {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    color: #393939;
+    margin: auto;
+}
+
+.payment-code-wrapper {
+    width: 100%;
+    margin: 50px auto;
+}
+
+.code-book-wrapper {
+    height: 60px;
+    width: max(100%, 150px);
+    border: 2px solid #80918E;
+    box-sizing: border-box;
+    border-radius: 7px;
+    margin-top: 30px;
+}
+
+.btn-booking-code {
+    text-align: center;
+    float: right;
+    background: #393939;
+    border-radius: 10px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 1rem;
+    align-items: center;
+    color: #FFCD61;
+    width: max(50%, 30px);
+    height: max(auto, 30px);
+}
+
+.title-detail-order-payment {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+
+.detail-book-wrapper {
+    height: auto;
+    width: max(65%, 350px);
+    border: 2px solid #80918E;
+    box-sizing: border-box;
+    border-radius: 7px;
+    margin: auto 20px;
+    text-align: center;
+    padding: 18px;
+    float: right;
+}
+
+.detail-book-wrapper-qty {
+    height: auto;
+    width: max(30%, 200px);
+    border: 2px solid #80918E;
+    box-sizing: border-box;
+    border-radius: 7px;
+    margin: auto 0;
+    text-align: center;
+    padding: 18px;
+    float: left;
+}
+
+.payment-deytail-order-title {
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    color: #393939;
+    margin: auto;
+    text-align: left;
+    vertical-align: middle;
+    padding: 0 auto 15px;
+}
+
+.btn-transfer-payment {
+    font-family: Nunito;
+    font-style: bolder;
+    font-weight: bold;
+    font-size: 1.2rem;
+    width: 25%;
+    height: 40px;
+    color: #393939;
+    margin: auto 20px;
+}
+
+.transfer-payment-transfer-left {
+    background: #FFCD61;
+    box-shadow: 0px 0px 20px rgba(251, 143, 29, 0.5);
+    border-radius: 10px;
+    text-align: center;
+    padding: 8px;
+}
+
+.transfer-payment-transfer-right {
+    border: 1px solid #80918E;
+    box-sizing: border-box;
+    border-radius: 10px;
+    text-align: center;
+    padding: 7px;
+}
+
+.payment-transfer-wrapper {
+    width: 100%;
+    text-align: center;
+    margin: 25px auto;
+}
+
+.btn-finish-payment {
+    border-radius: 10px;
+    width: 100%;
+    height: 59px;
+    font-family: Nunito;
+    font-style: normal;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    color: #393939;
+    margin: 10px auto;
+    background: #393939;
+    box-shadow: 0px 0px 20px rgba(57, 57, 57, 0.47);
+    color: #FFCD61;
+    padding: 13px;
+}
