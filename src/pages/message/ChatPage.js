@@ -12,8 +12,11 @@ import {
 } from "react-bootstrap";
 import { Layout, Navigation } from "../../components";
 import profileImage from "../../images/edward.png";
+import { useNavigate } from "react-router-dom";
+
 
 export default function ChatPage() {
+  let navigate = useNavigate()
   return (
     <Layout>
       <Navigation />
@@ -44,7 +47,7 @@ export default function ChatPage() {
           </Col>
         </div>
 
-        <div className="row my-5 mx-auto chat-card">
+        <div onClick={() => navigate('/chat-detail')} className="row my-5 mx-auto chat-card">
           <Col sm={2} align="center">
             <div className="container-fluid profile-picture">
               <img
@@ -83,8 +86,8 @@ export default function ChatPage() {
           </Col>
           <hr className="chat-bottom-line"/>
         </div>
-
-        <div className="row my-5 mx-auto">
+     
+        <div onClick={() => navigate('/chat-detail')} className="row my-5 mx-auto">
           <Col sm={2} align="center">
             <div className="container-fluid profile-picture">
               <img
@@ -123,8 +126,8 @@ export default function ChatPage() {
           </Col>
           <hr className="chat-bottom-line"/>
         </div>
-
-        <div className="row my-5 mx-auto">
+        
+        <div onClick={() => navigate('/chat-detail')} className="row my-5 mx-auto">
           <Col sm={2} align="center">
             <div className="container-fluid profile-picture">
               <img
@@ -164,7 +167,7 @@ export default function ChatPage() {
           <hr className="chat-bottom-line"/>
         </div>
 
-        <div className="row my-5 mx-auto">
+        <div onClick={() => navigate('/chat-detail')} className="row my-5 mx-auto">
           <Col sm={2} align="center">
             <div className="container-fluid profile-picture">
               <img

@@ -4,15 +4,18 @@ import { Layout, Navigation } from "../../components";
 import profileImage from "../../images/edward.png";
 // import { useNavigate } from "react-router-dom";
 // import { useSelector } from "react-redux";
+// import { useParams } from "react-router-dom";
 
 const Profile = () => {
   // let navigate = useNavigate();
+  // const { id } = useParams();
   const token = JSON.parse(localStorage.getItem("login-token"));
+  // const idUSer = user.token.id;
   // const { token: currentUser } = useSelector((userData) => userData.auth);
   // useEffect(() => {
-  //   if (!currentUser) {
-  //     navigate("/");
-  //   }
+  //  axios.patch(`http://localhost:8080/user${id}`,{
+   // name :
+ // })
   // });
 
   return (
