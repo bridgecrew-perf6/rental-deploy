@@ -1,6 +1,6 @@
 import React from "react";
 import { Layout, Navigation } from "../../components";
-import Product from "./Product";
+// import Product from "./Product";
 import "../../style.css";
 import { Link, Outlet } from "react-router-dom";
 
