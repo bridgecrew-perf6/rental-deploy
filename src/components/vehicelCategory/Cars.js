@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import { Card } from "../../components";
+import { Card } from "..";
 import "../../style.css";
 import axios from "axios";
 
@@ -16,7 +16,6 @@ export default class Cars extends Component {
             this.setState({
               vehicles: response.data.result,
             });
-            console.log(response.data.result);
           })
           .catch((error) => {
             console.log(error);

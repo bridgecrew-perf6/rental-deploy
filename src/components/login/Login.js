@@ -1,72 +1,80 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import logo from "../../images/btn-google.png";
 import "../../style.css";
-// import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { loginAction } from "../../redux/actions/auth";
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-class LoginComponent extends Component {
-  //  history = useHistory(this.props.history);
-  submitHandler = (event) => {
+const LoginComponent = (props) => {
+  let navigate = useNavigate();
+  const submitHandler = (event) => {
     event.preventDefault();
     const body = {
       email_address: event.target.email.value,
       password: event.target.password.value,
     };
-    this.props.loginDispatch(body);
+    props.loginDispatch(body);
+  };
+  useEffect(() => {
+    if (props.auth.isFulfilled === true) {
+      localStorage["login-token"] = JSON.stringify(props.auth.userData);
+      setTimeout(() => {
+        navigate("/");
+      }, 5000);
+    }
+  });
+  const notify = () => {
+    toast.info("Login success", {
+      position: "top",
+    });
   };
 
-  componentDidUpdate() {
-    if (this.props.auth.isFulfilled === true) {
-      localStorage["login-token"] = JSON.stringify(
-        this.props.auth.userData.token
-      );
-      this.props.history.push("/");
-    }
-  }
-  render() {
-    return (
-      <>
-        <div className="col-4 col-sm col-md col-lg right">
-          <form onSubmit={this.submitHandler}>
-            <div className="form-group form-group-index">
-              <input
-                name="email"
-                type="text"
-                className="form-control form-control-md sign-form"
-                placeholder="Enter email"
-              />
-              <input
-                name="password"
-                type="password"
-                className="form-control form-control-md sign-form"
-                placeholder="Password"
-              />
-              <a className="forgot-password">Forgot password?</a>
-            </div>
-            <a>
-              <button
-                type="submit"
-                className="btn btn-warning btn-md btn-block btn-right yellow-color"
-              >
-                Login
-              </button>
+  return (
+    <>
+      <div className="col-4 col-sm col-md col-lg right">
+        <form onSubmit={submitHandler}>
+          <div className="form-group form-group-index">
+            <input
+              name="email"
+              type="text"
+              className="form-control form-control-md sign-form"
+              placeholder="Enter email"
+              // validations={[requiredField]}
+            />
+            <input
+              name="password"
+              type="password"
+              className="form-control form-control-md sign-form"
+              placeholder="Password"
+              // validations={[requiredField]}
+            />
+            <a className="forgot-password">Forgot password?</a>
+          </div>
+          <div>
+            <button
+              type="submit"
+              className="btn btn-warning btn-md btn-block btn-right yellow-color"
+              onClick={notify}
+            >
+              Login
+            </button>
+            <ToastContainer autoClose={4000} />
+          </div>
+          <div className="btn-wrapper ">
+            <a className="btn btn-light btn-md btn-block btn-right">
+              <img src={logo} />
+              Login Using Google
             </a>
-            <div className="btn-wrapper ">
-              <a className="btn btn-light btn-md btn-block btn-right">
-                <img src={logo} />
-                Login Using Google
-              </a>
-            </div>
-          </form>
-        </div>
-      </>
-    );
-  }
-}
+          </div>
+        </form>
+      </div>
+    </>
+  );
+};
 
 const mapStateToProps = (state) => {
   return {
@@ -78,12 +86,13 @@ const mapDispatchToProps = (dispatch) => {
   return {
     loginDispatch: (body) => {
       dispatch(loginAction(body));
+      console.log(body);
     },
   };
 };
 
 // export default LoginComponent;
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(LoginComponent));
+export default connect(mapStateToProps, mapDispatchToProps)(LoginComponent);
 
 // loginAuth(body)
 //   .then((response) => {

@@ -31,6 +31,9 @@ switch (action.type) {
     const userData = {
       ...prevState.userData,
       token: data.result.token,
+      id: data.result.id,
+      name: data.result.name,
+      email: data.result.email_address,
     };
     return {
       ...prevState,

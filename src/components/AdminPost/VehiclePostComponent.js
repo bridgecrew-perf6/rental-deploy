@@ -1,11 +1,11 @@
 import React from "react";
 import "../../style.css";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { postVehicleForm } from "../../utils/https/user";
 import dbg from "../../images/Rectangle 394.png";
 
 const Vehiclepostcomponent = (props) => {
-  const history = useHistory(props.history);
+  let navigate = useNavigate(props.history);
   const postVehicleHandler = (event) => {
     event.preventDefault();
     const body = {
@@ -19,7 +19,7 @@ const Vehiclepostcomponent = (props) => {
       .then((response) => {
         const postVehicleResponse = response.data.result;
         console.log(postVehicleResponse);
-        history.push("/");
+        navigate("/");
       })
       .catch((error) => {
         console.log(error);

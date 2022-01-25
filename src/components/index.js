@@ -5,7 +5,7 @@ import Header from "./main/Header";
 import LoginComponent from "./login/Login";
 import SignupComponent from "./login/Signup";
 import Card from "./vehicle/Card";
-import DetailVehicle from "./vehicle/Detail";
+import DetailVehicle from "./vehicelCategory/Detail";
 import ReservationComponent from "./vehicle/Reservation";
 import ReservPayComp from "./vehicle/ReservPayComp";
 import Testimonial from "./homeComponent/Testimonial";
@@ -15,7 +15,9 @@ import Cars from "./vehicelCategory/Cars";
 import Motorbike from "./vehicelCategory/Motorbike";
 import Navvisit from "./main/NavVisit";
 import Vehiclepostcomponent from "./AdminPost/VehiclePostComponent";
-import VehicleAll from "./vehicelCategory/AllVehicle";
+import VehicleAll from "../pages/vehicle/Product";
+import Product from "../pages/vehicle/Product";
+import ProductDetail from "../pages/vehicle/ProductDetail";
 
 const Layout = (props) => (
   <>
@@ -39,5 +41,10 @@ export {
   ReservationComponent,
   ReservPayComp,
   Vehiclepostcomponent,
-  Bike, Cars, Motorbike, VehicleAll
+  Bike,
+  Cars,
+  Motorbike,
+  VehicleAll,
+  Product,
+  ProductDetail,
 };

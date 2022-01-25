@@ -21,7 +21,7 @@ class SignUp extends Component {
                         type="button"
                         className="btn btn-lg btn-block btn-left"
                       >
-                        Sign Up
+                        Login
                       </button>
                     </Link>
                   </div>

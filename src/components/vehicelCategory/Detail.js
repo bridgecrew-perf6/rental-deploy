@@ -15,13 +15,13 @@ class DetailVehicle extends Component {
     const { match } = this.props;
   console.log(match);
 
-    const URL = "http://localhost:8000/vehicles/all";
+    const URL = "http://localhost:8000/vehicles/";
     setTimeout(() => {
       axios
         .get(URL + match.params.id)
         .then((response) => {
           this.setState({ vehicleData: response.data, isSuccess: true });
-          console.log(response.data);
+          // console.log(response.data);
         })
         .catch((err) => console.error(err));
     }, 1000);

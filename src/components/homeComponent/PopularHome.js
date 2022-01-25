@@ -16,7 +16,7 @@ export default class PopularHome extends Component {
         this.setState({
           populars: response.data.result,
         });
-        console.log(response.data.result);
+        // console.log(response.data.result);
       })
       .catch((error) => {
         console.log(error);

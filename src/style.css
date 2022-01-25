@@ -382,7 +382,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 
 .profile-dropdown .dropdown-menu[data-bs-popper] {
     top: 51px;
-    left: -29px;
+    left: -90px;
     margin-top: 0.125rem;
 }
 
@@ -669,25 +669,17 @@ nav {
     font-style: normal;
     font-weight: normal;
     font-size: 1rem;
-    line-height: auto;
     color: #202336;
-    margin-right: 10px;
-    margin-bottom: 5px;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
     text-align: center
-    /* btn margin nottom 789px */
 }
-
-
-/* .nav-item .btn-outline-warning {
-    color: black;
-    width: 132px;
-} */
 
 .nav-item .nav-home-btn {
     color: black;
-    width: 132px;
+    width: 60px;
+    height: fit-content;
+    font-size: 1.5rem;
+    background-color: #FFCD61;
 }
 
 .navbar-light .navbar-toggler {
@@ -1449,6 +1441,7 @@ nav {
     display: flex;
     top: 0;
     text-align: center;
+    border: none;
 }
 
 .btn-message-profile {
@@ -1459,6 +1452,7 @@ nav {
     display: flex;
     top: 0;
     text-align: center;
+    border: none;
     width: 40px;
     height: 40px;
 }

@@ -2,13 +2,12 @@ import React from "react"; //{useState, useEffect }
 import dot from "../../images/dot.png";
 import Navactive from './NavActive';
 import  Navvisit  from "./NavVisit";
-import { withRouter, Link } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import "../../style.css";
 import {
   Navbar,
   Nav,
   Container,
-  ListGroup,
 } from "react-bootstrap";
 
 class Navigation extends React.Component{
@@ -37,7 +36,7 @@ class Navigation extends React.Component{
             <Nav.Link as={Link} to="/" className="nav-item">
               Home
             </Nav.Link> 
-            <Nav.Link as={Link} to="/vehicles" className="nav-item">
+            <Nav.Link as={Link} to="/product/list" className="nav-item">
               Vehicle
             </Nav.Link>
             <Nav.Link as={Link} to="/history" className="nav-item">
@@ -46,9 +45,8 @@ class Navigation extends React.Component{
             <Nav.Link className="nav-item">
               About
             </Nav.Link>
-            <ListGroup horizontal>
-            {navRender()}
-             
+  
+            {navRender()}         
               {/* <Nav.Link as="li" className="nav-item profile-dropdown">
                 <Dropdown className="d-inline">
                   <Dropdown.Toggle
@@ -70,7 +68,7 @@ class Navigation extends React.Component{
                   </Dropdown.Menu>
                 </Dropdown>
               </Nav.Link> */}
-            </ListGroup>
+           
           </Nav>
         </Navbar.Collapse>
       </Container>
@@ -79,4 +77,4 @@ class Navigation extends React.Component{
 }
 }
 
-export default withRouter(Navigation);
+export default Navigation;

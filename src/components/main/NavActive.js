@@ -10,30 +10,31 @@ import {
   Dropdown,
   Button,
 } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { useNavigate  } from "react-router-dom";
 
-const Navactive = (props) => {
-  const history = useHistory(props.history);
+const Navactive = () => {
+  let navigate = useNavigate();
+
   const handleLogout = () => {
     localStorage.clear();
-    history.push("/login");
+    navigate("/login");
   };
   return (
     <>
-      <Nav.Link as="li" className="nav-item chat">
+      <Nav.Link as="div" className="nav-item chat">
         <Dropdown className="d-inline">
           <Dropdown.Toggle
             id="dropdown-autoclose-true"
-            className="btn btn-sm btn-outline-warning btn-message-profile"
+            className="btn btn-sm btn-outline-warning nav-home-btn btn-message-profile"
           >
             <i className="bi bi-envelope"></i>
           </Dropdown.Toggle>
 
           <Dropdown.Menu className="justify-content-center">
           
-            <Dropdown.Item>
+            <Dropdown.Item as="div">
               <Card className="chat-nav-wrapper">
-                <Link to="/chat">
+                <Nav.Link onClick={() => navigate('/chat')}>
                   <Card.Body>
                     <ListGroup horizontal>
                       <ListGroup.Item>
@@ -54,13 +55,13 @@ const Navactive = (props) => {
                       </ListGroup.Item>
                     </ListGroup>
                   </Card.Body>
-                </Link>
+                </Nav.Link>
               </Card>
             </Dropdown.Item>
 
-            <Dropdown.Item>
+            <Dropdown.Item as="div">
               <Card className="chat-nav-wrapper">
-                <Link to="/chat">
+                <Nav.Link onClick={() => navigate('/chat')}>
                   <Card.Body>
                     <ListGroup horizontal>
                       <ListGroup.Item>
@@ -81,13 +82,13 @@ const Navactive = (props) => {
                       </ListGroup.Item>
                     </ListGroup>
                   </Card.Body>
-                </Link>
+                </Nav.Link>
               </Card>
             </Dropdown.Item>
 
-            <Dropdown.Item>
+            <Dropdown.Item as="div">
               <Card className="chat-nav-wrapper">
-                <Link to="/chat">
+                <Nav.Link onClick={() => navigate('/chat')}>
                   <Card.Body>
                     <ListGroup horizontal>
                       <ListGroup.Item>
@@ -108,7 +109,7 @@ const Navactive = (props) => {
                       </ListGroup.Item>
                     </ListGroup>
                   </Card.Body>
-                </Link>
+                </Nav.Link>
               </Card>
             </Dropdown.Item>
 
@@ -116,7 +117,7 @@ const Navactive = (props) => {
         </Dropdown>
       </Nav.Link>
 
-      <Nav.Link as="li" className="nav-item profile-dropdown">
+      <Nav.Link as="div" className="nav-item profile-dropdown">
         <Dropdown className="d-inline">
           <Dropdown.Toggle
             id="dropdown-basic-button"
@@ -131,13 +132,13 @@ const Navactive = (props) => {
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
-            <Dropdown.Item>
-              <Link to="/profile">
+            <Dropdown.Item as="div">
+              <Nav.Link onClick={() => navigate('/profile')}> 
                 <Button>Edit Profile</Button>
-              </Link>
+              </Nav.Link>
             </Dropdown.Item>
-            <Dropdown.Item href="#">Help</Dropdown.Item>
-            <Dropdown.Item onClick={handleLogout}>Logout</Dropdown.Item>
+            <Dropdown.Item as="div" href="#">Help</Dropdown.Item>
+            <Dropdown.Item as="div" onClick={handleLogout}>Logout</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </Nav.Link>

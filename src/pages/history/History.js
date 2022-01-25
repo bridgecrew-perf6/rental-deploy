@@ -1,19 +1,24 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useState, useEffect, useCallback } from "react"; //, useEffect
+import React, { useState, useEffect} from "react"; //useCallback 
 import { Layout, Navigation, Bike } from "../../components";
 import { Form, FormControl } from "react-bootstrap";
 import vehicleDetail from "../../images/vehicle-detail.png";
 import "../../style.css";
 import axios from "axios";
+import {Modal, Button} from 'react-bootstrap';
 
 
 const History = () => {
   let [historyList, setHistoryList] = useState([]);
-  const fetchData = useCallback(() => {
-    axios({
-      method: "GET",
-      url: "http://localhost:8000/history",
-    })
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  axios.defaults.baseURL="http://localhost:8000/history";
+
+  const fetchData = () => {
+    axios
+    .get('./')
       .then((response) => {
         setHistoryList(response.data.result);
         //console.log(response.data.result);
@@ -21,29 +26,21 @@ const History = () => {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  };
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, []);
 
-  // const deleteHandle = (id) => {
-  //   axios.delete(`http://localhost:8080/history/${id}`).then((response) => {
-  //     setHistoryList(
-  //       historyList.filter((index) => {
-  //         return index.id !== id;
-  //       })
-  //     );
-  //   });
-  // };
+  const deleteHandle = (id) => {
+    axios.delete(`http://localhost:8080/history/${id}`).then((response) => {
+      const del = historyList.filter((index) => id !== index.id)
+        setHistoryList(del)
+    });
+  };
 
   return (
     <Layout>
       <Navigation />
-      <div>
-        <ul>
-          
-        </ul>
-      </div>
       <div className="row history-wrapper">
         <div className="col col-md-6 col-lg-7 main-section-history">
           <div className=" row mx-auto align-items-center">
@@ -170,6 +167,8 @@ const History = () => {
                 id="checkboxNoLabel"
                 value=""
                 aria-label="..."
+               
+                onClick={handleShow}
               />
             </div>
           </div>
@@ -186,6 +185,27 @@ const History = () => {
           </button>
         </aside>
       </div>
+
+      <Modal className="aside-title-history-bottom"
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body>
+          Are you Sure you want to delete this item?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="warning"
+           onClick={(()=>deleteHandle())}
+           >Delete</Button>
+        </Modal.Footer>
+      </Modal>
     </Layout>
   );
 };

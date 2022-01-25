@@ -1,7 +1,7 @@
 import React  from "react";
 import { Layout, Header, LoginComponent } from "../../components";
 import navLogo from "../../images/dot.svg";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "../../style.css";
 
 class Login extends React.Component {
@@ -29,6 +29,7 @@ class Login extends React.Component {
             <LoginComponent />
           </div>
         </div>
+        <Outlet/>
       </Layout>
     );
   }
