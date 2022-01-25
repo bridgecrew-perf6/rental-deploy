@@ -7,12 +7,12 @@ const ProductDetail = () => {
   let { id } = useParams();
   let [vehicleDetail, setVehicleDetails] = useState([]);
   const [counter, setCounter] = React.useState(1);
-  const [counterPrice, setCounterPrice] = React.useState();
+  // const [counterPrice, setCounterPrice] = React.useState();
     
   const addCounter = () => {
     const newCounter = counter + 1;
-    const newCounterPrice = counterPrice + counterPrice;
     setCounter(newCounter);
+    // const newCounterPrice = counterPrice + counterPrice;
   };
   
   const subCounter = () => {
@@ -20,19 +20,20 @@ const ProductDetail = () => {
     setCounter(newCounter);
   };
 
-  const fetchData = () => {
-    setTimeout(() => {
-      axios
-        .get(`http://localhost:8000/vehicles/${id}`)
-        .then((response) => {
-          setVehicleDetails(response.data.result);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-    }, 1000);
-  };
+  
   useEffect(() => {
+    const fetchData = () => {
+      setTimeout(() => {
+        axios
+          .get(`http://localhost:8000/vehicles/${id}`)
+          .then((response) => {
+            setVehicleDetails(response.data.result);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }, 1000);
+    };
     fetchData();
   }, []);
 

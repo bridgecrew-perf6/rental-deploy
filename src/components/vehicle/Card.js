@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import popularImages from "../../images/popular-one.png";
 import "../../style.css";
 
