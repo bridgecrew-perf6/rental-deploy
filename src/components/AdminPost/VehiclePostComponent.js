@@ -2,7 +2,7 @@ import React from "react";
 import "../../style.css";
 import { useNavigate } from "react-router-dom";
 import { postVehicleForm } from "../../utils/https/user";
-import dbg from "../../images/Rectangle 394.png";
+import dbg from "../../images/defaultVehicle.png";
 
 const Vehiclepostcomponent = (props) => {
   let navigate = useNavigate(props.history);
@@ -44,21 +44,41 @@ const Vehiclepostcomponent = (props) => {
     <form onSubmit={postVehicleHandler}>
       <div className="container-fluid vehicle-detail">
         <div className="row justify-content-center">
-          <div className="col col-sm-5 col-md-5 vehicle-post-wrapper">
-            <div className="vehicle-img-wrapper">
-              <div>
-                <img
-                  src={dbg}
-                  alt="PostImg"
-                  className="img-fluid img-thumbnail rounded"
-                />
+        <div className="col-sm-6 col-md-12 col-lg">
+                <div className="vehicle-detail-container">
+                  <div className="grid-image">
+                    <img
+                      src={dbg}
+                      alt="detail-vehicle"
+                      className="img-fluid img-thumbnail rounded"
+                    />
+                  </div>
+                  <div className="item2">
+                    <button type="button" className="btn btn-light">
+                      <i className="bi bi-chevron-left"></i>
+                    </button>
+                  </div>
+                  <div className="item3">
+                    <img
+                      src={dbg}
+                      alt="detail-vehicle"
+                      className="img-thumbnail rounded vehicle-preview"
+                    />
+                  </div>
+                  <div className="item4">
+                    <img
+                      src={dbg}
+                      alt="detail-vehicle"
+                      className="img-thumbnail rounded vehicle-preview"
+                    />
+                  </div>
+                  <div className="item4">
+                    <button type="button" className="btn btn-light">
+                      <i className="bi bi-chevron-right"></i>
+                    </button>
+                  </div>
+                </div>
               </div>
-              <div className="row">
-                <div className="col"></div>
-                <div className="col"></div>
-              </div>
-            </div>
-          </div>
           <aside className="col col-sm-5 col-md-5 post-image-information">
             <input
               className="post-vehicel-input"
