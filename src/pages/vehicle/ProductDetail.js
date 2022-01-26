@@ -42,7 +42,7 @@ const ProductDetail = () => {
     <>
       <div className="container-fluid vehicle-detail">
         <div className="container-fluid">
-          <Link to="vproduct/list">
+          <Link to="/product/list">
             <button
               type="button"
               className="btn btn-light btn-lg btn-block btn-detail"

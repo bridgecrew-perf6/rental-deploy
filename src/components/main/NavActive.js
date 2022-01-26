@@ -18,7 +18,9 @@ const Navactive = () => {
   const handleLogout = () => {
     localStorage.clear();
     navigate("/login");
-  };
+    // setTimeout(() => {
+      // }, 1000)
+    };
   return (
     <>
       <Nav.Link as="div" className="nav-item chat">

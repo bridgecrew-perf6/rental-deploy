@@ -11,7 +11,6 @@ import {
 } from "react-bootstrap";
 
 class Navigation extends React.Component{
-  // const history = useHistory(props.history);
   render(){
     const token = JSON.parse(localStorage.getItem("login-token"));
      const navRender = ()=>{
@@ -36,7 +35,7 @@ class Navigation extends React.Component{
             <Nav.Link as={Link} to="/" className="nav-item">
               Home
             </Nav.Link> 
-            <Nav.Link as={Link} to="/product/list" className="nav-item">
+            <Nav.Link as={Link} to="/product/category" className="nav-item">
               Vehicle
             </Nav.Link>
             <Nav.Link as={Link} to="/history" className="nav-item">
@@ -46,28 +45,7 @@ class Navigation extends React.Component{
               About
             </Nav.Link>
   
-            {navRender()}         
-              {/* <Nav.Link as="li" className="nav-item profile-dropdown">
-                <Dropdown className="d-inline">
-                  <Dropdown.Toggle
-                    id="dropdown-basic-button"
-                    type="button"
-                    className="profile-btn-picture"
-                  >
-                    <img
-                      src={profileImage}
-                      className="profile-btn-image"
-                      alt="profile-thumbnail"
-                    />
-                  </Dropdown.Toggle>
-
-                  <Dropdown.Menu>
-                    <Dropdown.Item href="#">Edit Profile</Dropdown.Item>
-                    <Dropdown.Item href="#">Help</Dropdown.Item>
-                    <Dropdown.Item onClick={()=>this.handleLogout()}>Logout</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown>
-              </Nav.Link> */}
+            {navRender()} 
            
           </Nav>
         </Navbar.Collapse>

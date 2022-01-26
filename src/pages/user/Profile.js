@@ -9,7 +9,7 @@ import profileImage from "../../images/edward.png";
 const Profile = () => {
   // let navigate = useNavigate();
   // const { id } = useParams();
-  const token = JSON.parse(localStorage.getItem("login-token"));
+  const user = JSON.parse(localStorage.getItem("user"));
   // const idUSer = user.token.id;
   // const { token: currentUser } = useSelector((userData) => userData.auth);
   // useEffect(() => {
@@ -17,6 +17,11 @@ const Profile = () => {
    // name :
  // })
   // });
+  // useEffect(() => {
+  //     localStorage["user"] = JSON.stringify(props.auth.userData.payload)
+  //     console.log(props.auth.userData.payload)
+  //   }
+  // );
 
   return (
     <Layout>
@@ -35,9 +40,9 @@ const Profile = () => {
               </button>
             </div>
             <div className="card-body">
-              <h1 className="display-6">{token.name}</h1>
+              <h1 className="display-6">{user.name}</h1>
               <p className="card-text text-muted profile-text email">
-                {token.email}
+                {user.email}
               </p>
               <p className="card-text text-muted profile-text phone-number">
                 +62833467823

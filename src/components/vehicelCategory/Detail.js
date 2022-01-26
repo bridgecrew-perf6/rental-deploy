@@ -44,7 +44,7 @@ class DetailVehicle extends Component {
     return (
       <div className="container-fluid vehicle-detail">
         <div className="container-fluid">
-          <Link to="vehicle-all">
+          <Link to="/product/list">
             <button
               type="button"
               className="btn btn-light btn-lg btn-block btn-detail"

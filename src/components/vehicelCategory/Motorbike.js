@@ -26,7 +26,7 @@ class Motorbike extends Component {
           <div className="popular-section">
             <div className="d-flex justify-content-between popular-header">
               <h1 className="home-title">Motorbike</h1>
-              <Link to="/vehicle-detail">
+              <Link to="/product/list">
                 <button type="button" className="btn btn-link btn-next-viewAll">
                   View all<i className="bi bi-chevron-right"></i>
                 </button>

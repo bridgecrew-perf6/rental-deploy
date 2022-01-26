@@ -50,8 +50,8 @@ class App extends React.Component {
             <Route path="/profile" element={<Profile />} />
 
             <Route path="/product" element={<Vehicle />}>
-              <Route path="list" element={<Product />} />
               <Route path="category" element={<ProductType />} />
+              <Route path="list" element={<Product />} />
               <Route path="search" element={<ProductType />} />
               <Route path=":id" element={<ProductDetail />} />
             </Route>

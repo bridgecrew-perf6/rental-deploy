@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, Outlet } from "react-router-dom";
-// import { Card, } from "../../components";
 import "../../style.css";
 import axios from "axios";
-// import { connect } from 'react-redux';
 import popularImages from "../../images/popular-one.png";
 
 const Product = () => {

@@ -21,10 +21,11 @@ const LoginComponent = (props) => {
   };
   useEffect(() => {
     if (props.auth.isFulfilled === true) {
-      localStorage["login-token"] = JSON.stringify(props.auth.userData);
+      localStorage["login-token"] = JSON.stringify(props.auth.userData.token)
+      localStorage["user"] = JSON.stringify(props.auth.userData.user)
       setTimeout(() => {
         navigate("/");
-      }, 5000);
+      }, 1000);
     }
   });
   const notify = () => {
@@ -62,7 +63,7 @@ const LoginComponent = (props) => {
             >
               Login
             </button>
-            <ToastContainer autoClose={4000} />
+            <ToastContainer />
           </div>
           <div className="btn-wrapper ">
             <a className="btn btn-light btn-md btn-block btn-right">

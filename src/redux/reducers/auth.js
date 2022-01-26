@@ -4,6 +4,7 @@ import { ActionType } from "redux-promise-middleware";
 const initialState = {
   userData: {
     token: JSON.parse(localStorage["login-token"] || null),
+    name: JSON.parse(localStorage["user"] || null),
   },
   isPending: false,
   isFulfilled: false,
@@ -31,9 +32,7 @@ switch (action.type) {
     const userData = {
       ...prevState.userData,
       token: data.result.token,
-      id: data.result.id,
-      name: data.result.name,
-      email: data.result.email_address,
+      user: data.result.payload,
     };
     return {
       ...prevState,

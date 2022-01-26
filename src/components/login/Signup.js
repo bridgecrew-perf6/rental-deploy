@@ -21,8 +21,8 @@ const SignupComponent = () => {
         const registerResponse = response.data.result;
         console.log(registerResponse);
         setTimeout(() => {
-          navigate("/");
-        }, 4000);
+          navigate("/login");
+        }, 3000);
       })
       .catch((error) => {
         console.log(error);
@@ -72,7 +72,7 @@ const SignupComponent = () => {
         >
           Signup
         </button>
-        <ToastContainer autoClose={4000} />
+        <ToastContainer/>
 
         <div className="btn-wrapper">
           <a type="button" className="btn btn-light btn-md btn-block btn-right">

@@ -19,7 +19,7 @@ const Vehiclepostcomponent = (props) => {
       .then((response) => {
         const postVehicleResponse = response.data.result;
         console.log(postVehicleResponse);
-        navigate("/product");
+        navigate("/product/list");
       })
       .catch((error) => {
         console.log(error);
