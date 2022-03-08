@@ -30,7 +30,7 @@ class Navigation extends React.Component{
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
-          <Nav className="align-items-canter">
+          <Nav className="align-items-center">
            
             <Nav.Link as={Link} to="/" className="nav-item">
               Home

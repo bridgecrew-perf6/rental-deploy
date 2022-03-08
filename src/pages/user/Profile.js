@@ -14,8 +14,8 @@ const Profile = () => {
   // const { token: currentUser } = useSelector((userData) => userData.auth);
   // useEffect(() => {
   //  axios.patch(`http://localhost:8080/user${id}`,{
-   // name :
- // })
+  // name :
+  // })
   // });
   // useEffect(() => {
   //     localStorage["user"] = JSON.stringify(props.auth.userData.payload)
