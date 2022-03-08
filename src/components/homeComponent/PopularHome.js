@@ -9,16 +9,14 @@ export default class PopularHome extends Component {
     populars: [],
   };
   componentDidMount() {
-    const URL =
-      "https://arka-vehicle-rental.herokuapp.com/vehicles/byOrder?by=cars&order=asc&page=1&limit=4";
+    const URL = "https://arka-vehicle-rental.herokuapp.com/history/desc";
     axios
       .get(URL)
       .then((response) => {
         this.setState({
-          populars: response.data.result.data,
-          // populars: response.data.result,
+          populars: response.data.result,
         });
-        console.log(response.data.result);
+        // console.log(response.data.result);
       })
       .catch((error) => {
         console.log(error);
@@ -39,11 +37,9 @@ export default class PopularHome extends Component {
           <div className="row">
             {this.state.populars.map((popular, idx) => (
               <Card
-                location={popular.Type}
-                // location
+                location={popular.location}
                 key={idx}
-                city={popular.City}
-                // destionation
+                city={popular.destination}
               />
             ))}
           </div>
