@@ -8,24 +8,23 @@ const ProductDetail = () => {
   let [vehicleDetail, setVehicleDetails] = useState([]);
   const [counter, setCounter] = React.useState(1);
   // const [counterPrice, setCounterPrice] = React.useState();
-    
+
   const addCounter = () => {
     const newCounter = counter + 1;
     setCounter(newCounter);
     // const newCounterPrice = counterPrice + counterPrice;
   };
-  
+
   const subCounter = () => {
     const newCounter = counter - 1 < 0 ? 0 : counter - 1;
     setCounter(newCounter);
   };
 
-  
   useEffect(() => {
     const fetchData = () => {
       setTimeout(() => {
         axios
-          .get(`http://localhost:8000/vehicles/${id}`)
+          .get(`https://arka-vehicle-rental.herokuapp.com/vehicles/${id}`)
           .then((response) => {
             setVehicleDetails(response.data.result);
           })
@@ -36,7 +35,6 @@ const ProductDetail = () => {
     };
     fetchData();
   }, []);
-
 
   return (
     <>
@@ -119,17 +117,12 @@ const ProductDetail = () => {
                         -
                       </button>
                       <div className="form-group">
-                        <p
-                          className="form-control text-qty"
-                        >
-                          {counter}
-                        </p>
+                        <p className="form-control text-qty">{counter}</p>
                       </div>
                       <button
                         onClick={addCounter}
                         type="button"
                         className="btn btn-warning plus-qty"
-                       
                       >
                         +
                       </button>

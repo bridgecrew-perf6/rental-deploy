@@ -8,7 +8,7 @@ const Product = () => {
   let [vehicles, setVehicle] = useState([]);
   let navigate = useNavigate();
 
-  axios.defaults.baseURL = "http://localhost:8000/vehicles";
+  axios.defaults.baseURL = "https://arka-vehicle-rental.herokuapp.com/vehicles";
   const fetchData = () => {
     axios
       .get("./")
@@ -40,6 +40,7 @@ const Product = () => {
                 key={idx}
                 onClick={() => {
                   navigate(`/product/${vehicle.id}`);
+                  // console.log(id);
                 }}
               >
                 <img
