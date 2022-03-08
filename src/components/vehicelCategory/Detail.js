@@ -13,9 +13,9 @@ class DetailVehicle extends Component {
   };
   componentDidMount() {
     const { match } = this.props;
-  console.log(match);
+    console.log(match);
 
-    const URL = "http://localhost:8000/vehicles/";
+    const URL = "https://arka-vehicle-rental.herokuapp.com/vehicles/";
     setTimeout(() => {
       axios
         .get(URL + match.params.id)
@@ -40,7 +40,7 @@ class DetailVehicle extends Component {
     const { match } = this.props;
     const { vehicleData: vehicle, isSuccess } = this.state;
     // console.log(history);
-  // console.log(location)
+    // console.log(location)
     return (
       <div className="container-fluid vehicle-detail">
         <div className="container-fluid">
