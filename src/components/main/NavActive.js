@@ -1,7 +1,7 @@
 import React from "react";
 import profileImage from "../../images/edward.png";
 import "../../style.css";
-import "./style.css"
+import "./style.css";
 import {
   Nav,
   Card,
@@ -10,7 +10,7 @@ import {
   Dropdown,
   Button,
 } from "react-bootstrap";
-import { useNavigate  } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Navactive = () => {
   let navigate = useNavigate();
@@ -19,8 +19,20 @@ const Navactive = () => {
     localStorage.clear();
     navigate("/login");
     // setTimeout(() => {
-      // }, 1000)
-    };
+    // }, 1000)
+  };
+
+  // const onLogout = () => {
+  //   // console.log('token', token);
+  //   logoutAuth(token)
+  //     .then(res => {
+  //       dispatch(logoutAction());
+  //       navigation.navigate('Home');
+  //     })
+  //     .catch(err => {
+  //       console.log(err);
+  //     });
+  // };
   return (
     <>
       <Nav.Link as="div" className="nav-item chat">
@@ -33,42 +45,16 @@ const Navactive = () => {
           </Dropdown.Toggle>
 
           <Dropdown.Menu className="justify-content-center">
-          
             <Dropdown.Item as="div">
               <Card className="chat-nav-wrapper">
-                <Nav.Link onClick={() => navigate('/chat')}>
+                <Nav.Link onClick={() => navigate("/chat")}>
                   <Card.Body>
                     <ListGroup horizontal>
                       <ListGroup.Item>
                         <Container>
-                          <Card.Title className="chat-nav-user">User 1</Card.Title>
-                          <Card.Text className="chat-nav-text">
-                            Some quick example text to 
-                          </Card.Text>
-                        </Container>
-                      </ListGroup.Item>
-                      <ListGroup.Item>
-                        <Container>
-                          <Card.Subtitle className="mb-2 text-muted chat-nav-time">
-                            Just now
-                          </Card.Subtitle>
-                          <Card.Text className="chat-nav-numNotif">1</Card.Text>
-                        </Container>
-                      </ListGroup.Item>
-                    </ListGroup>
-                  </Card.Body>
-                </Nav.Link>
-              </Card>
-            </Dropdown.Item>
-
-            <Dropdown.Item as="div">
-              <Card className="chat-nav-wrapper">
-                <Nav.Link onClick={() => navigate('/chat')}>
-                  <Card.Body>
-                    <ListGroup horizontal>
-                      <ListGroup.Item>
-                        <Container>
-                          <Card.Title className="chat-nav-user">User 1</Card.Title>
+                          <Card.Title className="chat-nav-user">
+                            User 1
+                          </Card.Title>
                           <Card.Text className="chat-nav-text">
                             Some quick example text to
                           </Card.Text>
@@ -90,12 +76,14 @@ const Navactive = () => {
 
             <Dropdown.Item as="div">
               <Card className="chat-nav-wrapper">
-                <Nav.Link onClick={() => navigate('/chat')}>
+                <Nav.Link onClick={() => navigate("/chat")}>
                   <Card.Body>
                     <ListGroup horizontal>
                       <ListGroup.Item>
                         <Container>
-                          <Card.Title className="chat-nav-user">User 1</Card.Title>
+                          <Card.Title className="chat-nav-user">
+                            User 1
+                          </Card.Title>
                           <Card.Text className="chat-nav-text">
                             Some quick example text to
                           </Card.Text>
@@ -115,6 +103,34 @@ const Navactive = () => {
               </Card>
             </Dropdown.Item>
 
+            <Dropdown.Item as="div">
+              <Card className="chat-nav-wrapper">
+                <Nav.Link onClick={() => navigate("/chat")}>
+                  <Card.Body>
+                    <ListGroup horizontal>
+                      <ListGroup.Item>
+                        <Container>
+                          <Card.Title className="chat-nav-user">
+                            User 1
+                          </Card.Title>
+                          <Card.Text className="chat-nav-text">
+                            Some quick example text to
+                          </Card.Text>
+                        </Container>
+                      </ListGroup.Item>
+                      <ListGroup.Item>
+                        <Container>
+                          <Card.Subtitle className="mb-2 text-muted chat-nav-time">
+                            Just now
+                          </Card.Subtitle>
+                          <Card.Text className="chat-nav-numNotif">1</Card.Text>
+                        </Container>
+                      </ListGroup.Item>
+                    </ListGroup>
+                  </Card.Body>
+                </Nav.Link>
+              </Card>
+            </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </Nav.Link>
@@ -135,12 +151,16 @@ const Navactive = () => {
 
           <Dropdown.Menu>
             <Dropdown.Item as="div">
-              <Nav.Link onClick={() => navigate('/profile')}> 
+              <Nav.Link onClick={() => navigate("/profile")}>
                 <Button>Edit Profile</Button>
               </Nav.Link>
             </Dropdown.Item>
-            <Dropdown.Item as="div" href="#">Help</Dropdown.Item>
-            <Dropdown.Item as="div" onClick={handleLogout}>Logout</Dropdown.Item>
+            <Dropdown.Item as="div" href="#">
+              Help
+            </Dropdown.Item>
+            <Dropdown.Item as="div" onClick={handleLogout}>
+              Logout
+            </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </Nav.Link>

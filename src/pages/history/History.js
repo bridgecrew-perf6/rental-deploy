@@ -1,47 +1,68 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState, useEffect } from "react"; //useCallback
 import { Layout, Navigation, Bike } from "../../components";
 import { Form, FormControl } from "react-bootstrap";
 import vehicleDetail from "../../images/vehicle-detail.png";
 import "../../style.css";
-import axios from "axios";
 import { Modal, Button } from "react-bootstrap";
+import { historyById, delHistory } from "../../utils/https/history";
+import { useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const History = () => {
-  let [historyList, setHistoryList] = useState([]);
+  const token = useSelector((state) => state.auth.userData.token);
+  console.log(token);
+  const [historyList, setHistoryList] = useState([]);
+  const [idDel, setIdDel] = useState(null);
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  axios.defaults.baseURL = "https://arka-vehicle-rental.herokuapp.com/history";
-
-  const fetchData = () => {
-    axios
-      .get("./")
-      .then((response) => {
-        setHistoryList(response.data.result);
-        //console.log(response.data.result);
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+  const handleClose = () => {
+    setShow(false);
   };
+  const handleShow = () => {
+    setShow(true);
+    console.log("id :", historyList.id);
+    setIdDel(historyList.id);
+  };
+
   useEffect(() => {
+    const fetchData = () => {
+      historyById(token)
+        .then((response) => {
+          setHistoryList(response.data.result);
+          console.log("res : ", response);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    };
     fetchData();
   }, []);
 
-  const deleteHandle = (id) => {
-    axios
-      .delete(`https://arka-vehicle-rental.herokuapp.com/history/${id}`)
-      .then((response) => {
-        const del = historyList.filter((index) => id !== index.id);
-        setHistoryList(del);
+  console.log("id del : ", idDel);
+  const deleteHandle = () => {
+    let id = idDel;
+    delHistory(id)
+      .then((res) => {
+        console.log(res);
+        toast.info("Deleted Success");
+      })
+      .catch((err) => {
+        console.log(err);
+        toast.error("Delete Failed");
+        setShow(false);
       });
+    // .then((response) => {
+    //   const del = historyList.filter((index) => id !== index.id);
+    //   setHistoryList(del);
+    // });
   };
 
   return (
     <Layout>
       <Navigation />
+      <ToastContainer />
+
       <div className="row history-wrapper">
         <div className="col col-md-6 col-lg-7 main-section-history">
           <div className=" row mx-auto align-items-center">
@@ -135,11 +156,12 @@ const History = () => {
 
           <div>
             <p className="history-card-title-header"> Week ago</p>
-            {historyList.map((history) => (
+            {historyList.map((history, idx) => (
               <div
                 className="row justify-content-center"
                 style={{ width: "100%" }}
-                key={history.id}
+                // key={history.id}
+                key={idx}
               >
                 <div className="col-sm-6 col-md-12 col-lg">
                   <div className="vehicle-detail-container">
@@ -173,13 +195,18 @@ const History = () => {
                 </div>
 
                 <div className="col col-sm-1 col-md-1">
+                  <p>{history.id}</p>
                   <input
                     className="form-check-input"
                     type="checkbox"
                     id="checkboxNoLabel"
-                    value=""
+                    value={history.id}
                     aria-label="..."
-                    onClick={handleShow}
+                    onClick={() => {
+                      handleShow();
+                      setIdDel(history.id);
+                      console.log(history.id);
+                    }}
                   />
                 </div>
               </div>

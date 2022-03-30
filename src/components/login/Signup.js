@@ -13,7 +13,7 @@ const SignupComponent = () => {
     event.preventDefault();
     const body = {
       name: event.target.name.value,
-      email_address: event.target.email.value,
+      email: event.target.email.value,
       password: event.target.password.value,
     };
     registerAuth(body)
@@ -42,6 +42,7 @@ const SignupComponent = () => {
           <input
             name="name"
             type="text"
+            // value=name
             className="form-control form-control-md sign-form"
             id="inputUsername"
             placeholder="Username"
@@ -56,7 +57,7 @@ const SignupComponent = () => {
           />
           <input
             name="password"
-            type="text"
+            type="password"
             className="form-control form-control-md sign-form"
             id="inputPassword"
             placeholder="Password"
@@ -72,7 +73,7 @@ const SignupComponent = () => {
         >
           Signup
         </button>
-        <ToastContainer/>
+        <ToastContainer />
 
         <div className="btn-wrapper">
           <a type="button" className="btn btn-light btn-md btn-block btn-right">

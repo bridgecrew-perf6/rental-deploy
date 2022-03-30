@@ -8,6 +8,58 @@
     color: black;
 }
 
+.input-file-btn label {
+    /* color: black; */
+    height: 70px;
+    width: 100%;
+    background-color: "yellow";
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-file-edit-btn {
+    /* color: black; */
+    height: 70px;
+    width: 100%;
+    background-color: "yellow";
+    position: absolute;
+    z-index: 2;
+    /* left: 20%; */
+    top: 16%;
+    left: -1rem;
+    /* background-color: brown; */
+}
+
+.change-promo-img-btn {
+    position: absolute;
+    top: 0;
+    /* right: 168px; */
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    background-color: #6a68b8;
+    color: white;
+}
+
+.img-edit-promo {
+    /* display: none; */
+    /* background-color: transparent; */
+    /* width: 100px; */
+    left: 21rem;
+    cursor: pointer;
+    z-index: 3;
+    color: white;
+    opacity: 0;
+    position: absolute;
+}
+
+.img-edit-promo input[type="file"] {
+    display: none;
+}
+
 a.dropdown-toggle {
     border: none;
     outline: none;

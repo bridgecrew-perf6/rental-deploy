@@ -14,7 +14,7 @@ class Reservation extends Component {
           style={{ marginBottom: "30px" }}
         >
           <div className="row justify-content-center">
-            <Link to="/go-payment">
+            <Link to="/detail/payment">
               <button
                 type="button"
                 className="btn btn-warning btn-lg btn-block btn-pay-reservation-price yellow-color"

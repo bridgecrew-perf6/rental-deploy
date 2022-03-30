@@ -8,4 +8,8 @@ export const loginAction = (body) => {
   };
 };
 
-
+export const logoutAction = () => {
+  return {
+    type: ACTION_STRING.authLogout,
+  };
+};

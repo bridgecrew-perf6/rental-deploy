@@ -11,28 +11,32 @@ import "react-toastify/dist/ReactToastify.css";
 
 const LoginComponent = (props) => {
   let navigate = useNavigate();
+
   const submitHandler = (event) => {
     event.preventDefault();
     const body = {
-      email_address: event.target.email.value,
+      email: event.target.email.value,
       password: event.target.password.value,
     };
     props.loginDispatch(body);
   };
   useEffect(() => {
     if (props.auth.isFulfilled === true) {
-      localStorage["login-token"] = JSON.stringify(props.auth.userData.token)
-      localStorage["user"] = JSON.stringify(props.auth.userData.user)
+      localStorage["login-token"] = JSON.stringify(props.auth.userData.token);
+      localStorage["user"] = JSON.stringify(props.auth.userData.user);
       setTimeout(() => {
         navigate("/");
       }, 1000);
+      toast.info("Login Success");
+    } else if (props.auth.isRejected === true) {
+      toast.error("Wrong Email/Password");
     }
   });
-  const notify = () => {
-    toast.info("Login success", {
-      position: "top",
-    });
-  };
+  // const notify = () => {
+  //   toast.info("Login success", {
+  //     position: "top",
+  //   });
+  // };
 
   return (
     <>
@@ -41,7 +45,7 @@ const LoginComponent = (props) => {
           <div className="form-group form-group-index">
             <input
               name="email"
-              type="text"
+              type="email"
               className="form-control form-control-md sign-form"
               placeholder="Enter email"
               // validations={[requiredField]}
@@ -59,7 +63,7 @@ const LoginComponent = (props) => {
             <button
               type="submit"
               className="btn btn-warning btn-md btn-block btn-right yellow-color"
-              onClick={notify}
+              // onClick={notify}
             >
               Login
             </button>

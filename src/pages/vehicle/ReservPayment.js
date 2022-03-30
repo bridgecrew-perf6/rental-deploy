@@ -14,7 +14,7 @@ class ReservPayment extends Component {
           style={{ marginBottom: "30px" }}
         >
           <div className="justify-content-center">
-            <Link to="payment">
+            <Link to="payment/payment">
               <button
                 type="button"
                 className="btn btn-outline-secondary btn-lg btn-block btn-reservation"
@@ -22,14 +22,14 @@ class ReservPayment extends Component {
                 Rp.178.000,00
               </button>
             </Link>
-            <Link to='payment'>
-            <button
-              type="button"
-              className="btn btn-warning btn-lg btn-block btn-reservation yellow-color"
+            <Link to="/payment">
+              <button
+                type="button"
+                className="btn btn-warning btn-lg btn-block btn-reservation yellow-color"
               >
-              Go to Payment
-            </button>
-              </Link>
+                Go to Payment
+              </button>
+            </Link>
           </div>
         </div>
       </Layout>

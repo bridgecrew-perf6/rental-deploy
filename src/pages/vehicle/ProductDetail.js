@@ -152,7 +152,7 @@ const ProductDetail = () => {
             </Link>
           </div>
           <div className="col-sm-4">
-            <Link to="/pay-reservation">
+            <Link to="/reservation">
               <button
                 type="button"
                 className="btn btn-warning btn-lg btn-block btn-reservation yellow-color"
