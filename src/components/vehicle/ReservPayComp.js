@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import vehicleDetail from "../../images/vehicle-detail.png";
-import { Card  } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import "../../style.css";
 import { Link } from "react-router-dom";
 
@@ -9,14 +9,14 @@ class ReservPayComp extends Component {
     return (
       <div className="container-fluid vehicle-detail">
         <div className="container-fluid">
-          <Link to='/pay-reservation'>
-          <button
-            type="button"
-            className="btn-light btn-lg btn-block btn-back-content"
+          <Link to="/">
+            <button
+              type="button"
+              className="btn-light btn-lg btn-block btn-back-content"
             >
-            <i className="bi bi-chevron-left"></i>Reservation
-          </button>
-            </Link>
+              <i className="bi bi-chevron-left"></i>Reservation
+            </button>
+          </Link>
         </div>
 
         <div className="container-fluid vehicle-detail">
@@ -42,9 +42,11 @@ class ReservPayComp extends Component {
                 </div>
               </div>
 
-              <Card >
+              <Card>
                 <Card.Body className="qty-payment-card">
-                  <Card.Title className="mb-2 gopayment-title">Qt: 2 bikes</Card.Title>
+                  <Card.Title className="mb-2 gopayment-title">
+                    Qt: 2 bikes
+                  </Card.Title>
                   <Card.Text className="mb-2 text-muted">
                     No Prepayment
                   </Card.Text>
@@ -54,8 +56,12 @@ class ReservPayComp extends Component {
               <Card>
                 <Card.Body className="qty-payment-card">
                   <Card.Title className="gopayment-title">Details:</Card.Title>
-                  <Card.Text className="reservation-detail-txt">1 bike : Rp. 78.000</Card.Text>
-                  <Card.Text className="reservation-detail-txt">1 bike : Rp. 78.000</Card.Text>
+                  <Card.Text className="reservation-detail-txt">
+                    1 bike : Rp. 78.000
+                  </Card.Text>
+                  <Card.Text className="reservation-detail-txt">
+                    1 bike : Rp. 78.000
+                  </Card.Text>
                 </Card.Body>
               </Card>
             </div>
@@ -67,10 +73,14 @@ class ReservPayComp extends Component {
               <p className="reservation-date-title">Reservation date :</p>
             </div>
             <div className="col col-sm-4">
-              <div type="button" className="btn gopayment-reservation-btn">Start date</div>
+              <div type="button" className="btn gopayment-reservation-btn">
+                Start date
+              </div>
             </div>
             <div className="col col-sm-4">
-              <div type="button" className="btn gopayment-reservation-btn">Return Date</div>
+              <div type="button" className="btn gopayment-reservation-btn">
+                Return Date
+              </div>
             </div>
           </div>
         </div>

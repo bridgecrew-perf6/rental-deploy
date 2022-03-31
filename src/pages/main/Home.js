@@ -166,10 +166,18 @@ const Home = () => {
         <div className="container-fluid w-75 h-25 mx-auto my-0">
           <Link to="post-vehicle">
             <button
-              className="btn btn-warning btn-explore yellow-color mx-auto my-0"
+              className="btn btn-warning btn-explore yellow-color mx-5 my-0"
               type="button"
             >
               Add item
+            </button>
+          </Link>
+          <Link to="edit-vehicle">
+            <button
+              className="btn btn-warning btn-explore yellow-color mx-5 my-0"
+              type="button"
+            >
+              Edit item
             </button>
           </Link>
         </div>

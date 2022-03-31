@@ -11,13 +11,29 @@ import {
   Button,
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import { logoutAuth } from "../../utils/https/auth";
+import { useDispatch, useSelector } from "react-redux";
+import { logoutAction } from "../../redux/actions/auth";
 
 const Navactive = () => {
+  const token = useSelector((state) => state.auth.userData.token);
+  console.log("tokennav", token);
+  const dispatch = useDispatch();
+
   let navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.clear();
-    navigate("/login");
+    // localStorage.clear();
+    logoutAuth(token)
+      .then((res) => {
+        dispatch(logoutAction());
+        navigate("/");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
+    // navigate("/login");
     // setTimeout(() => {
     // }, 1000)
   };

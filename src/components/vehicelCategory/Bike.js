@@ -44,6 +44,7 @@ const Bike = () => {
               city={vehicle.city}
               name={vehicle.name}
               id={vehicle.id}
+              images={vehicle.images}
             />
           ))}
         </div>

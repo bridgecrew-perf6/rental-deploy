@@ -23,6 +23,11 @@ const Card = (props) => {
     };
     fetchData();
   }, []);
+
+  const img = JSON.parse(props.images)[0];
+  const popImg = process.env.REACT_APP_HOST + "/" + img;
+  console.log("link img" + popImg);
+
   return (
     <div
       className="col-sm-3 col-md-3 card vehicle-card d-felx"
@@ -37,9 +42,14 @@ const Card = (props) => {
     >
       <div>
         <img
-          src={popularImages}
+          src={popImg}
           className="card-img-top view-popular-image"
           alt="pop"
+          onError={({ currentTarget }) => {
+            console.log(currentTarget);
+            currentTarget.onerror = null;
+            currentTarget.src = require("../../images/defaultVehicle.png");
+          }}
         />
       </div>
       <div className="card-body view-popular-card">

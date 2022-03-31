@@ -1,16 +1,31 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import logo from "../../images/btn-google.png";
 import "../../style.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { loginAction } from "../../redux/actions/auth";
 import { connect } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loadingbtn from "../../components/loading/LoadingBtn";
 
 const LoginComponent = (props) => {
+  const [isFetching, setIsFetching] = useState(false);
   let navigate = useNavigate();
+  const [icon, setIcon] = useState("bi bi-eye");
+  const [type, setType] = useState("password");
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+    if (type === "password") {
+      setIcon("bi bi-eye-slash");
+      setType("text");
+    } else {
+      setIcon("bi bi-eye");
+      setType("password");
+    }
+  };
 
   const submitHandler = (event) => {
     event.preventDefault();
@@ -22,13 +37,17 @@ const LoginComponent = (props) => {
   };
   useEffect(() => {
     if (props.auth.isFulfilled === true) {
-      localStorage["login-token"] = JSON.stringify(props.auth.userData.token);
-      localStorage["user"] = JSON.stringify(props.auth.userData.user);
+      // localStorage["login-token"] = JSON.stringify(props.auth.userData.token);
+      // localStorage["user"] = JSON.stringify(props.auth.userData.user);
+      toast.info("Login Success");
       setTimeout(() => {
         navigate("/");
       }, 1000);
-      toast.info("Login Success");
-    } else if (props.auth.isRejected === true) {
+    }
+    if (props.auth.isPending === true) {
+      setIsFetching(true);
+    }
+    if (props.auth.isRejected === true) {
       toast.error("Wrong Email/Password");
     }
   });
@@ -50,14 +69,20 @@ const LoginComponent = (props) => {
               placeholder="Enter email"
               // validations={[requiredField]}
             />
-            <input
-              name="password"
-              type="password"
-              className="form-control form-control-md sign-form"
-              placeholder="Password"
-              // validations={[requiredField]}
-            />
-            <a className="forgot-password">Forgot password?</a>
+            <div>
+              <input
+                name="password"
+                type={(passwordShown ? "text" : "password", type)}
+                // type="password"
+                className="form-control form-control-md sign-form"
+                placeholder="Password"
+                // validations={[requiredField]}
+              />
+              <i onClick={togglePasswordVisiblity} className={icon}></i>{" "}
+            </div>
+            <Link to={"/forgot-password"}>
+              <a className="forgot-password">Forgot password?</a>
+            </Link>
           </div>
           <div>
             <button
@@ -65,7 +90,7 @@ const LoginComponent = (props) => {
               className="btn btn-warning btn-md btn-block btn-right yellow-color"
               // onClick={notify}
             >
-              Login
+              {isFetching ? <Loadingbtn /> : "Login"}
             </button>
             <ToastContainer />
           </div>

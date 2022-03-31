@@ -1,8 +1,9 @@
-import React  from "react";
+import React from "react";
 import { Layout, Header, LoginComponent } from "../../components";
 import navLogo from "../../images/dot.svg";
 import { Link, Outlet } from "react-router-dom";
 import "../../style.css";
+// import loadingBtn from "../../components/loading/LoadingBtn";
 
 class Login extends React.Component {
   render() {
@@ -29,7 +30,7 @@ class Login extends React.Component {
             <LoginComponent />
           </div>
         </div>
-        <Outlet/>
+        <Outlet />
       </Layout>
     );
   }

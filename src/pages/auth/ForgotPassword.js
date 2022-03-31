@@ -1,12 +1,19 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Layout, Header } from "../../components";
-import { Button, Form, Col } from "react-bootstrap";
+import { Button, Form, Col, FormGroup } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../../style.css";
+import Loadingbtn from "../../components/loading/LoadingBtn";
 
-class ForgotPassword extends Component {
-  render() {
-    return (
+const ForgotPassword = () => {
+  const [isFetching, setIsFetching] = useState(false);
+
+  useEffect(() => {
+    setIsFetching(true);
+  }, []);
+
+  return (
+    <>
       <Layout>
         <Header />
         <div className="main-child">
@@ -34,7 +41,7 @@ class ForgotPassword extends Component {
                       variant="warning"
                       className="btn btn-warning btn-md btn-block btn-right yellow-color"
                     >
-                      Send Link
+                      {isFetching ? <Loadingbtn /> : "Send Otp"}
                     </Button>
                   </Form.Group>
                   <Form.Text className="title-header-sm">
@@ -47,8 +54,8 @@ class ForgotPassword extends Component {
           </div>
         </div>
       </Layout>
-    );
-  }
-}
+    </>
+  );
+};
 
 export default ForgotPassword;

@@ -1,18 +1,19 @@
 import Home from "./main/Home";
 import Vehicle from "./vehicle/Vehicle";
-import Login from "./starter/Login";
+import Login from "./auth/Login";
 import Profile from "./user/Profile";
-import SignUp from "./starter/Signup";
+import SignUp from "./auth/Signup";
 import ReservationComponent from "./vehicle/Reservation";
 import ReservPayment from "./vehicle/ReservPayment";
 import ChatNav from "./message/ChatNav";
 import Notfound from "./NotFound";
-import ForgotPassword from "./starter/ForgotPassword";
+import ForgotPassword from "./auth/ForgotPassword";
 import ChatPage from "./message/ChatPage";
 import ChatDetail from "./message/ChatDetail";
 import Payment from "./paymnet/Payment";
 import History from "./history/History";
 import Postvehicle from "./admin/PostVehicle";
+import Editvehicle from "./admin/EditVehicle";
 import ProductDetail from "./vehicle/ProductDetail";
 import Product from "./vehicle/Product";
 import ProductType from "./vehicle/ProductType";
@@ -32,6 +33,7 @@ export {
   Payment,
   History,
   Postvehicle,
+  Editvehicle,
   Vehicle,
   Product,
   ProductType,

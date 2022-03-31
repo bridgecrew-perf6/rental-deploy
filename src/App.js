@@ -15,6 +15,7 @@ import {
   Payment,
   History,
   Postvehicle,
+  Editvehicle,
   Vehicle,
   Product,
   ProductType,
@@ -25,10 +26,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; //Nav
 // import { store } from "./redux/store";
 import { PersistGate } from "redux-persist/es/integration/react";
 import { persistor } from "./redux/store";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 
 function App() {
-  const token = useSelector((state) => state.auth.userData.token);
+  // const token = useSelector((state) => state.auth.userData.token);
   return (
     <PersistGate loading={null} persistor={persistor}>
       <Router>
@@ -46,6 +47,7 @@ function App() {
           </Route>
 
           <Route path="/post-vehicle" element={<Postvehicle />} />
+          <Route path="/edit-vehicle" element={<Editvehicle />} />
           <Route path="/reservation" element={<ReservationComponent />} />
           <Route path="/detail/payment" element={<ReservPayment />} />
           <Route path="/payment" element={<Payment />} />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../../style.css";
 import { Layout, Navigation } from "../../components";
-import profileImage from "../../images/edward.png";
+// import profileImage from "../../images/edward.png";
 import { getUsers, editUsers } from "../../utils/https/user";
 // import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -98,20 +98,25 @@ const Profile = () => {
               (
                 <img
                   src={`${process.env.REACT_APP_HOST}/${imageShow}`}
-                  className="card-img-top img-thumbnail profile-pic"
+                  className="card-img-top img-thumbnail profile-pic addWidth"
                   alt="profileImg"
                 />
               ) !== null ? (
                 <img
                   src={imgPrev}
-                  className="card-img-top img-thumbnail profile-pic"
+                  className="card-img-top img-thumbnail profile-pic addWidth"
                   alt="profileImg"
                 />
               ) : (
                 <img
                   src={`${process.env.REACT_APP_HOST}/${imageShow}`}
-                  className="card-img-top img-thumbnail profile-pic"
+                  className="card-img-top img-thumbnail profile-pic addWidth"
                   alt="profileImg"
+                  onError={({ currentTarget }) => {
+                    console.log(currentTarget);
+                    currentTarget.onerror = null;
+                    currentTarget.src = require("../../images/defaultVehicle.png");
+                  }}
                 />
               )}
               {/* <img

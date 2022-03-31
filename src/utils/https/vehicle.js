@@ -12,8 +12,23 @@ export const filterVehicle = (limit, type, search, location) => {
 };
 
 const AddURL = `${process.env.REACT_APP_HOST}/vehicles`;
-export const addVehicle = (token, body) => {
+export const addVehicle = (body, token) => {
   return axios.post(AddURL, body, {
+    headers: {
+      "content-type": "multipart/form-data",
+      "x-access-token": token,
+    },
+  });
+};
+
+export const getVehicleId = (id) => {
+  return axios.get(URL + "vehicles/" + id);
+};
+
+// const AddURLEdit = `${process.env.REACT_APP_HOST}/vehicles/${id}`;
+export const editVehicle = (body, token, id) => {
+  const URLedit = URL + "vehicle/" + id;
+  return axios.patch(URLedit, body, {
     headers: {
       "content-type": "multipart/form-data",
       "x-access-token": token,

@@ -1,14 +1,31 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import logo from "../../images/btn-google.png";
 import "../../style.css";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { registerAuth } from "../../utils/https/auth";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Loadingbtn from "../loading/LoadingBtn";
 
-const SignupComponent = () => {
+const SignupComponent = (props) => {
   let navigate = useNavigate();
+  const [isFetching, setIsFetching] = useState(false);
+
+  const [icon, setIcon] = useState("bi bi-eye");
+  const [type, setType] = useState("password");
+  const [passwordShown, setPasswordShown] = useState(false);
+  const togglePasswordVisiblity = () => {
+    setPasswordShown(passwordShown ? false : true);
+    if (type === "password") {
+      setIcon("bi bi-eye-slash");
+      setType("text");
+    } else {
+      setIcon("bi bi-eye");
+      setType("password");
+    }
+  };
+
   const registerHandler = (event) => {
     event.preventDefault();
     const body = {
@@ -29,7 +46,12 @@ const SignupComponent = () => {
       });
   };
 
+  // useEffect(() => {
+  //   if (props.auth.isPending === true) {
+  //   }
+  // });
   const notify = () => {
+    setIsFetching(true);
     toast.info("Account Created Successfully, Please Login", {
       position: "top",
     });
@@ -55,23 +77,26 @@ const SignupComponent = () => {
             aria-describedby="emailHelp"
             placeholder="Enter Email"
           />
-          <input
-            name="password"
-            type="password"
-            className="form-control form-control-md sign-form"
-            id="inputPassword"
-            placeholder="Password"
-          />
-          <a type="button" className="forgot-password">
-            Forgot password?
-          </a>
+          <div>
+            <input
+              name="password"
+              type={(passwordShown ? "text" : "password", type)}
+              className="form-control form-control-md sign-form"
+              id="inputPassword"
+              placeholder="Password"
+            />
+            <i onClick={togglePasswordVisiblity} className={icon}></i>{" "}
+          </div>
+          <Link to={"/forgot-password"}>
+            <a className="forgot-password">Forgot password?</a>
+          </Link>
         </div>
         <button
           type="submit"
           className="btn btn-warning btn-md btn-block btn-right yellow-color"
           onClick={notify}
         >
-          Signup
+          {isFetching ? <Loadingbtn /> : "SignUp"}
         </button>
         <ToastContainer />
 
