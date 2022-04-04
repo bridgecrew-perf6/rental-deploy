@@ -1,8 +1,30 @@
-# Getting Started with Create React App
+# Rental Vehicle App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Rental Vehicle](https://drive.google.com/uc?export=view&id=1FcRmroCq6whSqFiLSSeEkHLcz4JT752N) 
 
-## Available Scripts
+# Installation
+## 1. Clone this repository
+
+Clone this repository by run the following code:
+
+```
+$ git clone https://github.com/okidwijaya/rental-deploy
+```
+## 2. Go to directory
+
+```
+$ cd <your directory>
+```
+
+## 3. Install dependency packages
+
+Install dependency packages by run the following code inside project folder:
+
+```
+$ npm install
+```
+
+## Run Project
 
 In the project directory, you can run:
 
@@ -63,7 +85,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 ### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Rental Vehicle : [Rental Vehicle](https://arkarentaldeploy.netlify.app)
 
 ### `npm run build` fails to minify
 
