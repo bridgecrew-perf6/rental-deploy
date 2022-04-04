@@ -4,6 +4,12 @@
 
 Rental Vehicle is a web app built using ReactJs. This Vehicle Rental application accommodates consumers in vehicle rentals and the user can also have access to become a provider of vehicles for rent.
 
+[![react-router-dom](https://img.shields.io/npm/v/react-router-dom?label=react-router-dom)](https://www.npmjs.com/package/react-router-dom)
+[![axios](https://img.shields.io/npm/v/axios?label=axios)](https://www.npmjs.com/package/axios)
+[![chart.js](https://img.shields.io/npm/v/chart.js?label=chart.js)](https://www.npmjs.com/package/chart.js)
+[![redux](https://img.shields.io/npm/v/redux?label=redux)](https://www.npmjs.com/package/redux)
+
+
 # Installation
 ## 1. Clone this repository
 
