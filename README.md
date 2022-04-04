@@ -8,7 +8,7 @@ Rental Vehicle is a web app built using ReactJs. This Vehicle Rental application
 [![axios](https://img.shields.io/npm/v/axios?label=axios)](https://www.npmjs.com/package/axios)
 [![react toastify](https://img.shields.io/badge/reacttoastify-v.8.1.0-yellow)](https://www.npmjs.com/package/react-toastify)
 [![redux](https://img.shields.io/npm/v/redux?label=redux)](https://www.npmjs.com/package/redux)
-[![redux-persist](https://img.shields.io/npm/v/redux?label=redux)](https://www.npmjs.com/package/redux-persist)
+[![redux-persist](https://img.shields.io/npm/v/redux-persist?label=redux-persist)](https://www.npmjs.com/package/redux-persist)
 
 # Installation
 ## 1. Clone this repository
