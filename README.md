@@ -43,4 +43,4 @@ Rental Vehicle : [Rental Vehicle](https://arkarentaldeploy.netlify.app)
 
 ## Related Project 
 
-![Rental Vehicle Backend](https://github.com/okidwijaya/rental-vehicle) 
+[Rental Vehicle Backend](https://github.com/okidwijaya/rental-vehicle) 
