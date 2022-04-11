@@ -195,7 +195,7 @@ const History = () => {
                 </div>
 
                 <div className="col col-sm-1 col-md-1">
-                  <p>{history.id}</p>
+                  {/* <p>{history.id}</p> */}
                   <input
                     className="form-check-input"
                     type="checkbox"
@@ -216,7 +216,9 @@ const History = () => {
 
         <aside className="col col-md-4 col-lg-4 aside-history">
           <p className="aside-title-history">New Arrival</p>
-          <Bike />
+          <div className="col-10">
+            <Bike />
+          </div>
           <p className="aside-title-history-bottom">View more</p>
           <button className="aside-history-icon-chevron">
             <i className="bi bi-chevron-down"></i>

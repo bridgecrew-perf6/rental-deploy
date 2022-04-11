@@ -16,7 +16,7 @@ const Bike = () => {
       filterVehicle(limit, type, search, location)
         .then((response) => {
           setBike(response.data.result.data);
-          console.log("bike : ", response.data.result);
+          // console.log("bike : ", response.data.result);
         })
         .catch((error) => {
           console.log(error);
@@ -29,7 +29,7 @@ const Bike = () => {
     <div className="popular-section">
       <div className="d-flex justify-content-between popular-header">
         <h1 className="home-title">Bikes</h1>
-        <Link to="/product/list">
+        <Link to="/product/All-Vehicle" key={"bike"} state={{ vState: "bike" }}>
           <button type="button" className="btn btn-link btn-next-viewAll">
             View all<i className="bi bi-chevron-right"></i>
           </button>

@@ -101,6 +101,7 @@ body {
 .history-wrapper {
     margin: 30px auto 100px;
     width: 95%;
+    /* height: 100%; */
 }
 
 .aside-history {
@@ -111,6 +112,8 @@ body {
     height: auto;
     text-align: center;
     margin: 0 auto;
+    overflow-x: auto;
+    padding: auto;
 }
 
 .aside-title-history {

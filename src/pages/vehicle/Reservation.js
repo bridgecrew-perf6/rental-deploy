@@ -137,7 +137,7 @@ const Reservation = (props) => {
         style={{ marginBottom: "30px" }}
       >
         <div className="row justify-content-center">
-          <Link to="/">
+          <Link to="/detail/payment">
             <button
               type="button"
               className="btn btn-warning btn-lg btn-block btn-pay-reservation-price yellow-color"

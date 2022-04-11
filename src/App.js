@@ -20,6 +20,9 @@ import {
   Product,
   ProductType,
   ProductDetail,
+  AllProduct,
+  AllPopular,
+  Reservation,
 } from "./pages";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"; //Navigate
 // import { Provider } from "react-redux";
@@ -41,6 +44,8 @@ function App() {
 
           <Route path="/product" element={<Vehicle />}>
             <Route path="category" element={<ProductType />} />
+            <Route path="All-Vehicle" element={<AllProduct />} />
+            <Route path="Popular" element={<AllPopular />} />
             <Route path="list" element={<Product />} />
             <Route path="search" element={<ProductType />} />
             <Route path=":id" element={<ProductDetail />} />
@@ -48,8 +53,9 @@ function App() {
 
           <Route path="/post-vehicle" element={<Postvehicle />} />
           <Route path="/edit-vehicle" element={<Editvehicle />} />
-          <Route path="/reservation" element={<ReservationComponent />} />
           <Route path="/detail/payment" element={<ReservPayment />} />
+          <Route path="/reservation" element={<ReservationComponent />} />
+          <Route path="/reservation/payment" element={<Reservation />} />
           <Route path="/payment" element={<Payment />} />
 
           <Route path="/chat" element={<ChatPage />} />

@@ -1,13 +1,16 @@
 import React from "react";
 import "../../style.css";
 import dot from "../../images/dot.png";
+import { Link } from "react-router-dom";
 
 const Footer = () => (
   <footer>
     <div className="container-fluid information">
       <div className="row">
         <div className="col-4 first-foo">
-          <img src={dot} alt="footer-logo" />
+          <Link to="/">
+            <img src={dot} alt="footer-logo" />
+          </Link>
           <p className="foo-info">
             Plan and book your perfect trip with expert advice, travel tips for
             vehicle information from us

@@ -9,12 +9,12 @@ const Vehicle = () => {
     <Layout>
       <Navigation />
       <div className="popular-section-view">
-        <h1>Popular In Town</h1>
-        <p>Click item to see details and reservation</p>
+        {/* <h1>Popular In Town</h1>
+        <p>Click item to see details and reservation</p> */}
         {/* <AllVehicle /> */}
-        <Link to='/product/list' />
-        <Link to='/product/search' />
-        <Link to='/product/category' />
+        <Link to="/product/All-Product" />
+        <Link to="/product/search" />
+        <Link to="/product/category" />
         <Outlet />
         <p>There is no vehicle left</p>
       </div>

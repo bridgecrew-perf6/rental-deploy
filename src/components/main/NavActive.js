@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import profileImage from "../../images/edward.png";
 import "../../style.css";
 import "./style.css";
@@ -14,13 +14,31 @@ import { useNavigate } from "react-router-dom";
 import { logoutAuth } from "../../utils/https/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutAction } from "../../redux/actions/auth";
+import { getUsers } from "../../utils/https/user";
+import { userActive } from "../../redux/actions/user";
 
 const Navactive = () => {
   const token = useSelector((state) => state.auth.userData.token);
-  console.log("tokennav", token);
+  // const id = useSelector((state) => state.auth.userData.id);
+  // console.log("tokennav", token);
   const dispatch = useDispatch();
-
   let navigate = useNavigate();
+
+  const [activeUser, setActiveUser] = useState([]);
+
+  useEffect(() => {
+    getUsers(token)
+      .then((res) => {
+        setActiveUser(res.data.result[0]);
+        const data = { ...res.data.result[0] };
+        dispatch(userActive(data));
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  // console.log("active user", activeUser);
 
   const handleLogout = () => {
     // localStorage.clear();

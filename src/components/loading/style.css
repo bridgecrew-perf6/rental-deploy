@@ -19,8 +19,8 @@
 }
 
 .loading {
-    width: min(50vw, 350px);
-    margin: auto;
+    width: min(5vw, 150px);
+    margin: auto 20px;
 }
 
 p {

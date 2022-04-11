@@ -17,6 +17,9 @@ import Editvehicle from "./admin/EditVehicle";
 import ProductDetail from "./vehicle/ProductDetail";
 import Product from "./vehicle/Product";
 import ProductType from "./vehicle/ProductType";
+import AllProduct from "./vehicle/AllProduct";
+import AllPopular from "./vehicle/AllPopular";
+import Reservation from "./vehicle/Reservation";
 
 export {
   Home,
@@ -28,6 +31,7 @@ export {
   ForgotPassword,
   ReservationComponent,
   ReservPayment,
+  Reservation,
   ChatPage,
   ChatDetail,
   Payment,
@@ -38,4 +42,6 @@ export {
   Product,
   ProductType,
   ProductDetail,
+  AllProduct,
+  AllPopular,
 };

@@ -9,6 +9,7 @@ import { useDispatch } from "react-redux";
 
 const ProductDetail = (props) => {
   let { id } = useParams();
+  // console.log(id);
   let [vehicleDetail, setVehicleDetails] = useState([]);
   const [load, setLoad] = useState(false);
 
@@ -37,12 +38,12 @@ const ProductDetail = (props) => {
           setLoad(true);
           setVehicleDetails(response.data.result);
           setImgProduct(response.data.result[0].images);
-          console.log(response);
-          const data = {
-            ...response.data.result[0],
-            counter,
-          };
-          dispatch(transferUser(data));
+          console.log("response id", response.data.result[0]);
+          // const data = {
+          //   ...response.data.result[0],
+          //   counter,
+          // };
+          // dispatch(transferUser(data));
         })
         .catch((error) => {
           console.log(error);
@@ -52,9 +53,22 @@ const ProductDetail = (props) => {
     fetchData();
   }, []);
 
+  const reservation = () => {
+    const data = {
+      // userId: user_id,
+      // userName: user_name,
+      qty: counter,
+      vehicle_name: vehicleDetail[0].name,
+      price: vehicleDetail[0].price,
+      status: vehicleDetail[0].status,
+    };
+    dispatch(transferUser(data));
+    console.log(data);
+  };
+
   const img = JSON.parse(imgProduct);
   const popImg = process.env.REACT_APP_HOST + "/" + img;
-  console.log("link img" + popImg);
+  // console.log("link img" + popImg);
 
   return (
     <>
@@ -179,18 +193,19 @@ const ProductDetail = (props) => {
             </Link>
           </div>
           <div className="col-sm-4">
-            <Link
-              to={{
-                pathname: "/reservation",
-                data: {
-                  // counter: counter,
-                  // id: id,
-                  test: "test",
-                },
-              }}
-            >
+            <Link to="/reservation/payment">
+              {/* // to={{
+              //   pathname: "/reservation",
+              //   data: {
+              //     // counter: counter,
+              //     // id: id,
+              //     test: "test",
+              //   },
+              // }}
+            // > */}
               <button
                 type="button"
+                onClick={reservation}
                 className="btn btn-warning btn-lg btn-block btn-reservation yellow-color"
               >
                 Reservation

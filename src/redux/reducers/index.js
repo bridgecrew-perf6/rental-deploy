@@ -3,9 +3,13 @@ import { combineReducers } from "redux";
 import authReducer from "./auth";
 import { ACTION_STRING } from "../actions/actionString";
 import storage from "redux-persist/lib/storage";
+import transferReducer from "./transfer";
+import userReducer from "./user";
 
 const appReducer = combineReducers({
   auth: authReducer,
+  transfer: transferReducer,
+  user: userReducer,
 });
 
 const rootReducer = (state, action) => {

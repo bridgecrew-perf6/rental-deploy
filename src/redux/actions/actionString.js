@@ -3,6 +3,7 @@ export const ACTION_STRING = {
   authLogout: "AUTH_LOGOUT",
   deleteHistory: "DELETE_HISTORY",
   dataTransfer: "TRANSFER_DATA",
+  userData: "USER_DATA",
 
   pending: "_PENDING",
   fulfilled: "_FULFILLED",
