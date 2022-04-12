@@ -1,51 +1,54 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import vehicleDetail from "../../images/vehicle-detail.png";
 import "../../style.css";
 import "./style.css";
 import { Layout, Navigation } from "../../components";
-import { transferUser } from "../../redux/actions/transfer";
-import { useSelector, useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
+// import { transferUser } from "../../redux/actions/transfer";
+// import { useSelector, useDispatch } from "react-redux";
+// import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 const Payment = () => {
-  const dispatch = useDispatch();
-  const [enable, disable] = useState(false);
-  const user = useSelector((state) => state.user);
-  // const user_name = useSelector((state) => state.user.data.name);
-  const v = useSelector((state) => state.transfer.data);
-
-  const navigate = useNavigate();
-  const token = useSelector((state) => state.auth.userData.token);
-
-  // const buttonReservation = () => {};
-
-  useEffect(() => {
-    if (user.data === null) {
-      toast.info("you need to login first");
-      // navigate("/");
-    }
-  });
-  const reservation = () => {
-    // if (!token) {
-    //   toast.info("you cant reservation");
-    //   // navigate("/");
-    // }
-    if (!token && user.data === null) {
-      toast.info("Please login for reservation");
-    } else {
-      disable(true);
-      const data = {
-        ...v,
-        userId: user.data.id,
-        userName: user.data.name,
-      };
-      dispatch(transferUser(data));
-      // console.log(data);
-      toast.success("Reservation Success");
-    }
+  const finishPayment = () => {
+    toast.info("payment success");
   };
+  // const dispatch = useDispatch();
+  // const [enable, disable] = useState(false);
+  // const user = useSelector((state) => state.user);
+  // // const user_name = useSelector((state) => state.user.data.name);
+  // const v = useSelector((state) => state.transfer.data);
+
+  // const navigate = useNavigate();
+  // const token = useSelector((state) => state.auth.userData.token);
+
+  // // const buttonReservation = () => {};
+
+  // useEffect(() => {
+  //   if (user.data === null) {
+  //     toast.info("you need to login first");
+  //     // navigate("/");
+  //   }
+  // });
+  // const reservation = () => {
+  //   // if (!token) {
+  //   //   toast.info("you cant reservation");
+  //   //   // navigate("/");
+  //   // }
+  //   if (!token && user.data === null) {
+  //     toast.info("Please login for reservation");
+  //   } else {
+  //     disable(true);
+  //     const data = {
+  //       ...v,
+  //       userId: user.data.id,
+  //       userName: user.data.name,
+  //     };
+  //     dispatch(transferUser(data));
+  //     // console.log(data);
+  //     toast.success("Reservation Success");
+  //   }
+  // };
   return (
     <Layout>
       <Navigation />
@@ -145,10 +148,11 @@ const Payment = () => {
             CASH
           </div>
         </div>
+
         <div
           type="button"
-          disabled={enable}
-          onClick={reservation}
+          // disabled={enable}
+          onClick={finishPayment}
           className="btn btn-finish-payment"
         >
           Finish Payment

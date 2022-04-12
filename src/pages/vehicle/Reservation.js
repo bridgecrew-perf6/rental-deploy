@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Layout, Navigation } from "../../components";
 // , ReservationComponent
 import "../../style.css";
 import vehicleDetail from "../../images/vehicle-detail.png";
 
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { transferUser } from "../../redux/actions/transfer";
+import { useSelector, useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Reservation = (props) => {
   // console.log(props.history.location.state);
+  const user = useSelector((state) => state.user);
+  // const user_name = useSelector((state) => state.user.data.name);
+  const v = useSelector((state) => state.transfer.data);
+
+  const navigate = useNavigate();
+  const token = useSelector((state) => state.auth.userData.token);
   const location = useLocation();
   const data = location.data;
   console.log(data, props.data);
@@ -27,9 +37,87 @@ const Reservation = (props) => {
 
   // const { data } = props.location;
   // console.log("our props : ", data.counter, data.id, data.text);
+
+  const dispatch = useDispatch();
+  const [disable, setDisable] = useState(false);
+
+  const [bookCode, setBookCode] = useState(null);
+  const [paymentCode, setPaymentCode] = useState(null);
+
+  // const buttonReservation = () => {};
+  useEffect(() => {
+    const rnd = (() => {
+      const gen = (min, max) =>
+        max++ &&
+        [...Array(max - min)].map((s, i) => String.fromCharCode(min + i));
+
+      const sets = {
+        num: gen(48, 57),
+        alphaLower: gen(97, 122),
+        alphaUpper: gen(65, 90),
+        special: [...`~!@#$%^&*()_+-=[]\{}|;:'",./<>?`],
+      };
+
+      function* iter(len, set) {
+        if (set.length < 1) set = Object.values(sets).flat();
+        for (let i = 0; i < len; i++)
+          yield set[(Math.random() * set.length) | 0];
+      }
+
+      return Object.assign(
+        (len, ...set) => [...iter(len, set.flat())].join(""),
+        sets
+      );
+    })();
+    setBookCode(rnd(20, rnd.alphaLower));
+    setPaymentCode(rnd(20, rnd.alphaUpper));
+    //console.log("OUTPUT: ", rnd(20)); // Use all sets
+    // OUTPUT:  Kr8K1,f5hQa;YJC~7K9z
+    // console.log("OUTPUT lower: ", rnd(20, rnd.alphaLower));
+    // OUTPUT:  cpjbkwvslxsofzvkekcw
+    // console.log("OUTPUT upper: ", rnd(20, rnd.alphaUpper));
+    // OUTPUT: ----
+    // console.log("OUTPUT: ", rnd(20, rnd.alphaUpper, rnd.special));
+    // OUTPUT:  S]|-X]=N}TZC,GE;=,.D
+  }, []);
+
+  // console.log("all code : ", bookCode, paymentCode);
+  // useEffect(() => {
+  //if (user.data === null) {
+  // toast.info("you need to login first");
+  // navigate("/");
+  // }
+  // });
+  const reservation = () => {
+    // if (!token) {
+    //   toast.info("you cant reservation");
+    //   // navigate("/");
+    // }
+    if (!token && user.data === null) {
+      toast.info("Please login for reservation");
+      // navigate("/login");
+      setDisable(true);
+    } else {
+      const data = {
+        ...v,
+        user: user.data.name,
+        user_payment_id: user.data.id,
+        // email: user.data.email,
+        // mobile_number: user.data.mobile_number,
+        payment_code: paymentCode,
+        booking_code: bookCode,
+      };
+      dispatch(transferUser(data));
+      // console.log(data);
+      toast.success("Reservation Success");
+      navigate("/payment");
+    }
+  };
+
   return (
     <Layout>
       <Navigation />
+      <ToastContainer />
       <>
         <div className="container-fluid vehicle-detail">
           <div className="container-fluid">
@@ -138,12 +226,14 @@ const Reservation = (props) => {
       >
         <div className="row justify-content-center">
           <Link to="/detail/payment">
-            <button
+            <div
               type="button"
               className="btn btn-warning btn-lg btn-block btn-pay-reservation-price yellow-color"
+              disabled={disable}
+              onClick={reservation}
             >
               Rp.178.000,00
-            </button>
+            </div>
           </Link>
         </div>
       </div>

@@ -1,17 +1,24 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useParams, Link, Outlet } from "react-router-dom";
+import { useParams, Link, Outlet, useNavigate } from "react-router-dom";
 import vehicleDetailImg from "../../images/vehicle-detail.png";
 import Loadingcomponent from "../../components/loading/LoadingComponent";
 import { transferUser } from "../../redux/actions/transfer";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { connect } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ProductDetail = (props) => {
   let { id } = useParams();
   // console.log(id);
   let [vehicleDetail, setVehicleDetails] = useState([]);
   const [load, setLoad] = useState(false);
+
+  const userAccess = useSelector((state) => state.user);
+  // console.log("got to payment : ", bodyPayment);
+  const navigate = useNavigate();
+  const [disable, setDisable] = useState(false);
 
   const dispatch = useDispatch();
   const [counter, setCounter] = React.useState(1);
@@ -59,19 +66,37 @@ const ProductDetail = (props) => {
       // userName: user_name,
       qty: counter,
       vehicle_name: vehicleDetail[0].name,
-      price: vehicleDetail[0].price,
+      // price: vehicleDetail[0].price,
       status: vehicleDetail[0].status,
+      total_payment: vehicleDetail[0].price,
+      destination: vehicleDetail[0].location,
+      vehicle_payment_id: vehicleDetail[0].id,
     };
-    dispatch(transferUser(data));
-    console.log(data);
+    if (userAccess.data !== null) {
+      if (userAccess.data.role === 1) {
+        toast.error("please login as a user");
+        setDisable(true);
+        // setTimeout(() => {
+        // navigate("/login");
+        // }, 3000);
+      } else if (userAccess.data.role === 2 || userAccess.data.role === null) {
+        dispatch(transferUser(data));
+        console.log(data);
+        navigate("/reservation/payment");
+      }
+    } else {
+      dispatch(transferUser(data));
+      console.log(data);
+      navigate("/reservation/payment");
+    }
   };
-
   const img = JSON.parse(imgProduct);
   const popImg = process.env.REACT_APP_HOST + "/" + img;
   // console.log("link img" + popImg);
 
   return (
     <>
+      <ToastContainer />
       <div className="container-fluid vehicle-detail">
         <div className="container-fluid">
           <Link to="/">
@@ -193,8 +218,8 @@ const ProductDetail = (props) => {
             </Link>
           </div>
           <div className="col-sm-4">
-            <Link to="/reservation/payment">
-              {/* // to={{
+            {/* <Link to="/reservation/payment"> */}
+            {/* // to={{
               //   pathname: "/reservation",
               //   data: {
               //     // counter: counter,
@@ -203,14 +228,15 @@ const ProductDetail = (props) => {
               //   },
               // }}
             // > */}
-              <button
-                type="button"
-                onClick={reservation}
-                className="btn btn-warning btn-lg btn-block btn-reservation yellow-color"
-              >
-                Reservation
-              </button>
-            </Link>
+            <div
+              type="button"
+              disabled={disable}
+              onClick={reservation}
+              className="btn btn-warning btn-lg btn-block btn-reservation yellow-color"
+            >
+              Reservation
+            </div>
+            {/* </Link> */}
           </div>
           <div className="col-sm-2">
             <Link to="/">

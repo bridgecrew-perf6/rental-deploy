@@ -35,3 +35,8 @@ export const editVehicle = (body, token, id) => {
     },
   });
 };
+
+export const postPayment = (body) => {
+  //token
+  return axios.post(URL + "history", body);
+};
