@@ -9,6 +9,16 @@ import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const formatPrice = (value) => {
+  let price = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  })
+    .format(value)
+    .replace(/(\.|,)00$/g, "");
+  return price;
+};
+
 const Payment = () => {
   const finishPayment = () => {
     toast.info("payment success");
@@ -129,7 +139,7 @@ const Payment = () => {
           <div className="col-4 detail-book-wrapper-qty">
             <p className="payment-deytail-order-title">Price detail :</p>
             <p className="font-based-payment-book">
-              {v.qty} bike : {v.total_payment}
+              {v.qty} bike : {formatPrice(v.total_payment)}
             </p>
           </div>
           <div className="col-8 detail-book-wrapper">
