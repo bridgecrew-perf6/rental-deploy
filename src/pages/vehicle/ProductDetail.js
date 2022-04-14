@@ -4,6 +4,7 @@ import { useParams, Link, Outlet, useNavigate } from "react-router-dom";
 import vehicleDetailImg from "../../images/vehicle-detail.png";
 import Loadingcomponent from "../../components/loading/LoadingComponent";
 import { transferUser } from "../../redux/actions/transfer";
+import { product } from "../../redux/actions/product";
 import { useDispatch, useSelector } from "react-redux";
 // import { connect } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
@@ -47,6 +48,15 @@ const ProductDetail = (props) => {
   };
 
   useEffect(() => {
+    // window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
+  useEffect(() => {
     const fetchData = () => {
       // setTimeout(() => {
       axios
@@ -56,11 +66,10 @@ const ProductDetail = (props) => {
           setVehicleDetails(response.data.result);
           setImgProduct(response.data.result[0].images);
           console.log("response id", response.data.result[0]);
-          // const data = {
-          //   ...response.data.result[0],
-          //   counter,
-          // };
-          // dispatch(transferUser(data));
+          const data = {
+            ...response.data.result[0],
+          };
+          dispatch(product(data));
         })
         .catch((error) => {
           console.log(error);
@@ -107,6 +116,7 @@ const ProductDetail = (props) => {
   return (
     <>
       <ToastContainer />
+      {/* <ScrollToTop /> */}
       <div className="container-fluid vehicle-detail">
         <div className="container-fluid">
           <Link to="/">
@@ -269,6 +279,7 @@ const ProductDetail = (props) => {
           </div>
         </div>
       </div>
+
       <Outlet />
     </>
   );

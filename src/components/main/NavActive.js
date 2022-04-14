@@ -9,6 +9,7 @@ import {
   ListGroup,
   Dropdown,
   Button,
+  Modal,
 } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { logoutAuth } from "../../utils/https/auth";
@@ -16,6 +17,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logoutAction } from "../../redux/actions/auth";
 import { getUsers } from "../../utils/https/user";
 import { userActive } from "../../redux/actions/user";
+import Loadingbtn from "../loading/LoadingBtn";
 
 const Navactive = () => {
   const token = useSelector((state) => state.auth.userData.token);
@@ -23,8 +25,17 @@ const Navactive = () => {
   // console.log("tokennav", token);
   const dispatch = useDispatch();
   let navigate = useNavigate();
-
+  const [isFetching, setIsFetching] = useState(false);
   const [activeUser, setActiveUser] = useState([]);
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => {
+    setShow(false);
+  };
+  const handleShow = () => {
+    setShow(true);
+  };
 
   useEffect(() => {
     getUsers(token)
@@ -34,6 +45,7 @@ const Navactive = () => {
         dispatch(userActive(data));
       })
       .catch((err) => {
+        setIsFetching(false);
         console.log(err);
       });
   }, []);
@@ -42,6 +54,7 @@ const Navactive = () => {
 
   const handleLogout = () => {
     // localStorage.clear();
+    setIsFetching(true);
     logoutAuth(token)
       .then((res) => {
         dispatch(logoutAction());
@@ -192,12 +205,39 @@ const Navactive = () => {
             <Dropdown.Item as="div" href="#">
               Help
             </Dropdown.Item>
-            <Dropdown.Item as="div" onClick={handleLogout}>
+            <Dropdown.Item
+              as="div"
+              onClick={() => {
+                handleShow();
+              }}
+            >
               Logout
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </Nav.Link>
+
+      <>
+        <Modal
+          className="aside-title-history-bottom"
+          show={show}
+          onHide={handleClose}
+          backdrop="static"
+          keyboard={false}
+        >
+          <Modal.Header closeButton></Modal.Header>
+          <Modal.Body>Are you Sure want to Logout?</Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Cancel
+            </Button>
+            <Button variant="warning" onClick={handleLogout}>
+              {isFetching ? <Loadingbtn /> : "Logout"}
+              {/* Logout */}
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
     </>
   );
 };

@@ -5,11 +5,13 @@ import { ACTION_STRING } from "../actions/actionString";
 import storage from "redux-persist/lib/storage";
 import transferReducer from "./transfer";
 import userReducer from "./user";
+import productReducer from "./product";
 
 const appReducer = combineReducers({
   auth: authReducer,
   transfer: transferReducer,
   user: userReducer,
+  productData: productReducer,
 });
 
 const rootReducer = (state, action) => {

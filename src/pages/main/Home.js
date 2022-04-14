@@ -180,6 +180,14 @@ const Home = () => {
               Edit item
             </button>
           </Link>
+          <Link to="/">
+            <button
+              className="btn btn-warning btn-explore yellow-color mx-5 my-0"
+              type="button"
+            >
+              My Product
+            </button>
+          </Link>
         </div>
       ) : (
         <div></div>

@@ -18,6 +18,7 @@ import Vehiclepostcomponent from "./AdminPost/VehiclePostComponent";
 import VehicleAll from "../pages/vehicle/Product";
 import Product from "../pages/vehicle/Product";
 import ProductDetail from "../pages/vehicle/ProductDetail";
+import ScrollToTop from "./AutoScroll";
 
 const Layout = (props) => (
   <>
@@ -27,6 +28,7 @@ const Layout = (props) => (
 );
 
 export {
+  ScrollToTop,
   Layout,
   Header,
   Navigation,

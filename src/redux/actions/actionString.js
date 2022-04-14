@@ -4,6 +4,7 @@ export const ACTION_STRING = {
   deleteHistory: "DELETE_HISTORY",
   dataTransfer: "TRANSFER_DATA",
   userData: "USER_DATA",
+  productData: "PRODUCT_DATA",
 
   pending: "_PENDING",
   fulfilled: "_FULFILLED",

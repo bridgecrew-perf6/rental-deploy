@@ -12,16 +12,16 @@ const SignupComponent = (props) => {
   let navigate = useNavigate();
   const [isFetching, setIsFetching] = useState(false);
 
-  const [icon, setIcon] = useState("bi bi-eye");
+  const [icon, setIcon] = useState("bi bi-eye-slash");
   const [type, setType] = useState("password");
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
     if (type === "password") {
-      setIcon("bi bi-eye-slash");
+      setIcon("bi bi-eye");
       setType("text");
     } else {
-      setIcon("bi bi-eye");
+      setIcon("bi bi-eye-slash");
       setType("password");
     }
   };
@@ -85,7 +85,9 @@ const SignupComponent = (props) => {
               id="inputPassword"
               placeholder="Password"
             />
-            <i onClick={togglePasswordVisiblity} className={icon}></i>{" "}
+            <div className="showpsdRegis">
+              <i onClick={togglePasswordVisiblity} className={icon}></i>{" "}
+            </div>
           </div>
           <Link to={"/forgot-password"}>
             <a className="forgot-password">Forgot password?</a>

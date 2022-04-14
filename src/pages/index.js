@@ -20,6 +20,7 @@ import ProductType from "./vehicle/ProductType";
 import AllProduct from "./vehicle/AllProduct";
 import AllPopular from "./vehicle/AllPopular";
 import Reservation from "./vehicle/Reservation";
+import ProductSearch from "./vehicle/ProductSearch";
 
 export {
   Home,
@@ -44,4 +45,5 @@ export {
   ProductDetail,
   AllProduct,
   AllPopular,
+  ProductSearch,
 };

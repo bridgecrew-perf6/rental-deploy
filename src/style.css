@@ -8,6 +8,24 @@
     color: black;
 }
 
+.showpsd {
+    position: absolute;
+    z-index: 5;
+    top: 241px;
+    right: 161px;
+    font-size: 2rem;
+    color: white;
+}
+
+.showpsdRegis {
+    position: absolute;
+    z-index: 5;
+    top: 331px;
+    right: 161px;
+    font-size: 2rem;
+    color: white;
+}
+
 .imgWidthAdd {
     width: 300px;
     height: auto;

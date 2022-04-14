@@ -234,7 +234,7 @@ const History = () => {
         keyboard={false}
       >
         <Modal.Header closeButton></Modal.Header>
-        <Modal.Body>Are you Sure you want to delete this item?</Modal.Body>
+        <Modal.Body>Are you Sure want to delete this item?</Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close

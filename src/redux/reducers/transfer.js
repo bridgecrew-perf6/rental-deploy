@@ -11,7 +11,7 @@ const transferReducer = (prevState = initialState, action) => {
   switch (action.type) {
     case ACTION_STRING.dataTransfer:
       const data = action.payload;
-      console.log("data transfer", data);
+      // console.log("data transfer", data);
       return {
         ...data,
       };

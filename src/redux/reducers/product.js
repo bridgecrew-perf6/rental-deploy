@@ -4,11 +4,11 @@ const initialState = {
   data: null,
 };
 
-const userReducer = (prevState = initialState, action) => {
+const productReducer = (prevState = initialState, action) => {
   switch (action.type) {
-    case ACTION_STRING.userData:
+    case ACTION_STRING.productData:
       const data = action.payload;
-      // console.log("data user", data);
+      //   console.log("data ", data);
       return {
         ...data,
       };
@@ -17,4 +17,4 @@ const userReducer = (prevState = initialState, action) => {
   }
 };
 
-export default userReducer;
+export default productReducer;

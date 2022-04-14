@@ -13,16 +13,16 @@ import Loadingbtn from "../../components/loading/LoadingBtn";
 const LoginComponent = (props) => {
   const [isFetching, setIsFetching] = useState(false);
   let navigate = useNavigate();
-  const [icon, setIcon] = useState("bi bi-eye");
+  const [icon, setIcon] = useState("bi bi-eye-slash");
   const [type, setType] = useState("password");
   const [passwordShown, setPasswordShown] = useState(false);
   const togglePasswordVisiblity = () => {
     setPasswordShown(passwordShown ? false : true);
     if (type === "password") {
-      setIcon("bi bi-eye-slash");
+      setIcon("bi bi-eye");
       setType("text");
     } else {
-      setIcon("bi bi-eye");
+      setIcon("bi bi-eye-slash");
       setType("password");
     }
   };
@@ -151,7 +151,9 @@ const LoginComponent = (props) => {
                 value={formValues.password}
                 onChange={handleChange}
               />
-              <i onClick={togglePasswordVisiblity} className={icon}></i>{" "}
+              <div className="showpsd">
+                <i onClick={togglePasswordVisiblity} className={icon}></i>{" "}
+              </div>
               <p
                 style={{
                   width: "50%",

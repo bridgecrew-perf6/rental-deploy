@@ -23,16 +23,16 @@ const formatPrice = (value) => {
 
 const ReservPayment = () => {
   const bodyPayment = useSelector((state) => state.transfer.data);
+  const productData = useSelector((state) => state.productData.data);
   const token = useSelector((state) => state.auth.userData.token);
   const navigate = useNavigate();
   const [disable, setDisable] = useState(false);
-  const user = useSelector((state) => state.user);
+  // const user = useSelector((state) => state.user);
 
   // if (!token && user.data === null) {
   //   toast.info("Please login for reservation");
   //   // navigate("/login");
   // }
-
   useEffect(() => {
     if (!token) {
       setDisable(true);
@@ -60,6 +60,14 @@ const ReservPayment = () => {
         // navigate("/");
       });
   };
+  useEffect(() => {
+    // window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <Layout>
       <Navigation />
@@ -106,7 +114,7 @@ const ReservPayment = () => {
                 <Card>
                   <Card.Body className="qty-payment-card">
                     <Card.Title className="mb-2 gopayment-title">
-                      Qt: {bodyPayment.qty} bikes
+                      Qt: {bodyPayment.qty} {productData.type}
                     </Card.Title>
                     <Card.Text className="mb-2 text-muted">
                       No Prepayment

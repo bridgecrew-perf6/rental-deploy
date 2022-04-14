@@ -62,6 +62,14 @@ const Reservation = (props) => {
     setCounter(newCounter);
   };
 
+  useEffect(() => {
+    // window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
   // const { data } = props.location;
   // console.log("our props : ", data.counter, data.id, data.text);
 
@@ -87,7 +95,7 @@ const Reservation = (props) => {
         num: gen(48, 57),
         alphaLower: gen(97, 122),
         alphaUpper: gen(65, 90),
-        special: [...`~!@#$%^&*()_+-=[]\{}|;:'",./<>?`],
+        special: [...`~!@#$%^&*()_+-=[]{}|;:'",./<>?`],
       };
 
       function* iter(len, set) {
@@ -133,7 +141,7 @@ const Reservation = (props) => {
 
   const [endDate, setendDate] = useState(null);
   const reservation = () => {
-    let date = new Date();
+    // let date = new Date();
     setendDate(dataOptionals.day + dataOptionals.date);
     console.log(endDate);
     // if (!token) {

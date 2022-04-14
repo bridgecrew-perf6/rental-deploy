@@ -1,13 +1,12 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import vehicleDetail from "../../images/vehicle-detail.png";
 import "../../style.css";
 import "./style.css";
 import { Layout, Navigation } from "../../components";
-// import { transferUser } from "../../redux/actions/transfer";
 import { useSelector } from "react-redux";
-// import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useNavigate } from "react-router-dom";
 
 const formatPrice = (value) => {
   let price = new Intl.NumberFormat("id-ID", {
@@ -18,47 +17,78 @@ const formatPrice = (value) => {
     .replace(/(\.|,)00$/g, "");
   return price;
 };
+const formatTime = (time) =>
+  `${String(Math.floor(time / 60)).padStart(2, "0")}:${String(
+    time % 60
+  ).padStart(2, "0")}`;
+
+const useTimer = (startTime) => {
+  const [time, setTime] = useState(startTime);
+  const [intervalID, setIntervalID] = useState(null);
+  const hasTimerEnded = time <= 0;
+  const isTimerRunning = intervalID != null;
+
+  useEffect(() => {
+    const update = () => {
+      setTime((time) => time - 1);
+    };
+    const startTimer = () => {
+      if (!hasTimerEnded && !isTimerRunning) {
+        setIntervalID(setInterval(update, 1000));
+      }
+    };
+    startTimer();
+  }, []);
+  const stopTimer = () => {
+    clearInterval(intervalID);
+    setIntervalID(null);
+  };
+  // clear interval when the timer ends
+  useEffect(() => {
+    if (hasTimerEnded) {
+      clearInterval(intervalID);
+      setIntervalID(null);
+    }
+  }, [hasTimerEnded]);
+  // clear interval when component unmounts
+  useEffect(
+    () => () => {
+      clearInterval(intervalID);
+    },
+    []
+  );
+  return {
+    time,
+    // startTimer,
+    stopTimer,
+  };
+};
 
 const Payment = () => {
+  const navigate = useNavigate();
   const finishPayment = () => {
     toast.info("payment success");
+    setTimeout(() => {
+      navigate("/");
+    }, 4000);
   };
   // const dispatch = useDispatch();
   // const [enable, disable] = useState(false);
   const user = useSelector((state) => state.user.data);
-  // // const user_name = useSelector((state) => state.user.data.name);
+  const productData = useSelector((state) => state.productData.data);
+
   const v = useSelector((state) => state.transfer.data);
-
-  // const navigate = useNavigate();
-  // const token = useSelector((state) => state.auth.userData.token);
-
-  // // const buttonReservation = () => {};
-
-  // useEffect(() => {
-  //   if (user.data === null) {
-  //     toast.info("you need to login first");
-  //     // navigate("/");
-  //   }
-  // });
-  // const reservation = () => {
-  //   // if (!token) {
-  //   //   toast.info("you cant reservation");
-  //   //   // navigate("/");
-  //   // }
-  //   if (!token && user.data === null) {
-  //     toast.info("Please login for reservation");
-  //   } else {
   //     disable(true);
-  //     const data = {
-  //       ...v,
-  //       userId: user.data.id,
-  //       userName: user.data.name,
-  //     };
-  //     dispatch(transferUser(data));
-  //     // console.log(data);
-  //     toast.success("Reservation Success");
-  //   }
-  // };
+  const { time, stopTimer } = useTimer(3600);
+  // startTimer,
+  useEffect(() => {
+    // window.scrollTo(0, 0);
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  }, []);
   return (
     <Layout>
       <Navigation />
@@ -93,8 +123,11 @@ const Payment = () => {
           </div>
         </div>
         <div className="btn-payment-time">
+          <div></div>
+          {/* <button onClick={startTimer}>start</button> */}
+          {/* <button onClick={stopTimer}>stop</button> */}
           <p className="payment-time-text">
-            Pay before : <span> 59:30</span>
+            Pay before : <span> {formatTime(time)}</span>
           </p>
         </div>
       </div>
@@ -139,7 +172,7 @@ const Payment = () => {
           <div className="col-4 detail-book-wrapper-qty">
             <p className="payment-deytail-order-title">Price detail :</p>
             <p className="font-based-payment-book">
-              {v.qty} bike : {formatPrice(v.total_payment)}
+              {v.qty} {productData.type} : {formatPrice(v.total_payment)}
             </p>
           </div>
           <div className="col-8 detail-book-wrapper">
@@ -163,7 +196,7 @@ const Payment = () => {
         <div
           type="button"
           // disabled={enable}
-          onClick={finishPayment}
+          onClick={(finishPayment, stopTimer)}
           className="btn btn-finish-payment"
         >
           Finish Payment
