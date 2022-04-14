@@ -11,6 +11,16 @@ import { useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const formatPrice = (value) => {
+  let price = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  })
+    .format(value)
+    .replace(/(\.|,)00$/g, "");
+  return price;
+};
+
 const ReservPayment = () => {
   const bodyPayment = useSelector((state) => state.transfer.data);
   const token = useSelector((state) => state.auth.userData.token);
@@ -85,16 +95,18 @@ const ReservPayment = () => {
                 <div className="card">
                   <div className="card-body vehicle-info-wrapper">
                     <h1 className="display-5 vehicle-detail-title">
-                      Fixie Gray - Only
+                      {bodyPayment.vehicle_name}
                     </h1>
-                    <h3 className="card-subtitle city">Yogyakarta</h3>
+                    <h3 className="card-subtitle city">
+                      {bodyPayment.destination}
+                    </h3>
                   </div>
                 </div>
 
                 <Card>
                   <Card.Body className="qty-payment-card">
                     <Card.Title className="mb-2 gopayment-title">
-                      Qt: 2 bikes
+                      Qt: {bodyPayment.qty} bikes
                     </Card.Title>
                     <Card.Text className="mb-2 text-muted">
                       No Prepayment
@@ -108,11 +120,12 @@ const ReservPayment = () => {
                       Details:
                     </Card.Title>
                     <Card.Text className="reservation-detail-txt">
-                      1 bike : Rp. 78.000
+                      {bodyPayment.qty} bike :{" "}
+                      {formatPrice(bodyPayment.total_payment)}
                     </Card.Text>
-                    <Card.Text className="reservation-detail-txt">
-                      1 bike : Rp. 78.000
-                    </Card.Text>
+                    {/* <Card.Text className="reservation-detail-txt">
+                      1 bike : {formatPrice(bodyPayment.price)}
+                    </Card.Text> */}
                   </Card.Body>
                 </Card>
               </div>
@@ -125,7 +138,7 @@ const ReservPayment = () => {
               </div>
               <div className="col col-sm-4">
                 <div type="button" className="btn gopayment-reservation-btn">
-                  Start date
+                  {bodyPayment.start_date}
                 </div>
               </div>
               <div className="col col-sm-4">
@@ -144,7 +157,10 @@ const ReservPayment = () => {
       >
         <div className="justify-content-center">
           <div className="btn btn-outline-secondary btn-lg btn-block btn-reservation">
-            <p style={{ lineHeight: "2.5em" }}>Rp.178.000,00</p>
+            <p style={{ lineHeight: "2.5em" }}>
+              {" "}
+              {formatPrice(bodyPayment.total_payment)}
+            </p>
           </div>
           {/* <Link to="payment/payment">
               <button

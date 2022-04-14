@@ -10,23 +10,50 @@ import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const formatPrice = (value) => {
+  let price = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  })
+    .format(value)
+    .replace(/(\.|,)00$/g, "");
+  return price;
+};
+
 const Reservation = (props) => {
   // console.log(props.history.location.state);
   const user = useSelector((state) => state.user);
   // const user_name = useSelector((state) => state.user.data.name);
   const v = useSelector((state) => state.transfer.data);
+  const dispatch = useDispatch();
+  const [disable, setDisable] = useState(false);
 
+  const [bookCode, setBookCode] = useState(null);
+  const [paymentCode, setPaymentCode] = useState(null);
+  const [totalPayment, setTotalPayment] = useState(null);
+
+  const defaultDate = new Date().toISOString().substring(0, 10);
+  console.log(defaultDate);
+
+  const [dataOptionals, setDataOptionals] = useState({
+    day: "1",
+    date: defaultDate,
+  });
   const navigate = useNavigate();
   const token = useSelector((state) => state.auth.userData.token);
   const location = useLocation();
   const data = location.data;
   console.log(data, props.data);
-  const [counter, setCounter] = React.useState(1);
+  const [counter, setCounter] = useState(v.qty);
   // const [counterPrice, setCounterPrice] = React.useState();
 
   const addCounter = () => {
-    const newCounter = counter + 1;
-    setCounter(newCounter);
+    if (v.qty !== null) {
+      setDisable(true);
+    } else {
+      const newCounter = counter + 1;
+      setCounter(newCounter);
+    }
     // const newCounterPrice = counterPrice + counterPrice;
   };
 
@@ -38,12 +65,17 @@ const Reservation = (props) => {
   // const { data } = props.location;
   // console.log("our props : ", data.counter, data.id, data.text);
 
-  const dispatch = useDispatch();
-  const [disable, setDisable] = useState(false);
+  const handleChange = (e) => {
+    const value = e.target.value;
+    setDataOptionals({
+      ...dataOptionals,
+      [e.target.name]: value,
+    });
+  };
 
-  const [bookCode, setBookCode] = useState(null);
-  const [paymentCode, setPaymentCode] = useState(null);
-
+  console.log("opt data : ", dataOptionals.day, dataOptionals.date);
+  // const value = e.target.value;
+  // console.log("day : ", value.day);
   // const buttonReservation = () => {};
   useEffect(() => {
     const rnd = (() => {
@@ -88,7 +120,22 @@ const Reservation = (props) => {
   // navigate("/");
   // }
   // });
+
+  useEffect(() => {
+    setTotalPayment(
+      v.total_payment * v.qty + v.total_payment * dataOptionals.day
+    );
+  });
+  // useEffect(() => {
+  // const endDate = () => {
+  // };
+  // }, [endDate]);
+
+  const [endDate, setendDate] = useState(null);
   const reservation = () => {
+    let date = new Date();
+    setendDate(dataOptionals.day + dataOptionals.date);
+    console.log(endDate);
     // if (!token) {
     //   toast.info("you cant reservation");
     //   // navigate("/");
@@ -102,6 +149,10 @@ const Reservation = (props) => {
         ...v,
         user: user.data.name,
         user_payment_id: user.data.id,
+        qty: v.qty,
+        total_payment: totalPayment,
+        start_date: dataOptionals.date,
+        end_date: endDate,
         // email: user.data.email,
         // mobile_number: user.data.mobile_number,
         payment_code: paymentCode,
@@ -121,7 +172,7 @@ const Reservation = (props) => {
       <>
         <div className="container-fluid vehicle-detail">
           <div className="container-fluid">
-            <Link to="/vehicle-detail">
+            <Link to="/">
               <button
                 type="button"
                 className="btn-light btn-lg btn-block btn-back-content"
@@ -148,25 +199,30 @@ const Reservation = (props) => {
                 <div className="card">
                   <div className="card-body vehicle-info-wrapper">
                     <h1 className="display-5 vehicle-detail-title">
-                      Fixie Gray - Only
+                      {v.vehicle_name}
                     </h1>
-                    <h3 className="card-subtitle city">Yogyakarta</h3>
+                    <h3 className="card-subtitle city">{v.destination}</h3>
                     <h2 className="card-subtitle payment-info">
                       No prepayment
                     </h2>
-                    <div className="container-fluid d-flex justify-content-center qty-box">
+                    <div className="container-fluid d-flex justify-content-center qty-box mx-1">
                       <button
                         onClick={subCounter}
+                        disabled={disable}
                         type="button"
                         className="btn btn-light min-qty"
                       >
                         -
                       </button>
                       <div className="form-group">
-                        <p className="form-control text-qty">{counter}</p>
+                        <p className="form-control text-qty">
+                          {counter}
+                          {/* {v.qty !== null ? v.qty : counter} */}
+                        </p>
                       </div>
                       <button
                         onClick={addCounter}
+                        disabled={disable}
                         type="button"
                         className="btn btn-warning plus-qty"
                       >
@@ -178,39 +234,44 @@ const Reservation = (props) => {
                       <div className="container-fluid">
                         <input
                           type="date"
+                          name="date"
+                          // value="12-04-2022"
+                          defaultValue={defaultDate}
                           className="datepicker box-btn"
                           placeholder="Select date"
-                          id="datereservation"
+                          // id="datereservation"
+                          onChange={handleChange}
                         />
                       </div>
 
                       <div
-                        className="btn dropdown-toggle box-btn btn-day-options"
-                        type="button"
-                        id="defaultDropdown"
-                        data-bs-toggle="dropdown"
-                        data-bs-auto-close="true"
-                        aria-expanded="false"
+                      // className="btn dropdown-toggle box-btn btn-day-options"
+                      // type="button"
                       >
-                        Day 1
-                        <span className="dropdown-span-icon">
-                          <i className="bi bi-chevron-down"></i>
-                        </span>
+                        <select
+                          id="status"
+                          name="day"
+                          className="btn-reservation box-btn btn-day-options"
+                          style={{
+                            borderRadius: "4px",
+                            height: "50px",
+                            fontSize: "20px",
+                            margin: "auto",
+                            lineHeight: "2rem",
+                          }}
+                          onChange={handleChange}
+                        >
+                          <option value="" disable="true" hidden>
+                            1 Day
+                          </option>
+                          <option value="" className="choose-category" disabled>
+                            selectDay
+                          </option>
+                          <option value="1">1 Day</option>
+                          <option value="2">2 Day</option>
+                          <option value="3">3 Day</option>
+                        </select>
                       </div>
-                      <ul
-                        className="dropdown-menu"
-                        aria-labelledby="defaultDropdown"
-                      >
-                        {/* <li>
-                        <a className="dropdown-item">Menu item</a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item">Menu item</a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item">Menu item</a>
-                      </li> */}
-                      </ul>
                     </div>
                   </div>
                 </div>
@@ -232,7 +293,11 @@ const Reservation = (props) => {
               disabled={disable}
               onClick={reservation}
             >
-              Rp.178.000,00
+              <p style={{ lineHeight: "2.5em" }}>
+                {dataOptionals.day !== undefined
+                  ? formatPrice(totalPayment)
+                  : "Please select day"}
+              </p>
             </div>
           </Link>
         </div>

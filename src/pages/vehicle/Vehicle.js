@@ -16,7 +16,7 @@ const Vehicle = () => {
         <Link to="/product/search" />
         <Link to="/product/category" />
         <Outlet />
-        <p>There is no vehicle left</p>
+        {/* <p>There is no vehicle left</p> */}
       </div>
     </Layout>
   );

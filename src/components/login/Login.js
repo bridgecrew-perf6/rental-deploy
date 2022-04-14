@@ -27,14 +27,52 @@ const LoginComponent = (props) => {
     }
   };
 
+  const initialValues = { email: "", password: "" };
+  const [formValues, setFormValues] = useState(initialValues);
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmit, setIsSubmit] = useState(false);
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
   const submitHandler = (event) => {
     event.preventDefault();
+    setFormErrors(validate(formValues));
+    // setIsSubmit(true);
     const body = {
       email: event.target.email.value,
       password: event.target.password.value,
     };
     props.loginDispatch(body);
   };
+
+  useEffect(() => {
+    // console.log(formErrors);
+    if (Object.keys(formErrors).length === 0 && isSubmit) {
+      // console.log(formValues);
+    }
+  }, [formErrors]);
+  const validate = (values) => {
+    const errors = {};
+    const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+    if (!values.email) {
+      errors.email = "Email is required!";
+    } else if (!regex.test(values.email)) {
+      errors.email = "This is not a valid email format!";
+    }
+    if (!values.password) {
+      errors.password = "Password is required";
+    } else if (values.password.length <= 2) {
+      errors.password = "Password must be more than 2 characters";
+    }
+    // } else if (values.password.length > 10) {
+    //   errors.password = "Password cannot exceed more than 10 characters";
+    // }
+    return errors;
+  };
+
   useEffect(() => {
     if (props.auth.isFulfilled === true) {
       // localStorage["login-token"] = JSON.stringify(props.auth.userData.token);
@@ -43,14 +81,31 @@ const LoginComponent = (props) => {
       setTimeout(() => {
         navigate("/");
       }, 1000);
+      setIsFetching(false);
     }
     if (props.auth.isPending === true) {
       setIsFetching(true);
     }
     if (props.auth.isRejected === true) {
       toast.error("Wrong Email/Password");
+      setIsFetching(false);
     }
-  });
+
+    // const hasError = props.auth.err.status === 401;
+    // if (props.loginAction === Error) {
+    //   const error = new Error("This is an error"); // I want to set my message that I obtained from the controller here.
+    //   throw error;
+    // }
+    // return response;
+
+    // checkStatus();
+
+    // if (props.auth.err.status === 401) {
+    //   toast.error("Wrong Email/Password");
+    //   setIsFetching(false);
+    // }
+  }, [props.auth]);
+
   // const notify = () => {
   //   toast.info("Login success", {
   //     position: "top",
@@ -59,16 +114,33 @@ const LoginComponent = (props) => {
 
   return (
     <>
+      {/* {Object.keys(formErrors).length === 0 && isSubmit ? (
+        <div>successfully</div>
+      ) : (
+        <pre>{JSON.stringify(formValues, undefined, 2)}</pre>
+      )} */}
       <div className="col-4 col-sm col-md col-lg right">
         <form onSubmit={submitHandler}>
           <div className="form-group form-group-index">
             <input
               name="email"
-              type="email"
+              type="text"
               className="form-control form-control-md sign-form"
               placeholder="Enter email"
-              // validations={[requiredField]}
+              value={formValues.email}
+              onChange={handleChange}
             />
+            <p
+              style={{
+                width: "50%",
+                color: "#B20600",
+                textAlign: "center",
+                margin: "auto",
+                backgroundColor: "#DFDFDE",
+              }}
+            >
+              {formErrors.email}
+            </p>
             <div>
               <input
                 name="password"
@@ -76,12 +148,24 @@ const LoginComponent = (props) => {
                 // type="password"
                 className="form-control form-control-md sign-form"
                 placeholder="Password"
-                // validations={[requiredField]}
+                value={formValues.password}
+                onChange={handleChange}
               />
               <i onClick={togglePasswordVisiblity} className={icon}></i>{" "}
+              <p
+                style={{
+                  width: "50%",
+                  color: "#B20600",
+                  textAlign: "center",
+                  margin: "auto",
+                  backgroundColor: "#DFDFDE",
+                }}
+              >
+                {formErrors.password}
+              </p>
             </div>
             <Link to={"/forgot-password"}>
-              <a className="forgot-password">Forgot password?</a>
+              <p className="forgot-password">Forgot password?</p>
             </Link>
           </div>
           <div>

@@ -9,6 +9,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const formatPrice = (value) => {
+  let price = new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+  })
+    .format(value)
+    .replace(/(\.|,)00$/g, "");
+  return price;
+};
+
 const ProductDetail = (props) => {
   let { id } = useParams();
   // console.log(id);
@@ -163,12 +173,14 @@ const ProductDetail = (props) => {
                           No prepayment
                         </h2>
                         <div className="vehicle-info-detail">
-                          <p className="card-text">Capacity : 1 Person</p>
+                          <p className="card-text">
+                            Capacity : {vehicle.capacity} Person
+                          </p>
                           <p className="card-text">Type : {vehicle.type}</p>
                           <p className="card-text">Reservaton before 2 PM</p>
                         </div>
                         <div className="price">
-                          <h4>Rp.{vehicle.price}/day</h4>
+                          <h4>{formatPrice(vehicle.price)}/day</h4>
                         </div>
                         <div className="container-fluid d-flex justify-content-center qty-box">
                           <button
@@ -179,7 +191,12 @@ const ProductDetail = (props) => {
                             -
                           </button>
                           <div className="form-group">
-                            <p className="form-control text-qty">{counter}</p>
+                            <p
+                              className="form-control text-qty"
+                              style={{ color: "black" }}
+                            >
+                              {counter}
+                            </p>
                           </div>
                           <button
                             onClick={addCounter}
@@ -229,6 +246,7 @@ const ProductDetail = (props) => {
               // }}
             // > */}
             <div
+              style={{ lineHeight: "3.5rem" }}
               type="button"
               disabled={disable}
               onClick={reservation}
